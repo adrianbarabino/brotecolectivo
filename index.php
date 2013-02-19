@@ -1,6 +1,6 @@
 <?php
 
-//aca estoy cargando la config
+// ehh, aca estoy cargando la config
 
 require ("configuracion.php");
 
