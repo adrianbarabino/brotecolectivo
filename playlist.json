@@ -1,0 +1,37 @@
+{"playlist":
+    [
+    {
+        "0": {"src":"http://www.brotecolectivo.com/canciones/29-38.mp3", "type":"audio/mp3"},
+        "1": {"src":"http://www.brotecolectivo.com/canciones/29-38.ogg", "type":"audio/ogg"},
+        "config": {
+        "title": "Por sobre todas las cosas - Arde en llamas",
+        "poster": "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/arde-en-llamas.jpg&w=125&h=125&zc=1g"
+        }
+    },
+    {
+        "0": {"src":"junk/paniq.mp3", "type":"audio/mp3"},
+        "1": {"src":"junk/paniq.ogg", "type":"audio/ogg"},
+        "config": {
+        "title": "An Educated Simpleton - Copy Two",
+        "poster": "junk/cover.jpg"
+        }
+    },
+    {
+        "0": {"src":"junk/paniq.mp3", "type":"audio/mp3"},
+        "1": {"src":"junk/paniq.ogg", "type":"audio/ogg"},
+        "config": {
+        "title": "An Educated Simpleton - Copy Three",
+        "poster": "junk/cover.jpg"
+        }
+    },
+    {
+        "0": {"src":"junk/paniq.mp3", "type":"audio/mp3"},
+        "1": {"src":"junk/paniq.ogg", "type":"audio/ogg"},
+        "config": {
+        "title": "An Educated Simpleton - Copy Four",
+        "poster": "junk/cover.jpg"
+        }
+    }
+
+    ]
+}
