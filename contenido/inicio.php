@@ -1,7 +1,7 @@
 <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h1>Sé bienvenido!</h1>
-        <p>Brote Colectivo es un sitio de difusion de artistas de la provincia de Santa Cruz, desde este sitio le brindamos espacios a los artistas para que puedan exponer su labor.</p>
+        <p>Brote Colectivo es un sitio de difusión de artistas de la provincia de Santa Cruz, desde este sitio le brindamos espacios a los artistas para que puedan exponer su labor.</p>
         <p><a href="#" class="btn btn-primary btn-large" data-loading-text="Loading...">Leer más &raquo;</a></p>
       </div>
       <ul class="breadcrumb">
