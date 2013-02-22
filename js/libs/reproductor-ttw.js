@@ -1,3 +1,9 @@
+define(['libs/jplayer'], function(jplayer){
+    
+        
+    
+     
+
 /**
  * Created by 23rd and Walnut for Codebasehero.com
  * www.23andwalnut.com
@@ -665,5 +671,7 @@
 
         return this;
     };
+    console.log("Reproductor TTW LISTO!");
 })(jQuery);
 
+});

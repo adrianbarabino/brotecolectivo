@@ -18,6 +18,7 @@
 
 (function($, undefined) {
 
+	console.log("Se empezo a cargar el jPlayer.js");
 	// Adapted from jquery.ui.widget.js (1.8.7): $.widget.bridge
 	$.fn.jPlayer = function( options ) {
 		var name = "jPlayer";
@@ -2202,4 +2203,7 @@
 		CSS_SELECTOR_STRING: "Check your css selector is a string.",
 		OPTION_KEY: "Check your option name."
 	};
+	console.log("Listo, se termino de cargar el jPlayer.js ! ");
+
+
 })(jQuery);

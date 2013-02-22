@@ -8,79 +8,7 @@
         <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-transition.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-alert.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-modal.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-dropdown.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-scrollspy.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-tab.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-tooltip.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-popover.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-button.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-collapse.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-carousel.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/bootstrap-typeahead.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/redimensionar-thumbs.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/jplayer/jquery.jplayer.js"></script>
-    <script src="<?php echo $configuracion['ruta_absoluta']; ?>js/reproductor.js"></script>
-
-
-
-<script type="text/javascript">
-
-function YaCargoLetras(){
-
-   $("a.overlay").overlay({
- 
-        mask: 'black',
-        effect: 'apple',
- 
-        onBeforeLoad: function() {
- 
-            // grab wrapper element inside content
-            var wrap = this.getOverlay().find(".contentWrap");
- 
-            // load the page specified in the trigger
-            wrap.load(this.getTrigger().attr("href"));
-        }
- 
-    });
-};
-
-
-</script>
-
-<script>
-$(function() {
- 
-    // if the function argument is given to overlay,
-    // it is assumed to be the onBeforeLoad event listener
-    $("a.overlay").overlay({
- 
-        mask: 'black',
-        effect: 'apple',
- 
-        onBeforeLoad: function() {
- 
-            // grab wrapper element inside content
-            var wrap = this.getOverlay().find(".contentWrap");
- 
-            // load the page specified in the trigger
-            wrap.load(this.getTrigger().attr("href"));
-        }
- 
-    });
-});
-
-</script>
-<!-- overlayed element -->
-
-<div class="apple_overlay" id="overlay">
-  <!-- the external content is loaded inside this tag -->
-  <div class="contentWrap"></div>
-</div>
+    
 
 <script type="text/javascript">
 
@@ -456,48 +384,42 @@ var myPlaylist = [
 
 </script>
 
+
+
+<div id="reproductor"></div>
+<script data-main="<?php echo $configuracion['ruta_absoluta']; ?>js/principal" src="<?php echo $configuracion['ruta_absoluta']; ?>js/libs/require-jquery.js"></script>
+
+
+
 <script type="text/javascript">
-$(document).ready(function(){
 
-$('#reproductor').ttwMusicPlayer(myPlaylist, {
+function YaCargoLetras(){
 
-                autoPlay:false, 
-                ratingCallback:function(index, playlistItem, rating){
-                //some logic to process the rating, perhaps through an ajax call
-                alert("El Index es "+index);
-                alert("El playlist item es "+ playlistItem);
-                alert("Y el rating es..... "+ rating);
-                 },
-
-
-
-                jPlayer:{
-
-                    swfPath:'/js/jplayer' //You need to override the default swf path any time the directory structure changes
-
-                }
-
-            });
-
-
-  $('.boton-playlist').click(function() {
-    $(".tracklist").slideToggle();
-  });
-  $('.reproductor-tooltip').tooltip({
-    container: 'body'
-  });
-  $(function() {
-  // Setup drop down menu
-  $('.dropdown-toggle').dropdown();
+   $("a.overlay").overlay({
  
-  // Fix input element click problem
-  $('.dropdown input, .dropdown label').click(function(e) {
-    e.stopPropagation();
-  });
-});
- });
+        mask: 'black',
+        effect: 'apple',
+ 
+        onBeforeLoad: function() {
+ 
+            // grab wrapper element inside content
+            var wrap = this.getOverlay().find(".contentWrap");
+ 
+            // load the page specified in the trigger
+            wrap.load(this.getTrigger().attr("href"));
+        }
+ 
+    });
+};
+
 
 </script>
-<div id="reproductor"></div>
+
+<!-- overlayed element -->
+
+<div class="apple_overlay" id="overlay">
+  <!-- the external content is loaded inside this tag -->
+  <div class="contentWrap"></div>
+</div>
   </body>
 </html>
