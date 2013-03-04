@@ -57,10 +57,10 @@ function esta_activo($elemento){
 	                  <li <?php esta_activo("tos"); ?>><a href="#">Terminos y Condiciones</a></li>
 	                </ul>
 	          	  </li>
-	              <li <?php esta_activo("noticias"); ?>><a href="<?php enlace_interno("noticias/"); ?>">Noticias</a></li>
-	              <li <?php esta_activo("artistas"); ?>><a href="<?php enlace_interno("artistas/"); ?>">Artistas</a></li>
-	              <li <?php esta_activo("agenda-cultural"); ?>><a href="<?php enlace_interno("agenda-cultural/"); ?>">Agenda Cultural</a></li>
-	              <li <?php esta_activo("mp3"); ?>><a href="<?php enlace_interno("reproductor-mp3/"); ?>">Reproductor MP3</a></li>
+	              <li <?php esta_activo("noticias"); ?>><a id="nav_noticias" href="<?php enlace_interno("noticias/"); ?>">Noticias</a></li>
+	              <li <?php esta_activo("artistas"); ?>><a id="nav_artistas" href="<?php enlace_interno("artistas/"); ?>">Artistas</a></li>
+	              <li <?php esta_activo("agenda-cultural"); ?>><a id="nav_agenda" href="<?php enlace_interno("agenda-cultural/"); ?>">Agenda Cultural</a></li>
+	              <li <?php esta_activo("mp3"); ?>><a id="nav_mp3" href="<?php enlace_interno("reproductor-mp3/"); ?>">Reproductor MP3</a></li>
    
             </ul>
             <!-- The drop down menu -->

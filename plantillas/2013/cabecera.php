@@ -9,6 +9,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
+    <link href="<?php echo $configuracion['ruta_absoluta']; ?>css/normalize.css" rel="stylesheet">
     <link href="<?php echo $configuracion['ruta_absoluta']; ?>css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="<?php echo $configuracion['ruta_absoluta']; ?>css/bootstrap-responsive.css" rel="stylesheet">
     <link href="<?php echo $configuracion['ruta_absoluta']; ?>css/reproductor.css" rel="stylesheet">

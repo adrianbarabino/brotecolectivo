@@ -1,6 +1,6 @@
 define([
 		'modulos/reproductor',
-//		'modulos/ingresar',
+		'modulos/cargar-pagina',
 //		'modulos/validar'
 		], 
 	function(){

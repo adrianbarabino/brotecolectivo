@@ -386,7 +386,7 @@ var myPlaylist = [
 
 
 
-<div id="reproductor"></div>
+<div id="reproductor" style="display:none;"></div>
 <script data-main="<?php echo $configuracion['ruta_absoluta']; ?>js/principal" src="<?php echo $configuracion['ruta_absoluta']; ?>js/libs/require-jquery.js"></script>
 
 
@@ -421,5 +421,9 @@ function YaCargoLetras(){
   <!-- the external content is loaded inside this tag -->
   <div class="contentWrap"></div>
 </div>
+<script>
+$(".nav li a").attr("href", "javascript:void(0)")
+
+</script>
   </body>
 </html>

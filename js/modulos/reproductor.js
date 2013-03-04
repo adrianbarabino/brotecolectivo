@@ -38,6 +38,7 @@ $('#reproductor').ttwMusicPlayer(myPlaylist, {
     e.stopPropagation();
   });
 });
+    $('#reproductor').show();
     console.log("Reproductor LISTO!");
 }
 }

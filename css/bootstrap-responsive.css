@@ -1147,6 +1147,10 @@ body > div.container{
 padding: 1em;
 }
 
+.pagination{
+  text-align:center;
+}
+
 a.dropdown-toggle.brand{
   width:120px;
   height:20px;

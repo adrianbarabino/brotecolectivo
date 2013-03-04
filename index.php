@@ -3,6 +3,7 @@
 // ehh, aca estoy cargando la config
 
 require ("configuracion.php");
+require ("conexion.php");
 
 
 function enlace_interno($url){
