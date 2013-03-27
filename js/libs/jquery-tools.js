@@ -1,4 +1,4 @@
-define(function(){
+
 
 /*!
  * jQuery Tools v1.2.7 - The missing UI library for the Web
@@ -125,4 +125,3 @@ c("[name='"+b.attr("name")+"']").each(function(b,d){c(d).is(":checked")&&(a=!0)}
 
 
     console.log("jQuery Tools LISTO!");
-});

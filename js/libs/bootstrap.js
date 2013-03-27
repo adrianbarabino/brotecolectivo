@@ -1,5 +1,3 @@
-define(['libs/jquery-tools'], function(jquerytools){
-
 /* ===================================================
  * bootstrap-transition.js v2.3.0
  * http://twitter.github.com/bootstrap/javascript.html#transitions
@@ -2270,4 +2268,3 @@ define(['libs/jquery-tools'], function(jquerytools){
 }(window.jQuery);
 
 console.log("Bootstrap LISTO!");
-});

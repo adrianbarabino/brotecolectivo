@@ -1,24 +1,54 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  	<meta charset="UTF-8" />
-  	<meta name="keywords" content="<?php echo $configuracion["palabras_clave"]; ?>">
-	<meta name="keywords" content="<?php echo $configuracion["descripcionweb"]; ?>">
-	
-    <title><?php echo $configuracion['tituloweb']; ?></title>
+<!doctype html>
+<html class="no-js">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="<?php echo $configuracion['ruta_absoluta']; ?>css/normalize.css" rel="stylesheet">
-    <link href="<?php echo $configuracion['ruta_absoluta']; ?>css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="<?php echo $configuracion['ruta_absoluta']; ?>css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="<?php echo $configuracion['ruta_absoluta']; ?>css/reproductor.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8"/>
+    <title><?php echo $configuracion['sitioweb']; ?></title>
+    <!--[if lt IE 9]>
+      <script src="/js/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="/css/style.less" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+    
+    <script src="/js/less.js" type="text/javascript"></script>
+ 
+    
+    <!-- superfish -->
+    <link rel="stylesheet" media="screen" href="/css/superfish.css" /> 
+
+    
+
+    <link rel="stylesheet" href="/js/prettyPhoto/css/prettyPhoto.css"  media="screen" />
+    <!-- ENDS prettyPhoto -->
+    
+    <!-- Plugin de direcciones (address) -->
+
+    <!-- poshytip -->
+    <link rel="stylesheet" href="/js/poshytip-1.1/src/tip-twitter/tip-twitter.css"  />
+    <link rel="stylesheet" href="/js/poshytip-1.1/src/tip-yellowsimple/tip-yellowsimple.css"  />
+    <!-- ENDS poshytip -->
+    
+    
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Allan:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+
+    <!-- Flex Slider -->
+    <link rel="stylesheet" href="/css/flexslider.css" >
+    <!-- ENDS Flex Slider -->
+    
+    
+    
+    <!-- Lessgrid -->
+    <link rel="stylesheet" media="all" href="/css/lessgrid.css"/>
+    
+
+    
 
   </head>
-  <body>
-
-	
-
-
-	
-
+  
+  <body lang="en">
+  

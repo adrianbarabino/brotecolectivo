@@ -1,5 +1,3 @@
-define(['libs/bootstrap'], function(bootstrap){
-
 // Código realizado por Adrian Barabino
 // El sentido de este código es el siguiente
 // Primero verificamos como está la pantalla, osea el tamaño.
@@ -91,4 +89,3 @@ $(document).ready(function(){
 
 	});
 
-});

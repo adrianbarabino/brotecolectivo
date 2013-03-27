@@ -75,7 +75,7 @@ if ($resultado = $mysqli->query($consulta)) {
 
 
 
-        echo "[ \n";
+        echo "[";
             
 
             while ($row = $resultado->fetch_assoc()) {
@@ -88,21 +88,21 @@ if ($resultado = $mysqli->query($consulta)) {
                     $banda_social = json_decode($row['social']);
 
                     
-                     $respuesta .= '{'. "\n";
-                     $respuesta .= '   "id": '.$banda_id.' ,'. "\n";
-                     $respuesta .= '   "nombre": "'.$banda_nombre.'",'. "\n";
-                     $respuesta .= '   "bio": "'.$banda_bio.'",'. "\n";
-                     $respuesta .= '   "urltag": "'.$banda_urltag.'",'. "\n";
-                     $respuesta .= '   "social": {'. "\n";
-                     $respuesta .= '       "facebook": "'.$banda_social->facebook.'",'. "\n";
-                     $respuesta .= '       "twitter": "'.$banda_social->twitter.'",'. "\n";
-                     $respuesta .= '       "sitioweb": "'.$banda_social->sitioweb.'",'. "\n";
-                     $respuesta .= '       "soundcloud":"'.$banda_social->soundcloud.'",'. "\n";
-                     $respuesta .= '       "youtube":"'.$banda_social->youtube.'",'. "\n";
-                     $respuesta .= '       "grooveshark":"'.$banda_social->grooveshark.'",'. "\n";
-                     $respuesta .= '       "vimeo":"'.$banda_social->vimeo.'"'. "\n";
-                     $respuesta .= '   }'. "\n";
-                     $respuesta .= '},'. "\n";
+                     $respuesta .= '{';
+                     $respuesta .= '"id": '.$banda_id.' ,';
+                     $respuesta .= '"nombre": "'.$banda_nombre.'",';
+                     $respuesta .= '"bio": "'.$banda_bio.'",';
+                     $respuesta .= '"urltag": "'.$banda_urltag.'",';
+                     $respuesta .= '"social": {';
+                     $respuesta .= '"facebook": "'.$banda_social->facebook.'",';
+                     $respuesta .= '"twitter": "'.$banda_social->twitter.'",';
+                     $respuesta .= '"sitioweb": "'.$banda_social->sitioweb.'",';
+                     $respuesta .= '"soundcloud":"'.$banda_social->soundcloud.'",';
+                     $respuesta .= '"youtube":"'.$banda_social->youtube.'",';
+                     $respuesta .= '"grooveshark":"'.$banda_social->grooveshark.'",';
+                     $respuesta .= '"vimeo":"'.$banda_social->vimeo.'"';
+                     $respuesta .= '}';
+                     $respuesta .= '},';
 
 
                 }elseif($tabla == "fechas"){
@@ -143,23 +143,23 @@ if ($resultado = $mysqli->query($consulta)) {
                     $fecha_fin = $row['fecha_fin'];
 
                     
-                     $respuesta .= '{'. "\n";
-                     $respuesta .= '   "id": '.$fecha_id.' ,'. "\n";
-                     $respuesta .= '   "bandas": "'.$fecha_bandas.'",'. "\n";
-                     $respuesta .= '   "lugar": "'.$fecha_lugar.'",'. "\n";
-                     $respuesta .= '   "direccion": "'.$fecha_direccion.'",'. "\n";
-                     $respuesta .= '   "coordenadas": "'.$fecha_coordenadas.'",'. "\n";
-                     $respuesta .= '   "tags": "'.$fecha_tags.'",'. "\n";
-                     $respuesta .= '   "interior": "'.$fecha_interior.'",'. "\n";
-                     $respuesta .= '   "contenido": "'.$fecha_contenido.'",'. "\n";
-                     $respuesta .= '   "urltag": "'.$fecha_urltag.'",'. "\n";
-                     $respuesta .= '   "inicio": "'.$fecha_inicio.'",'. "\n";
-                     $respuesta .= '   "fin": "'.$fecha_fin.'"'. "\n";
-                     $respuesta .= '},'. "\n";                    
+                     $respuesta .= '{';
+                     $respuesta .= '"id": '.$fecha_id.' ,';
+                     $respuesta .= '"bandas": "'.$fecha_bandas.'",';
+                     $respuesta .= '"lugar": "'.$fecha_lugar.'",';
+                     $respuesta .= '"direccion": "'.$fecha_direccion.'",';
+                     $respuesta .= '"coordenadas": "'.$fecha_coordenadas.'",';
+                     $respuesta .= '"tags": "'.$fecha_tags.'",';
+                     $respuesta .= '"interior": "'.$fecha_interior.'",';
+                     $respuesta .= '"contenido": "'.$fecha_contenido.'",';
+                     $respuesta .= '"urltag": "'.$fecha_urltag.'",';
+                     $respuesta .= '"inicio": "'.$fecha_inicio.'",';
+                     $respuesta .= '"fin": "'.$fecha_fin.'"';
+                     $respuesta .= '},';                    
                 }
             }
-            echo substr($respuesta, 0, -2);
-            echo "\n ] ";
+            echo substr($respuesta, 0, -1);
+            echo "]";
     
 
 

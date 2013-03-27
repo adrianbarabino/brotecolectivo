@@ -1,4 +1,4 @@
-define(['libs/jplayer'], function(jplayer){
+
     
         
     
@@ -674,4 +674,3 @@ define(['libs/jplayer'], function(jplayer){
     console.log("Reproductor TTW LISTO!");
 })(jQuery);
 
-});

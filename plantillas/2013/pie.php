@@ -1,10 +1,64 @@
 
 
-      <footer>
-        <p>&copy; Brote Colectivo 2013</p>
-      </footer>
 
-    </div> <!-- /container -->
+        <footer>
+            <div class="wrapper">
+            
+                <ul id="footer-cols">
+                    
+                    <li class="first-col">
+                        
+                        <div class="widget-block">
+                            <h4>Recent posts</h4>
+                            <div class="recent-post">
+                                <a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+                                <div class="post-head">
+                                    <a href="#">Pellentesque habitant morbi senectus</a><span>March 12, 2011</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+                                <div class="post-head">
+                                    <a href="#">Pellentesque habitant morbi senectus</a><span>March 12, 2011</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+                                <div class="post-head">
+                                    <a href="#">Pellentesque habitant morbi senectus</a><span>March 12, 2011</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="second-col">
+                        
+                        <div class="widget-block">
+                            <h4>Dummy text</h4>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies ege. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada.</p>
+                        </div>
+                        
+                    </li>
+                    
+                    <li class="third-col">
+                        
+                        <div class="widget-block">
+                            <div id="tweets" class="footer-col tweet">
+                                <h4>Twitter widget</h4>
+                            </div>
+                        </div>
+                        
+                    </li>   
+                </ul>               
+                <div class="clearfix"></div>
+                
+                
+            </div>
+            
+            <div id="to-top"></div>
+        </footer>
+         <!-- /container -->
         <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -387,7 +441,38 @@ var myPlaylist = [
 
 
 <div id="reproductor" style="display:none;"></div>
-<script data-main="<?php echo $configuracion['ruta_absoluta']; ?>js/principal" src="<?php echo $configuracion['ruta_absoluta']; ?>js/libs/require-jquery.js"></script>
+<!-- JS -->
+    <script src="/js/jquery-1.6.4.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <!--  <script src="/js/less-grid-4.js"></script> -->
+    <script src="/js/custom.js"></script>
+    <script src="/js/tabs.js"></script>
+    
+    <!-- Masonry -->
+    <script src="/js/masonry.min.js" ></script>
+    <script src="/js/imagesloaded.js" ></script>
+    <!-- ENDS Masonry -->
+    
+    <script src="/js/jquery.flexslider-min.js"></script>
+    <!-- modernizr -->
+    <script src="/js/modernizr.js"></script>
+    <!-- prettyPhoto -->
+    <script  src="/js/superfish-1.4.8/js/hoverIntent.js"></script>
+    <script  src="/js/superfish-1.4.8/js/superfish.js"></script>
+    <script  src="/js/superfish-1.4.8/js/supersubs.js"></script>
+    <!-- ENDS superfish -->
+    <script  src="/js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+
+    <script  src="/js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+    <!--[if IE 6]>
+    <link rel="stylesheet" href="css/ie6-hacks.css" media="screen" />
+    <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
+      <script>
+              /* EXAMPLE */
+              DD_belatedPNG.fix('*');
+          </script>
+    <![endif]-->
+
 
 
 
@@ -421,8 +506,20 @@ function YaCargoLetras(){
   <!-- the external content is loaded inside this tag -->
   <div class="contentWrap"></div>
 </div>
+    <!-- empiezan los otros JS -->
+
+    <script src="/js/direcciones.js"></script>
+    <script src="/js/brotecolectivo.js"></script>    
+    <script src="/js/libs/bootstrap.js"></script>
+    <script src="/js/modernizr.js"></script>
+    <script src="/js/libs/jplayer.js"></script>
+    <script src="/js/libs/reproductor-ttw.js"></script>
+    <script src="/js/modulos/reproductor.js"></script>
+
+    <script src="/js/libs/ajuste-thumbs.js"></script>
 <script>
-$(".nav li a").attr("href", "javascript:void(0)")
+
+$("nav ul#nav li a").attr("href", "javascript:void(0)")
 
 </script>
   </body>

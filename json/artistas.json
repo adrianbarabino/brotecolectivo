@@ -1,0 +1,718 @@
+[
+ {
+    "id": 2,
+    "nombre": "Bienvenidos Al Mundo",
+    "bio": "<p><strong>Bienvenidos Al Mundo</strong> es una banda riogalleguense de <em>Rock Fusión</em> que comenzó en el 2009.<br /><br /> Sus integrantes son: Agustín (Guitarra y Voz), Alfredo (Batería), Milton (Coros), Daniel (Saxo), Fernando (Trombón) y Pablo (Bajo). <br /><br /> Han logrado tocar en diversos escenarios de la provincia, entre ellos en la fiesta nacional del Trekking en la localidad de El Chaltén en el 2009.<br /><br /> Durante el invierno del 2011 grabaron lo que será su primer trabajo discográfico que será lanzado a mediados del 2012.<br /><br /></p>",
+    "urltag": "bam-bienvenidos-al-mundo",
+    "social": {
+        "facebook": "BienvenidosAlMundo",
+        "twitter": "bam_sur",
+        "sitioweb": "http://www.bienvenidosalmundo.net",
+        "soundcloud":"SoundCloud",
+        "youtube":"Youtube",
+        "grooveshark":"GrooveShark",
+        "vimeo":"Vimeo"
+    }
+},
+    {
+    "id": 3,
+    "nombre": "Bolas de Frayle",
+    "bio": "<p>Bolas de frayle es una banda riogalleguense de rock que nació hace ya 20 años en nuestra ciudad. Actualmente está formada por Nestor Cabe Reynoso (Voz y Guitarra), Luciano (Bajo) y Ricky (Batería).</p>\n<p>En Julio del 2012 lanzaron su CD Casi Normal grabado en El Calafate (Solo Studio).</p>",
+    "urltag": "bolas-de-frayle",
+    "social": {
+        "facebook": "bolasdefrayle",
+        "twitter": "Twitter",
+        "sitioweb": "http: //www.bolasdefrayle.com.ar/",
+        "soundcloud":"SoundCloud",
+        "youtube":"Youtube","grooveshark":"GrooveShark",
+        "vimeo":"Vimeo"
+    }
+},
+        {
+    "id": 4,
+    "nombre": "Dol Amroth",
+    "bio": "<p>Dol Amroth es una banda riogalleguense de Hard Rock que nació como un proyecto el 28 de febrero del 2008 por el guitarrista Ariel Skelazzy y el guitarrista Lucas Sánchez.</p>\n<p>La banda comenzó con temas propios inclinados al género Hard Rock y Heavy Metal Melódico, esto fué lo que llevó a que la banda se destaque entre otras por su género, algo que no se vé mucho por lo menos en la ciudad. Tras varias ensayos y algunas presentaciones en la ciudad, y algunas en el interior, ya en mayo del 2009 comenzaron a grabar un demo de 4 temas, con las siguientes canciones: La puerta de la luz, Una lluvia que no se detendrá, noches frías y hacia la realidad. </p>\n<p>Tras casi más de 1 año donde casi no hubo actividad de la banda a causa de varios problemas internos, Dol Amroth vuelve con una formación cambiada a inicios del 2011 con la siguiente formación, que sería ya la actual:</p>\n<p>Martín Hernandez (Voz)</p>\n<p>Ariel Skelazzy (Guitarra)</p>\n<p>Ema Gareca (Bajo)</p>\n<p>Ricardo Rogel (Bateria)</p>\n<p> </p>",
+    "urltag": "dol-amroth",
+    "social": {
+        "facebook": "dol.amroth.3",
+        "twitter": "Twitter",
+        "sitioweb": "http: //dolamrothhardrock.blogspot.com.ar/",
+        "soundcloud":"SoundCloud",
+        "youtube":"Youtube",
+        "grooveshark":"GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+            {
+    "id": 42,
+    "nombre": "The Chulas",
+    "bio": "<p>The Chulas es una banda riogalleguense de Punk Rock, integrada en su totalidad por mujeres. Comenzaron a fines de abril del 2012 con ensayos en la casa de una de sus integrantes, en el transcurso de un par de meses ya tienen 6 temas propios.</p>\n<p>Con ganas de tocar y grabar sus canciones, The Chulas se encuentra tocando en diversos escenarios de la ciudad, en búsqueda de experiencia y presupuesto para la grabación de un demo. </p>\n<p>La banda está integrada por: Nony (Bateria y Coros), Jorgelina (Guitarra) y Nicolle (Bajo y Voz)</p>",
+    "urltag": "the-chulas",
+    "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+            {
+    "id": 43,
+    "nombre": "Siva",
+    "bio": "<p>Siva es una banda riogalleguense de rock alternativo que se formó aproximadamente en el 1996 pero que debutó oficialmente cono SIVA recién en 1997.</p>\n<p>En 1998 comenzaron con las canciones propias de la banda, y además participan del concurso de bandas La casa x la música y ganan como mejor banda en la categoría Punk Rock, y además el baterista de la banda se llevó el premio de mejor baterista. Esto les dió derecho a grabar, esa misma noche, un demo de 4 canciones que sería editado y puesto a la venta en las disquerías locales.</p>\n<p>Cerca del 2002 tras algunos cambios en la formación, lograron realizar el primer trabajo discográfico independiente, de la banda. Después de varios años, en el 2006 logran grabar otro disco independiente, y después de un par de años algunos integrantes dejan la banda.</p>\n<p>En el 2009 la banda consigue el retorno de uno de los primeros bateristas de la banda, y se arma una formación con la cual sigue tocando la banda.</p>\n<p>Actualmente SIVA tiene un repertorio propio de 35 canciones mas algún que otro cover que suelen hacer en vivo, como A forest de The Cure o Heroes de Bowie en la versión de los 7 delfines.</p>\n<p>La banda está formada por: </p>\n<p>Jorge Aranda (Guitarra y Voz)</p>\n<p>Carlos Charly Constanzo (Guitarra y Coros)</p>\n<p>Andres Vivanco (Bajo)</p>\n<p>Juan Menna (Batería)</p>",
+    "urltag": "siva",
+    "social": {
+        "facebook": "exaltaciondelyo",
+        "twitter": "Twitter",
+        "sitioweb": "http://profundoretorcijon.blogspot.com/",
+        "soundcloud":"SoundCloud",
+        "youtube":"Youtube",
+        "grooveshark":"GrooveShark",
+        "vimeo":"Vimeo"
+    }
+},
+                {
+    "id": 44,
+    "nombre": "Extremauncion",
+    "bio": "<p>Extremaucion es una banda de HardCore que se formó en el año 2003 por tres amigos, que tiempo más tarde se suman un par de integrantes más.</p>\n<p>En el año 2010 grabaron un demo/ensayo de 11 temas, y se encuentra en pleno proceso de grabación de lo que será el primer álbum independiente titulado Confrontación.</p>\n<p>La formación actual de la banda es:</p>\n<p>Fabián Castillo (Guitarra y Coros)<br />Pedro Menor (Guitarra)<br />Jose Barría (Bajo)<br />Fernando Santucho (Batería)<br />Nicolás Mendoza (Voz)</p>",
+    "urltag": "extremauncion",
+    "social": {
+        "facebook": "147692081956197",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+                {
+    "id": 45,
+    "nombre": "Disaster",
+    "bio": "<p><strong>Disaster </strong>es una banda de deathcore que se formo en octubre de 2011 por Jose Montiel (guitarra), Jonathan Sosa (bateria), al tiempo se integro Horacio Cardenas (guitarra) y Luis Barberia (voz). pocas semanas despues se termino de formar la banda con Cristian Gimenez (bajo).</p>\n<p>Las influencias de la banda son: Blood Runs Black, Carnifex, Chelsea Grin, The Black Dahlia Murder entre otras.</p>\n<p>Algunas de sus presentaciones: el primer recital fue abriendo en el carancho fest luego un par de recitales mas en la posta resto bar.</p>\n<p>Hoy se encuentran trabajando en ampliar su repertorio para las proximas fechas.</p>",
+    "urltag": "disaster",
+    "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+                {
+    "id": 46,
+    "nombre": "Brigada Mutante",
+    "bio": "<p>Brigada Mutante es una banda riogalleguense de Punk Rock Barrial, nació en el 2010 como un dueto (Batería y Guitarra), pero logran su formación completa en 2011 con Maxi (el Heavy) en guitarra, Mutante 5 (Guitarra), Mutante 2 (Batería), Mutante 3 (Bajo) y Mutante 4 (Voz). </p>\n<p>Con esta formación logran sus primeros ensayos hasta que Maxi se va a vivir a Rosario, donde cambian nuevamente la formación, y Mutante 4 en ves de cantar pasa a tocar la guitarra y hacer coros, mientras que Mutante 5 a cantar y tocar la primera guitarra. Ya armados de nuevo, comienzan a grabar un demo que se llamaría 499, influenciados principalmente por las temáticas barriales, enfocando sus canciones a hablar de la vida diaria en Rio Gallegos, evocando personajes y situaciones propias de la ciudad.</p>\n<p>La idea de no revelar los nombres de los integrantes y tocar siempre con la cara cubierta nace principalmente de la idea de que no importa quien esté tocando, si no el mensaje de las canciones, pero sus integrantes fundarion y fueron parte de bandas como: Mercado Negro, Bulineros, Siete al Hilo, Cero Positivo, A Tierra, Los Sentidos, Reakxion, entre otras.</p>\n<p>La banda espera a finales del 2012 grabar su primera larga duración (LP) para volcar todos los temas de la banda.</p>",
+    "urltag": "brigada-mutante",
+    "social": {
+        "facebook": "238564582857820",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+                {
+    "id": 5,
+    "nombre": "Tierra del Sur",
+    "bio": "<p><em><strong>Tierra del sur</strong></em> es una banda riogalleguense que nació entre fines de diciembre del 2009 y comienzos del 2010, tocaron en varios escenarios de la ciudad, arrancaron con covers mientras poco a poco iban armando sus propios temas, en el transcurso del año 2010 grabaron un demo con 4 temas propios, en la actualidad siguen tocando con la meta de volver a grabar un disco con temas nuevos y una producción propia de un trabajo más elaborado.</p>\n<p>Los integrantes fueron los mismos desde sus inicios, son 3 personas, más específicamente, Mauricio en el Bajo y la voz de la banda, David con la guitarra y César con la batería.</p>\n<p>La temática de las letras de la banda, se basan fundamentalmente en la actualidad, de contenido social, tratando de transmitir un mensaje más allá de solo lo musical, como por ejemplo Ajeno a Dios habla de la época de la patagonia rebelde, <em>Cuando el tiempo anochese en los campos, y el viento llora triste en su canto, facón grande revive en mi gente y escucho al ahonikenk... llamandome</em> es el coro principal del tema, Generación Perdida es otro tema compuesto por la banda, e intenta reflejar el momento que vivimos delante de los medios masivos de comunicación y su intento de lavar la cabeza a la juventud en general. Tierra del Sur es un tema que le dá nombre a la banda, es un humilde reflejo de la forma de vida acá en la patagonia, <em>tierra del sur, parida en viento y escarcha... gobiernos devoran tu entraña, riqueza que nunca volvió</em> es parte de la letra del tema.</p>\n<p>La banda posee un video clip realizado por ellos mismos llamado <strong>N.N.</strong>, el cual trata sobre la época de la dictadura militar y los desaparecidos, el cual está en nuestra sección de videos.</p>",
+    "urltag": "tierra-del-sur",
+    "social": {
+        "facebook": "tierradelsur.rg",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo":"Vimeo"
+    }
+},
+                {
+    "id": 6,
+    "nombre": "Hector Chucu Rodriguez",
+    "bio": "<p>Hector Chucu Rodriguez es un guitarrista, compositor y arreglador. Nació en Rio Turbio, en el año 1971 y es profesor de Arte con Orientación en Música (egresado en la U.N.P.A.), y actualmente es Director de la Orquesta Infantojuvenil de Instrumentos Latinoamericanos del programa social Andrés Chazarreta de Rio Turbio, además de su labor como Docente de Música y Músico autodidacta, desde temprana edad y con una trayectoria de más de 30 años como guitarrista.</p>\n<p>Tuvo participación en varias ediciones del festival de Guitarras del Mundo, en Río Gallegos y Río Turbio como artista local y en el año 2010 es incorporado como Guitarrista Nacional en la XVI edición del festival Guitarras del Mundo tocando en las sedes de Trelew y Pto Madryn, participando allí junto al maestro de la guitarra flamenca Manolo Yglesias. Como así también en la edición XVII del festival, en el año 2011, junto a Manolo Iglesias y Pablo Uccelli en las sedes de Río Gallegos y El Chaltén.</p>\n<p>Participó en tres producciones discográficas del destacado músico patagónico Eduardo Guajardo como guitarrista y arreglador, además de acompañarlo eventualmente. Integró distintas agrupaciones como dúos, trios, grupos de ensamble, y participó de multiples festivales y eventos nacionales e internacionales.</p>\n<p>Actualmente presenta su primer trabajo discográfico con obras propias para guitarra llamado Vertientes, brindando conciertos en distintos lugares del país exponiendo su obra, como así también, dirigiendo la Orquesta Infantojuvenil de instrumentos Latinoamericanos de Rio Turbio junto a los músicos, Profesores Rodrigo Haro y Ariel Matus.</p>\n<p> </p>\n<p> </p>",
+    "urltag": "hector-chucu-rodriguez",
+    "social": {
+        "facebook": "hectorchucu.rodriguez",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud"
+    }
+},
+                {
+    "id": 7,
+    "nombre": "Eduardo Guajardo",
+    "bio": "<p>Eduardo Guajardo es un cantautor nacido en Rio Turbio en el año 1967, es reconocido por sus pares patagónicos, como la voz más importante de estos años.</p>\n<p>Compuso su primera canción a los 14 años, La Muerte del Ovejero, inspirado en un amigo que su padre que, cuidando a las ovejas murió aislado y de frio en tierra santacruceña. A partir de allí, no se detuvo en su camino de poesía y canción. Su primer reconocimiento lo tuvo en el Festival Juvenil Patagónico de San Julián, en 1979, donde obtuvo el primer premio como Solista Vocal. </p>\n<p><br /><span>En 1980, el Festival Salesiano de la Canción de Puerto Natales, Chile, le otorgó el primer puesto. A partir de ese momento, sus participaciones fueron como cantautor: en 1984, el primer premio del Centro de Estudios EIPA, de Río Gallegos: en 1985, el del Cantar Liceano de Puerto Natales. </span><br /><br /><span>En 1989, participó representando al Turbio, en el Festival Nacional Austral del Folklore, obteniendo el Pingüino de Oro en el rubro Solista Vocal Masculino. </span><br /><br /><span>Su música llegó al norte: después de sus presentaciones en el 90 y 91, en el Teatro Cervantes y en ATC, llegó a Jesús María en el 92. Fue Consagración del Circuito de Peñas de </span><br /><span>Cosquín en el 97, por su participación en la Peña Nueva del folclorista cordobés Ica Novo. En el 96, participó del Encuentro de Creadores Patagónicos, de Cutral Co, Tremn Tahuen. </span><br /><br /><span>Además, es importante destacar su actuación en la Televisión Nacional de Chile, con el chino Jorge Navarrete en el programa De buen humor. Como así también en el Festival Costumbrista de Castro en la isla de Chiloé. </span><br /><br /><span>A fines de 1997, editó su primer trabajo discográfico, Señales de Vida, que incluyó el tema Que va a Pasar un Obrero, considerado como un himno por los mineros del carbón en su Río Turbio natal. </span><br /><br /><span>En octubre de 1998, se presentó en la 30º Edición del Festival Nacional Austral del Folklore de Pico Truncado, junto con el Ballet Fortín Sureño, estrenando el cuadro de música y danza sobre vivencias de la región: Santa Cruz... una mirada al Sur, que en el mismo año se ofreció en Río Turbio, para el Día del Minero y en Río Gallegos, en el 113º Aniversario de la capital provincial. </span><span>Dos de sus canciones, Nostalgiando e Historia de náufragos, fueron seleccionadas en el 1º Certamen de Nuevas Canciones Folklóricas, dentro del marco de la 43º semana de la Canción del Norte Cordobés, y fueron grabadas en un Compacto, que salió a la venta en enero de este año. También en enero, participó de la Peña de Cosquín del Dúo Coplanacu y participa además con singular éxito en el Festival del Poncho en la ciudad de Catamarca. </span><br /><br /><span>Sus letras de profundo contenido poético, reflejan el clima y los colores del sufrido suelo sureño y sus historias permiten trasladar la fuerza y el optimismo que su voz refleja a otras geografías del país.</span></p>\n<p><p><iframe src='http://player.vimeo.com/video/18514081?byline=0&amp;portrait=0&amp;color=ff9933' frameborder='0' width='300' height='165'></iframe></p></p>\n<p>Video: Entrevista realizada en Punta Arenas, Chile, por un grupo independiente para un programa de TV emitido en esa región chilena. </p>",
+    "urltag": "eduardo-guajardo",
+    "social": {
+        "facebook": "guajardosur",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud"
+    }
+},
+                {
+    "id": 8,
+    "nombre": "Stoker",
+    "bio": "<p>Stoker es una banda riogalleguense de heavy metal que se formó en el 2001, comenzando con los ensayos a la mitad de ese año. Con la idea de darle forma a un proyecto que sea distinto a las bandas que estaban tocando en ese momento en la ciudad, e intentar capturar el viejo sonido de la N.W.O.B.H.M. (New Wave of British Heavy Metal), basamento fundamental del heavy metal mundial. </p>\n<p>Con Matías álvarez en la guitarra, Rubén Zunino en la batería, Charly Balceda en las voces y Diego Vargas en el bajo, se le dió vida a la primera formación de la banda que aún no tenía nombre propio. Luego de los dos primeros ensayos, sumó el sonido de su teclado, Emilio Durán. Ya habían 2 temas casi terminados y para finalizarlos faltaba el toque que caracterizaria a Stoker, el cual llegó de la mano del tecladista. Los dos primeros temas compuestos por la banda fueron La casa del ayer y La hora del vampiro, ambos inspirados en la novela de Stephen King, El misterio de Salem's Lot, por tal motivo al hablar constantemente de vampiros, un allegado a la banda les sugirió ponerle a la misma Vampiros, al no estar muy conformes con esa posibilidad surgió el nombre STOKER, en homenaje a Bram Stoker, autor del libro Drácula. </p>\n<p>La banda tuvo la posibilidad de recorrer diversos escenarios de la provincia y de compartir escenario con bandas de la talla de Rata Blanca y Almafuerte, con muy buena repercusión. En el 2002 grabaron un demo de la banda, en el local de La Guarida. En el 2003 fueron seleccionados para participar del concurso Pre - La Falda Rock Tour representando a la provincia de santa cruz, donde compitieron con 24 bandas de todo el país, llegando al 5to puesto. Después de esto surgieron varias fechas para realizar una gira por todo el país, que desgraciadamente no se pudo concretar por razones laborales, y problemas personales de la mayoría de los integrantes de la banda, haciendo su última presentación ese año en el aniversario de la ciudad de Rio Gallegos.</p>\n<p>Después de casi 4 años de silencio, tras la llegada del entonces bajista, Fernando, se decidió refundar Stoker, y se presentaron en la ciudad de Rio Grande tras varios ensayos, en el marco del Pre - Cosquín. </p>\n<p>Actualmente la banda está formada por Marino, Pablo Silva, Maquina y Charly, quienes vienen ensayando hace tiempo, para presentarse a la menor brevedad posible, arreglando los temas clásicos de la banda y preparando temas nuevos. Stoker mas allá de las dificultades a las que tuvo que sobreponerse, siempre ha tenido como meta la intención de divertirse arriba del escenario, dejar todo en cada una de las presentaciones y principalmente dejar en claro que más allá de todo, lo que mueve el mundo de Stoker es la música.</p>",
+    "urltag": "stoker",
+    "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "sitioweb": "http://www.myspace.com/stokermetal",
+        "soundcloud":"SoundCloud"
+    }
+},
+    {
+    "id": 9,
+    "nombre": "Milles",
+    "bio": "<p>Milles es una banda riogalleguense de Punk Core, proyecto que llevan a cabo sus integrantes hace ya 2 años y que los encuentra actualmente con ganas de crecer y seguir tocando.</p>\n<p>Los integrantes de la banda son: Mariano (Voz), Alejandro (Batería), Paly (Bajo, Coros), Carlos (Guitarra, Coros), Nelson (Guitarra), quienes tras 2 años de brindar su música en varios escenarios locales con esta banda, y la trayectoria individual en diversas bandas, de cada integrante, actualmente están trabajando en lo que sería su primer trabajo discográfico, por lo menos, como Milles, ya que algunos integrantes ya formaron parte del proceso de grabación en otras bandas de punk rock, entre otros.  </p>",
+    "urltag": "milles",
+    "social": {
+        "facebook": "milles.punkrock",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud"
+    }
+},
+    {
+    "id": 10,
+    "nombre": "Bonne Vibra",
+    "bio": "<p>Bonne Vibra es una banda riogalleguense de rock/ska/reggae/cumbia/punk, que hace más de 1 año están tocando en muchos escenarios locales, con sus temas propios y también con algunos covers. El año pasado estuvieron tocando en el escenario principal del aniversario de Rio Gallegos.</p>\n<p>La formación de la banda es la siguiente:</p>\n<p><span>Nacho Bedoya: Voz, 2da guitarra.</span></p>\n<p><span>Guillermo Sarmartano: Guitarrista, 2da voz.</span></p>\n<p><span>Gabriel Albornoz: Bajista.</span></p>\n<p><span><span>Daniel Riquelme: Saxo</span></span></p>\n<p><span>Santiago Valdez: Tecladista,coros.</span></p>\n<p><span>Braian nuñez: Percusión, coros.</span></p>\n<p> </p>",
+    "urltag": "bonne-vibra",
+    "social": {
+        "facebook": "149877288429547",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "bonne-vibra",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+    {
+    "id": 11,
+    "nombre": "Paradise",
+    "bio": "<p>Paradise es una banda riogalleguense, formada a mediados del 2008, el estilo de la banda es alternativo, por las influencias de sus integrantes, que es muy variada, pero se podría decir que hacen punk, yendo por distintas ramas y también llegando al hardcore.</p>\n<p>Sus letras son positivas, cuentan historias, casos habituales o cotidianos, y vivencias, sus integrantes son:</p>\n<p>David - Guitarra y Voz</p>\n<p>Mario - Bajo y Voz</p>\n<p>Fernando - Batería</p>",
+    "urltag": "paradise",
+    "social": {
+        "facebook": "323094948854",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+    {
+    "id": 12,
+    "nombre": "Austral Latin Jazz",
+    "bio": "<p>Austral Latin Jazz es una banda riogalleguense de Jazz Latino que nació a mediados del 2003, con la idea de ejecutar el talento y la dedicación de años al arte de la música; Luis Díaz, Fernando Díaz, Mauricio Ferreyra y Juan Alvarado consolidan el cuarteto funcacional de la banda.</p>\n<p>Una banda muy prestigiosa de la ciudad, y además que en cada recital muestran la calidad músical de cada uno de sus integrantes, recorriendo así con este carisma destacado casi toda la provincia y diversos puntos de Chile.</p>",
+    "urltag": "austral-latin-jazz",
+    "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+    {
+    "id": 13,
+    "nombre": "Erodhes",
+    "bio": "<p>Erodhes es una banda riogalleguense de Heavy Metal y Power Metal, se formó a fines del año 2008 por Cristian y Sebastián, sumando al proyecto a Marcos (Guitarra), Cesar (teclado), Martín (Bajo) y Ricardo (Batería). Junto compusieron 10 temas en el transcurso de los años 2009 y 2010 e hicieron varias presentaciones en diferentes recitales de la ciudad, teniendo una buena aceptación por parte del público en general.</p>\n<p>Durante el transcurso del 2011 dos integrantes de la banda se alejaron por motivos personales, y luego de un par de meses de descanso Erodhes comienza sus ensayos y se suman Ema en el bajo que después es reemplazado por Victor Pincheira, quien queda como integrante fijo de la banda.</p>\n<p>Las letras de los temas van sobre temas diversos como la falsedad de una persona, la hipocrecía del ser humano, sobre el medio ambiente, sobre las islas Malvinas, hasta de la misma música, etc. Teniendo así un repertorio amplio en lo musical e interesante en lo poético.</p>\n<p>Actualmente la banda esta formado por:</p>\n<p>Sebastian Saravia (Guitarra)</p>\n<p>Cesar Mieres (Teclados)</p>\n<p>Ricardo Rogel (Bateria)</p>\n<p>Cristian Gutierrez (Voz)</p>\n<p>Victor Pincheira (Bajo)</p>\n<p>Junto a la formación actual se está trabajando en el primer disco de la banda que se llama Madre Tierra, el que contendrá 10 temas propios, un plegable de 3 caras con todas las letras de los temas y una producción muy interesante. Además de estar trabajando en lo que será su sitio web oficial, donde se podrá descargar algunos temas del disco y leer las próximas fechas y noticias de la banda.</p>\n<p> </p>",
+    "urltag": "erodhes",
+    "social": {
+        "facebook": "erodhesmetal",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+    {
+    "id": 14,
+    "nombre": "Astrolabion",
+    "bio": "<p>Astrolabion es una banda de rock alternativo que nació en el 2005 en Rio Gallegos. Participaron y fueron elegidos en el 120 Rock compilado, realizado por parte de la municipalidad de rio gallegos para bandas que recien empezaban o no tenian ninguna canción grabada. En el 2006 editaron su primer trabajo discográfico independiente llamado Diamantes de carbón, en el 2007 grabaron Carcel de Ciervos cual es su segundo disco pero no editado, además de un disco con versiones acústicas.</p>\n<p>En el 2007 fueron ganadores de la Casa por la música como mejor banda de rock de la ciudad, con el tema Dromedario como mejor letra, mejor baterista y mejor vocalista. Luego de varios recitales, a fines del 2007 se disuelve la banda.</p>\n<p>En el 2012 astrolabion retorna su rumbo, con la siguiente formación:</p>\n<p>Voz: Juanito<br />Guitarra y Voz: Lucho Mendez<br />Guitarra y Voz: Ratón<br />Bajo: Pichu<br />Teclados: Matías Oyarzún<br />Batería: Iván</p>",
+    "urltag": "astrolabion",
+    "social": {
+        "facebook": "237922079570543",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+    {
+    "id": 15,
+    "nombre": "Viejo de Barba",
+    "bio": "<p>Viejo de barba es una banda formada en el año 2003 en Buenos Aires, y ahora continuada en Rio Gallegos, el género de la banda según ellos, varia entre Rock, Reggae, Ska, Punk, Hard Rock y Folk.</p>\n<p>Tocaron en muchos escenarios de la provincia, haciendo en algunas ocasiones mini-giras provinciales, tienen 8 integrantes, que se detalla a continuacion:</p>\n<p>Fede - Voz + Guitarra</p>\n<p>David - Acordeon+melódica+Coros</p>\n<p>Juan - Batería</p>\n<p>Nico - Charango</p>\n<p>Manu - Armonica+Trompeta+Coros</p>\n<p>Alberto - Bajo</p>\n<p>Jorge - Percusión</p>\n<p> </p>",
+    "urltag": "viejo-de-barba",
+    "social": {
+        "facebook": "148401211924470",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud"
+    }
+},
+    {
+    "id": 16,
+    "nombre": "Republica Cachi",
+    "bio": "<p>Republica Cachi es una banda de Ska Core Punk formada en Rio Gallegos a fines del 2009 surgida la disolución de LA GENTE, banda en la que mezclaban un poco de ska hc y punk. Empezaron a tocar en la calle, y en fiestas clandestinas más que nada, la banda surge para romper un poco con la monotonía que nos brindaba nuestra ciudad, y la falta de espacios que nadie quería ni quiere generar. </p>\n<p><br />Actualmente estan presentando Contra el Paredón, el primer trabajo discográfico de la banda, con el que tuvieron la suerte de telonear a Los Miserables en Punta Arenas (Chile) además de recorrer diversos puntos de la provincia y de tierra del fuego. También compartieron fechas con AntiHeroes, Los Sentidos, Coco Rallado, Superuva, Eterna Inocencia, Kapanga, Mal pasar, Flekones, Sol Artificial entre otras bandas.</p>\n<p>Formación actual:</p>\n<p>Exequiel - Guitarra y Voz<br /> Lea - Bajo y gritos<br /> Brako - Percusión y voces<br /> Ivan - Batería y voces<br /> Carlos - Percusión, Batería y voces.</p>",
+    "urltag": "republica-cachi",
+    "social": {
+        "facebook": "republi.cacachiskapunk",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud"
+    }
+},
+    {
+    "id": 17,
+    "nombre": "Coco Rallado",
+    "bio": "<p>Coco Rallado es una banda riogalleguense de Punk Rock que empezó en diciembre del 2001 tras la separación de ZANGANOS!. Es una banda hecha por amigos, integrada por Verry (Voz y Guitarra), El Conde / Gamuza (Bajo) y Brako (Batería).</p>\n<p>En la actualidad tienen 3 discos:</p>\n<p>Criaturas del andergraund (2007)<br />La mejor banda del mundo (2009)<br />Noc Noc (2010)</p>",
+    "urltag": "coco-rallado",
+    "social": {
+        "facebook": "200901509962821",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+    {
+    "id": 18,
+    "nombre": "Deathcrush",
+    "bio": "<p>Deathcrush es una banda riogalleguense de Death Metal que nació en el 2010 como un simple proyecto para tocar con amigos, después de un año comenzaron a hacer covers y en el 2011 se volvió un proyecto serio y comenzaron a hacer temas propios y pensar cual sería el estilo de la banda.</p>\n<p>Los integrantes son:</p>\n<p>Segio Romero (1er Guitarrista)<br />Miguel (Jimmy) Medina (Cantante)<br />Angel Levin (Bateria)<br />Cristian Guerrero (Bajo)</p>\n<p>En la actualidad siguen produciendo temas propios para la grabación del demo que desean realizar en un futuro no muy lejano, para difundirlo por internet y además quieren seguir tocando y hacer lo que les gusta</p>",
+    "urltag": "deathcrush",
+    "social": {
+        "facebook": "184627694919392",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+    {
+    "id": 25,
+    "nombre": "Che Guanaco",
+    "bio": "<p>Che Guanaco es un power trio formado en El Calafate a mediados de abril del 2010 por Carlos Ariza (Chory), Silvio Galván (Guana) y Santiago Cabana. <br />La búsqueda de nuevas experiencias generó este proyecto, apostando a un formato más rockero y a la vez alternativo.<br />Comenzaron tocando covers de bandas del género, evolucionando paralelamente con temas propios. Al poco tiempo de formarse surgieron las primeras presentaciones en vivo, en lugares como El Chaltén, Rio Gallegos y escenarios de su propia ciudad. </p>\n<p>A un año de su formación, comenzaron a grabar su primer LP, a cargo de Santiago Cabana (Bajista, técnico y sonidista de la banda) en su estudio propio.<br /><br /><span>La variada influencia musical de los integrantes de CHE GUANACO logró una diversa conjunción de estilos. El resultado esta reflejado en su primer producción con un sonido CRUDO y a la vez DEFINIDO.</span></p>\n<p> </p>",
+    "urltag": "che-guanaco",
+    "social": {
+        "facebook": "che.guanaco",
+        "twitter": "Twitter",
+        "sitioweb": "http: //cheguanaco.com.ar"
+        ,"soundcloud":"che-guanaco",
+        "youtube":"channel/UCqvPc7JkffckVwKHYMtGLzQ/videos",
+        "grooveshark":"/search?q=Che+Guanaco",
+        "vimeo":"user11663353"
+    }
+},
+        {
+    "id": 26,
+    "nombre": "Paulo Neo",
+    "bio": "<p>Paulo Neo es un escritor, músico y conductor riogalleguense. Nació el 4 de noviembre de 1980 en Rio Gallegos.</p>\n<p>En agosto del 2010 publicó el libro De la Muerte y sus entrañas, su primer obra. A principios del 2011 el poema inédito Del Odin y de Zeus es seleccionado para ser incluido en una antología poética publicada en Madrid, España.</p>\n<p>En Agosto del 2011, inicia el ciclo radial demonimado El Patíbulo de los Indoctos.</p>\n<p>En Mayo del 2012 publica su segunda obra: Café de Siglos perfilándose como una de las promesas más interesantes del programa literario actual.</p>",
+    "urltag": "paulo-neo",
+    "social": {
+        "facebook": "paulo.neo.7",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 27,
+    "nombre": "Histeria",
+    "bio": "<p>Histeria es una banda de punk rock riogalleguense integrada en su totalidad por mujeres, que nació a fines del 2010 con la idea de representar al género femenino en el Punk Rock y revalorizando a la mujer en sus letras.</p>\n<p>Está integrado actualmente por:<br /><br />Bruja (Voz)</p>\n<p>Ro (Guitarra)</p>\n<p>Cinthya (Bajo)</p>\n<p>Mariana (Batería)</p>\n<p>La banda inició con una formación diferente a la inicial, con la cual realizaron algunas presentaciones locales y en marzo del 2011 se desintegró, comenzando nuevamente en septiembre del mismo año con una formación parecida a la actual pero con Caro en la 1ra guitarra hasta abril del 2012.</p>",
+    "urltag": "histeria-punk-rock",
+    "social": {
+        "facebook": "histeria.punkrock",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 28,
+    "nombre": "Vicios",
+    "bio": "<p>Vicios es una banda riogalleguense de Hard Rock, que nació hace ya 2 años por la fusión de dos bandas: consuno y 4nudilloz.</p>\n<p>Desde el principio las ilusiones de la banda apuntaron a ser una banda con temas propios y reconocida, y llegaron a grabar un demo con 7 canciones de la cual 6 son temas propios. </p>\n<p>Sus integrantes son: </p>\n<p>Fernando Galcerán (Voz)</p>\n<p>Matías Páez (1ra guitarra)</p>\n<p>Miguel Mora (2da guitarra)</p>\n<p>Ezequiel Ramos (Bajo)</p>\n<p>Emiliano Muñoz (Batería)</p>",
+    "urltag": "vicios",
+    "social": {
+        "facebook": "vicios.rock.7",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 29,
+    "nombre": "Los Mas Peores",
+    "bio": "<p>Los mas peores es una banda riogalleguense que se fué formando a inicios del 2012, después de 8 años ininterrumpidos de tocar, viajar y grabar con Los Sentidos, los 3 miembros fundadores (Dany, Mauricio y Bene) fueron los que formaron esta nueva banda, con un concepto distinto: hardcore rápido, letras cortas y políticas, y mucho griterío. Poco a poco se fueron sumando más integrantes y la idea ahora era más que nada grabar canciones.</p>\n<p>Los integrantes son:</p>\n<p>Dany (Batería)</p>\n<p>Melisa (Bajo)</p>\n<p>Mauricio (Guitarra)</p>\n<p>Bene (Voz)</p>\n<p> </p>",
+    "urltag": "los-mas-peores",
+    "social": {
+        "facebook": "LosMasPeores",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 30,
+    "nombre": "Mascaras (Teatro)",
+    "bio": "<p>Máscaras es un grupo de teatro independiente riogalleguense que comenzó sus actividades en el año 2007, producto de la formación actoral desarrollada en el Taller de Teatro de Adultos de ETISAC y está integrado por actores que se han abocado al estudio no-formal, experimentación y puesta en escena de distintos géneros teatrales como comedias dramáticas, de enredo, de humor, dramas, tragedias clásicas, sainetes criollos, creaciones colectivas e intervenciones.</p>\n<p>Los integrantes de “Máscaras”, Fernanda Comeña, Horacio Gómez, Ruth González, Rosa Bahamonde, Roxana Carrazco Ferrutti y Cristina Facello además de su rol de actores dentro del grupo aportan su experiencia como docentes y asistentes de los talleres , y de dirección en los espectáculos puestos en escena , estando invitadas en el año 2012 las talleristas Sandra González y Gabriela Caliguri para compartir el dictado de los talleres nivel avanzados ante la gran cantidad de actores asistentes a ellos.</p>\n<p>Además de la actuación, el interés es que todos los integrantes puedan experimentar los distintos roles para enriquecer las experiencias teatrales personales trabajando como técnicos en sonido e iluminación, escenografía, vestuaristas, maquillaje, etc.</p>\n<p>Sus integrantes pertenecen a la Asociación Teatral ETISAC, que está dedicada a la difusión del quehacer teatral a través de distintas actividades.</p>\n<p>Ha participado en diferentes Festivales y Encuentros: FES.TE.SA, Festival Internacional de Teatro Francisco Zapata, FES.TE.NIñOS y el Encuentro de Teatro Independiente de Río Gallegos</p>",
+    "urltag": "grupo-teatro-mascaras",
+    "social": {
+        "facebook": "grupoteatromascaras.mascaras",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 31,
+    "nombre": "From the Marte",
+    "bio": "<p>From the marte es un power trio riogalleguense formado en mayo del 2011. Hacen un estilo mezcla de Rock, Fusion y Hardcore y sus integrantes son:</p>\n<p>Jorge Acuña (Voz y Guitarra)</p>\n<p>Johnny Santana (Bajo y Voz)</p>\n<p>Tommy Stout (Bateria)</p>",
+    "urltag": "from-the-marte",
+    "social": {
+        "facebook": "326010487489569",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 32,
+    "nombre": "Volando Bajo",
+    "bio": "<p>Volando Bajo es una banda riogalleguense de punk rock, formada en el año 1998 con la siguiente formación: </p>\n<p>Daniel (Guitarra y Voz)</p>\n<p>Lucio (Guitarra y Coros)</p>\n<p>Pablo (Bajo)</p>\n<p>Ricky (Batería)</p>\n<p>A lo largo de estos años la banda logró llevar su música a lugares como Ushuaia, Rio Grande, Punta Arenas, San Julián, Calafate y una fecha inolvidable en Buenos Aires junto a su banda amiga Doble Fuerza. Además tuvieron la oportunidad de compartir escenario con bandas como Ataque 77, Flema, Bulldog, Todos tus muertos, Dos Minutos y muchas más.</p>\n<p>Su primer trabajo discográfico fué Dias Rados, sacado por la UMI (Union de músicos independientes), además de participar en el compilado Mala Difusión 2012 junto a otras bandas de distintas provincias, el cual está siendo difundido a nivel nacional. En estos momentos la banda se encuentra grabando su próxima producción.</p>",
+    "urltag": "volando-bajo",
+    "social": {
+        "facebook": "volando.bajo.7",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "volandobajo2012",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 33,
+    "nombre": "La Kandonga",
+    "bio": "<p>La Kandonga es una banda de El Calafate que nació a mediados del 2006 y que en sus principios perfiló hacia la fusión del reggae con el rock y algo de murga, tango y milonga. Actualmente la banda esta formada por los siguientes integrantes:</p>\n<p>Laura Guzzini (Voz) / Alexis Monono Cejas (Bajo) / Beto Rosales (Batería) / Franco Behrens (Guitarra y Coros) / Sebastián Parrondo (Teclados y Coros) / Ariel Encinas (Trombón), Amanda Robinson (Trompeta) / Matias Coñuecar Miranda (Teclados, Guitarra, Armonicas y Coros).</p>\n<p>En su gran mayoría músicos aficionados, el grupo creció desde sus comienzos hasta alcanzar un repertorio que consta de más de 20 temas propios que definen un show de estilo Rock rioplatense.</p>\n<p>En 2010 llega su primer disco, Homenaje Colectivo, grabado en Solo Studio en El Calafate, con una edición inicial de 1000 ejemplares.</p>\n<p>Siempre independientes, desde el comienzo han recorrido los escenarios de Calafate, Gobernador Gregores, y lo han compartido con bandas de renombre, tales como Los Cafres, Chala Rasta y Dread Mar I. Así mismo participaron anualmente junto a otras bandas reconocidas de esa localidad, de los festejos de la Fiesta del Lago Argentino que se realiza en el escenario mayor.</p>\n<p>Actualmente la banda se encuentra armando un show que estarán presentando en la temporada 2012/2013, planeando terminarla con la grabación del segundo disco, que incluirá un dvd con material de los recitales a realizarse desde ahoar. Dicho show suma músicos amigos invitados, proyecciones audiovisuales e intervenciones de murga completa entre otras cosas.</p>",
+    "urltag": "la-kandonga",
+    "social": {
+        "facebook": "LAKANDONGA",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "lakandongaa",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 34,
+    "nombre": "Flekones",
+    "bio": "<p>Flekones es una banda de punk rock riogalleguense que nace en el 2004, con 4 amigos que se juntaban a tocar y hacer temas de Embajada Boliviana, Cretinos y algunas más. A fines de ese año graban un demo de 4 canciones propias.</p>\n<p>En el 2006 cambian la formación y graban 11 temas nuevos para difundir, del cual hicieron varias copias y regalaron muchos a amigos de otras ciudades, este trabajo discográfico se llamó Solo Perros.</p>\n<p>En 2009 comenzaron a grabar su último material con 13 canciones propias, y lo sacaron a la calle recién en 2011, este disco es el tercero de la banda y se llama Domingos. </p>\n<p>Tuvieron la posibilidad de compartir escenario con varias bandas amigas y otras nacionales, como mal momento, sin ley, dos minutos, expulsados, bulldog entre otras. Ademas de poder visitar ciudades como San Julián, Ushuaia, Rio Grande, Puerto Deseado y Perito moreno, compartiendo su música.</p>\n<p>Las influencias de la banda, varía entre los integrantes pero se destacan Ramones, Buzzcocks, the jam y los Clash.</p>\n<p>En este momento la banda se encuentra más que nada ensayando para empezar a grabar lo que sería el cuarto trabajo discográfico de la banda. </p>",
+    "urltag": "flekones",
+    "social": {
+        "facebook": "flekones.punkrock",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 35,
+    "nombre": "Dictatorshit",
+    "bio": "<p>Dictatorshit es una banda de Trash Metal oriunda de Puerto Santa Cruz, son precursores del género en su localidad, y cuentan con un demo grabado de manera independiente bajo la producción de Ivan Vertki y Hernan Carbone (Cantante de la banda) durante el mes de marzo del 2008. </p>\n<p>El material consta de dos temas propios y dos covers; evidanciando una amplia cercanía al Trash Metal 90. Pero el estilo de la banda también está marcado por diferentes influencias.</p>\n<p>En Julio del 2010 editaron el segundo demo Nadie escucha que contiene 4 temas propios, con la misma producción que el demo anterior. En ese mismo año, en abril se presentaron junto a Serpentor,  en mayo del 2011 en el Patagonia Metal Fest junto a Horcas y Almafuerte y en Junio del 2010 abrieron el show para Malon.</p>\n<p>Actualmente está prevista la edición de nuevo material grabado en Rio Gallegos y masterizado en los estudios de La Nave de Oseberg de Bs. As., la salida sería para Octubre del 2012.</p>",
+    "urltag": "dictatorshit",
+    "social": {
+        "facebook": "Dictatorshitpsc",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 36,
+    "nombre": "Auka",
+    "bio": "<p>Auka es una banda riogalleguense de rock fusión que se formó a fines del 2011 por un grupo de amigos que vienen tocando desde hace mucho con otras bandas y/o formaciones como Mata Negra, Kone Quillango, Camusu, entre otras.</p>\n<p>La mayoría de los temas de la banda son propios y es una prioridad de la banda. Entre las influencias se pueden encontrar diversos estilos musicales como Punk, Ska, Reggae y Rock. </p>\n<p>El nombre de la banda proviene del término Auca, que es una palabra del idioma mapuche que significa rebelde, arisco, indomable, bravo, etc. En tiempo de conflictos, los mapuches utilizaban este adjetivo para describir a sus vecinos del sur, los Tehuelches, considerados como conflictivos, rebeldes, ariscos, indomables... Auca.</p>\n<p>Los integrantes de la banda son:</p>\n<p>Nicolás (Batería)</p>\n<p>Mario (Bajo)</p>\n<p>Martín (Percusión y Voz)</p>\n<p>Pipa (Primera Guitarra)</p>\n<p>Jero (Segunda Guitarra)</p>\n<p>Nico El Piche (Trompeta)</p>",
+    "urltag": "auka-rock",
+    "social": {
+        "facebook": "auka.rock.7",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 37,
+    "nombre": "Zoloft",
+    "bio": "<p>Zoloft es una banda riogalleguense de Heavy Metal que nació en el 2008, formada por Pablo Cuella y Fernando Vivar, quienes buscan formar un trio (viola y voz, batería y bajo). Willy Oviedo pasó a ser el primer bajista de la banda.</p>\n<p>Con esta formación empezaron a ensayar, después de un tiempo Willy se retira de la banda y en el transcurso del 2009 y el 2010 se terminan 5 temas y suman Maxi Cardenas y Jona Ancalipe, en bajo y voz.</p>\n<p>Al 2010, la banda ya contaba con 7 canciones de autoría propia, y Maxi Cardenas deja la banda y lo reemplaza Omar, siendo ya esta la formación actual de la banda.</p>\n<p>El 25 de septiembre del 2010 Zoloft hace su debut en un recital donde participaron Black Diamond, Erodhes, Dragonat y Tierra del sur.</p>\n<p>En 2011 nace el demo titulado DEMOLIRIUM, compuesto por 9 temas propios con una producción a pulmon de 150 copias con tapa, contratapa y tapa trasera a color en papel satinado.</p>\n<p>Entre los aportes para este demo, está Fernando vivar quien agregó los efectos de intro y demás, y Cesar Román (Baterista de Tierra del sur) quien facilitó la batería para la grabación de este demo que su lista de temas quedó organizada de esta forma:</p>\n<p><span>01- Locura Mental </span><br /><span>02 – Dignidad Suicida </span><br /><span>03 – Delirium Tremens </span><br /><span>04 – Aquí Y Ahora (Jona Ancalipe)</span><br /><span>05 – El Siguiente Paso </span><br /><span>06 – Del Norte </span><br /><span>07 – Nos Pertenecen </span><br /><span>08 – Asesino Animal </span><br /><span>09 - Ojo De Guerra </span></p>\n<p>En el transcurso del 2011 tocaron en distintos lugares de la ciudad, además de participar en el Aniversario Nº 128 de Rio Gallegos, en el UNPA Rock 2011, Sur Metal Full en el Polivalente, además de tener el privilegio de ser banda soporte de Tren Loco y Logos en el marco del Metal Fest del Extremo Sur.</p>",
+    "urltag": "zoloft",
+    "social": {
+        "facebook": "zoloftriogallegos",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 38,
+    "nombre": "Arde en Llamas",
+    "bio": "<p>Arde en llamas es una banda riogalleguense de Metalcore que nació a mediados del 2011. Bajo la idea de Javier Alzamora y Jonathan Becker de armar algo nuevo en el estilo Metalcore, influenciados en varias bandas, íconos como Bring Me The Horizont y As I Lay Ding, estos dos personajes dieron fruto llamando a Lucas Acosta que se incorporó como baterista, también se sumó Rodrigo Fernandez en el bajo y los coros, con esta formación ya empezaron a componer las primerias melodías de la banda.</p>\n<p>Después de un tiempo, decidieron buscar a un cantante, probando con algunos, el último dió buenos resultados, Alexander, apodado Oliver por su parentesco con la vos de BMTH, él se quedó con el puesto y comenzaron a armar los temas de una manera más concreta.</p>\n<p>El 18 de septiembre del 2011, ya con 5 temas debajo del brazo y todo organizado dieron su primer presentación en vivo, en los galpones de la costanera donde muchas personas asistieron a ver de que se trataba esto que se venía formando.</p>\n<p>Además de esta fecha, en el 2011 también tocaron en el UNPA Fest (Día Metal) el 3 de diciembre, además de tener la posibilidad de tocar en Punta Arenas en una noche de Metal Patagónico en el Hardbar Pub con un público que llenó el lugar, también se presentaron en el Recital de Under Extremo, Sullivan MAdness Fest, la Convención de Tatuajes Extremo Sur 2012, en el Teatro Rock Fest 2012 entre otras fechas.</p>\n<p>A fines del 2011 lanzaron su demo Arde en Llamas que incluia 5 canciones tituladas: Soy, Caminos, Para tus enemigos, Crecer y Distintos.</p>\n<p>En el 2012 comenzaron poniendo en marcha la grabación y producción de su EP que se tituló Para tus enemigos de la mano en la grabación de Poly de los Nic's, en su estudio de grabación y masterización. La producción constó de 5 temas, algunos del demo y otros nuevos, que grabaron entre abril y agosto del 2012. Actualmente se encuentra en el proceso de masterización a cargo de Javier Suarez/Nueva ética.</p>\n<p>El 1ro de septiembre viajaron a Punta Arenas para telonear a Cenizas, una banda de Stgo de Chile. </p>\n<p>Formación actual de la banda:</p>\n<p>Oliver</p>\n<p>Jona</p>\n<p>El Jefe</p>\n<p>Rodri</p>\n<p>Lucas</p>",
+    "urltag": "arde-en-llamas",
+    "social": {
+        "facebook": "ArdeEnLlamasOFICIAL",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 39,
+    "nombre": "Zero Frio",
+    "bio": "<p>Zero Frio es una banda de rock originaria de El Calafate, que comenzó en el 2006, en ese mismo año grabaron un demo de 5 canciones llamado DEMOS06 al mes de tener una formación definitiva.</p>\n<p>Esta banda tuvo la posibilidad de participar en el concurso de MTV Adios Garage resultando una de las bandas con más fans en toda Latinoamérica. Este resultado, tan inesperado como gratificante, impulsó a la banda a un nuevo mercado, y gracias a todo esto lograron un mayor reconocimiento tanto a nivel local, regional e internacional. </p>\n<p>En el 2007 tuvieron la posibilidad de tocar en La Fiesta del Lago Argentino, junto a bandas de renombre nacional e internacional, tocando así también en otras ediciones de este festival.</p>\n<p>En ese mismo año decidieron grabar su primer EP, que titularon Zero Frio EP, que lanzaron en agosto de ese mismo año con 5 canciones nuevas junto a un video-clip del single Rendido a tus pies filmado en los alrededores de El Calafate y el glaciar Perito Moreno. También tuvieron la posibiliddad de presentarse en Rio Gallegos y de ser invitados nuevamente a esa ciudad en diciembre del mismo año como banda soporte del grupo Violadores.</p>\n<p>En el 2008 se presentaron como banda soporte en una de las giras del grupo El Otro Yo, acompañandolos en El Calafate, Rio Gallegos, Rio Grande y Ushuaia (Tierra del Fuego). En ese mismo año viajaron a Buenos Aires a realizar su primera gira presentandose tanto en Capital Federal como en el Gran Buenos Aires, además fué publicada una entrevista en el suplemento de Espectáculos del diario Clarín.</p>\n<p>A finales del 2010 la banda cambió su formación a un trío y filman el video del tema Explotar. Actualmente se encuentran presentando Destino 2.1, su primer LP, mientras ya están trabajando en su próximo álbum que tendrá el nombre de Revolución del viento con un sonido rockero más clásico; como así tambien la nueva formación de la banda, que en la actualidad está compuesta por: Franco Behrens (Guitarra y Voz), Mariano Escalante (Bajo) y Federico Machelett (Batería).</p>\n<p> </p>",
+    "urltag": "zero-frio",
+    "social": {
+        "facebook": "zerofrio",
+        "twitter": "Twitter",
+        "sitioweb": "http://zerofrio.com.ar",
+        "soundcloud":"SoundCloud",
+        "youtube":"zerofrio",
+        "grooveshark":"GrooveShark",
+        "vimeo":"Vimeo"
+    }
+},
+        {
+    "id": 40,
+    "nombre": "Espiritu Viejo",
+    "bio": "<p>Espiritu Viejo es una banda riogalleguense que se formó a comienzos del año 2010 y con la intención de comenzar un proyecto serio de banda. Al poco tiempo se unió a la banda un bajista, con una formación básica comenzaron a hacer covers de bandas que identificaban al grupo como Divididos, La Renga, Rush, Metallica, entre otras.</p>\n<p>Tras algunas presentaciones, el bajista dejó la banda por motivos personales y en el año 2011 consiguieron otro bajista quien sería ya el actual de la banda, y que también ayudaría en los coros. En noviembre de ese año se presentaron por segunda ves en La Posta Restobar junto a Extremauncion y Dol Amroth.</p>\n<p>En el 2012 se presentaron en un festival organizado por el Centro de Estudiantes del a UNPA, en abril tocaron en el Rock Fest Teatro 2012, entre otras fechas. </p>\n<p>La formación actual de la banda es:</p>\n<p>Matias Anderson (Guitarra y Voz)</p>\n<p>Andres Morala (Bajo y Coros)</p>\n<p>Sebastian Tenorio (Bateria)</p>",
+    "urltag": "espiritu-viejo",
+    "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 41,
+    "nombre": "Revelacion",
+    "bio": "<p>Revelacion es una banda de Heavy Metal oriunda de Rio Gallegos, que fué fundada en el año 2006 gracias a la iniciativa y el sentimiento que compartieron sus integrantes.</p>\n<p>La banda actualmente está formada por: </p>\n<p>Jona Riquelme (Voz)</p>\n<p>Walter Almonacid (Guitarra)</p>\n<p>Franco Hasan (Batería)</p>\n<p>Jona Ancalipe (Bajo)</p>\n<p>La banda comenzó a tocar a mediados del 2006 y desde entonces tocaron en una infinidad de conciertos y demostrando que la escencia del heavy metal sigue viva en la ciudad. Revelación grabo su primer demo en el año 2008, el cual contó con 5 temas, en el que la temática de las letras fueron influenciadas en base al a sociedad en la cual estamos viviendo y de los problemas que surgen día tras día en ella, pero con la intención de salir a flote dando también un mensaje de fuerza y esperanza. Hace unos mese revelación lanzó su primer álbum titulado Hacia la victoria, el cual cuenta con 10 temas.</p>",
+    "urltag": "revelacion",
+    "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "sitioweb": "http://revelacionheavimetal.jimdo.com",
+        "soundcloud":"SoundCloud",
+        "youtube":"Youtube",
+        "grooveshark":"GrooveShark",
+        "vimeo":"Vimeo"
+    }
+},
+        {
+    "id": 47,
+    "nombre": "Draconis",
+    "bio": "<p>Draconis es una banda riogalleguense que comenzó en el 2003 haciendo un estilo death melódico, en el 2004 graban su primer demo WORM ..04 , tuvieron la posibilidad de participar en festivales independientes, además de grabar otro demo llamado Echoes of a never ending labyrinth, un videoclip para el tema Worms, un EP que titularon WORMS el 11 de diciembre del 2010 y un disco en agosto del 2011 llamado The Behinning of the End disponible para su descarga digital de forma gratuita en DontPayMusic.</p>\n<p>La banda está integrada por::</p>\n<p>Gerardo Vargas (Guitarras y Voces)</p>\n<p>Bruno Vargas (Guitarras y Coros)</p>\n<p>Jerson Ricardi (Bajo y Coros)</p>\n<p>Nicolás Vargas (Batería)</p>",
+    "urltag": "draconis",
+    "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "user/Draconisband",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 48,
+    "nombre": "A Surrogate Band",
+    "bio": "<p>A Surrogate Band es una banda riogalleguense que interpretan canciones del grupo británico de rock progresivo y psicodélico Pink Floyd. Comenzaron en la segunda mitad del 2009 con el nombre de El último gato en una oscura, dudosa y humorística referencia al álbum The final cut de Pink Floyd. Con 5 integrantes comenzaron a despuntar el vicio presentándose en el Teatro Municipal, como parte de los festejos del aniversario de la capital santacruceña.<br /><br />Saciada la sed de interpretar a la banda británica, la agrupación se tomó un respiro y a casi un año fueron convocados desde la localidad de 28 de noviembre para realizar allí un tributo al alma mater de esta locura, a este proyecto ya se suman mas integrantes y se rebautiza como A Surrogate Band.<br /><br />Concretado el viaje y la exitosa presentación en esa localidad, la banda retomó definitivamente su actividad cerrando 2010 con una presentación en el escenario emplazado en el gimnasio del Colegio Salesiano, marcando la apertura de los festejos del aniversario de Rio Gallegos. <br /><br />Durante el 2011 se trabajó a puertas cerradas en los arreglos musicales y visuales hasta que nuevamente, el paseo aniversario de la ciudad se vió engalonado con una presentación de la banda, esta vez como cierre de los festejos, con una modificación en los coros por una integrante que se retiró del proyecto.<br /><br />2012 interrumpió los propósitos de la banda al aparecer un elemento en discordia, conocido como Roger Waters, quien osó presentar en Buenos Aires, frente al 1% de la población del país, una remozada versión del clásico The Wall, acaparando todo el crédito del éxito de las canciones interpretadas por A Surrogate Band.<br /><br />Esto obligó a una pausa en el trabajo de producción ya que todo el presupuesto y los recursos destinados al nuevo espectáculo se destinaron a verificar in situ esta invasión a los territorios soberanamente reclamados por A Surrogate Band. Para ello se comisionó a un séquito integrado por la totalidad de la formación de la banda local quienes dieron fe de los hechos perpretados por el artista británico en la Capital Federal.</p>\n<p>Desahuciados, retomaron paulatinamente y en varios pagos sin interés sus tareas de producción del nuevo espectáculo debatiéndose entre utilizar algunas ideas explotadas por el susodicho o poner un kiosco.<br /><br />Tomadas las decisiones, (litro y litros), se preparó una presentación en el Teatro Municipal, en el cual se pudieron poner a prueba varios recursos técnicos y arreglos musicales innovadores en el ámbito escénico local, junto al aporte del nuevo integrante Benito Fleita en el saxo. Esto además sirvió para solventar los gatos que se desviaron en Buenos Aires, para la puesta que hoy desarrolla la banda.</p>\n<p><br /><span>Integrantes:</span><br /><br /><span>Martin Herrera – Voz/Guitarra</span><br /><span>Pino Aravena – Guitarra/Voz</span><br /><span>Carlos Aburto – Guitarra/Voz</span><br /><span>Fernando Zurutuza – Batería/Percusión/Voz</span><br /><span>Matias Herrera – Teclados/Voz</span><br /><span>Medardo Mollard – Bajo/Voz</span><br /><span>Benito Fleita – Saxo</span><br /><span>Diana Aburto – Coros</span><br /><span>Ana Costa – Coros</span><br /><span>Vanina Uribe – Coros</span></p>",
+    "urltag": "a-surrogate-band",
+    "social": {
+        "facebook": "groups/278338752181185/",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 49,
+    "nombre": "Suicidio Primavera",
+    "bio": "<p>Suicidio Primavera es una banda calafatense que se formó a fines del 2008 en el primer centro cultural de El Calafate. La idea, en principio, fue mediante un taller de experimentación fusionar a todos los artistas para una obra a modo variete. <br /><br />Fueron pasando los días y al ser, siempre los mismos tres, optaron por abandonar el bongo y la guitarrita criolla para sumarle un bajo, una batería y un cantante.<br /><br />Fueron saliendo ideas, y esas ideas se fueron convirtiendo en canciones. El 5 de diciembre del 2008 subieron con 5 temas a medio terminar en un evento que celebraría el día de la música. Ese dia, se apodaron suicidio primavera un poco porque subir a tocar frente a verdaderos talentos era realmente un suicidio, sobre todo porque en el caso del cantante que no venía de la musica, sino del teatro, rompía la escrutcura tradicional. Y otro poco, porque era primavera. También cuenta la leyenda que era el nombre de un proyecto anterior del baterista, pero eso lo discutirán los historiadores.<br />Con el tiempo, la banda fué compuesta por 3 integrantes, el Ebanista del bote rojo en batería, el terrorista en el bajo y el Archi enemigo en voz. No usan nombres propios porque al no hacer covers, pensaron que lo mejor era usar pseudónimos que se comporten como tal.<br />Se presentaron varias veces, pocas quizás con shows que duran 40 minutos, después optaron por lo general que un Dj se encargue del resto.<br /><br />En diciembre del 2011 sumaron al pequeño Skywalker en guitarra. Quien dió a Suicidio Primavera un formato más amigable para los oídos tradicionales. No hacen covers, no rock tradicional, tampoco heavy metal ni punk. Es experimental, con fusión que va del rock al arabe coqueteando un poco con lo latino.<br /><br />En septiembre, gracias al aporte del armonizador grabaron su disco, que lleva el nombre de la escena del delito que encaja justamente con lo que interpretaron, con lo que trasmiten quizás, ¿Por qué no? Con lo que pensaron en el llamado crónicas de la boca para afuera.</p>",
+    "urltag": "suicidio-primavera",
+    "social": {
+        "facebook": "pages/Suicidio-Primavera/294916247238271",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 50,
+    "nombre": "La Tarambana",
+    "bio": "<p>La Tarambana es un grupo riogalleguense de percusión que a partir del estudio y la práctica de instrumentos de percusión, y así también del lenguaje musical, trabaja la improvisación dirigida por señas, la exploración de las posibilidades sonoras y rítmicas de cada instrumento, la creación de ensambles y la fusión de ritmos, géneros y estilos musicales.</p>\n<p>La búsqueda de una identidad como grupo fortaleció los lazos de amistad y aumentó el compromiso con este proyecto que sigue creciendo y renovándose contando con 16 miembros en escena en la actualidad.</p>\n<p>Los primeros ensayos comenzaron en abril de 2011, siendo el semillero<br />los talleres de percusión latina que dicta Cristian Borden, director de La<br />Tarambana. Las primeras presentaciones se dieron en fiestas de salsa y<br />luego se extendieron a eventos solidarios, lúdicos y/o culturales, instituciones<br />educativas, espectáculos autogestionados, conciertos didácticos, tocatas en<br />las calles de la ciudad de Río Gallegos y de localidades del interior como El<br />Calafate y El Chaltén. En su mayoría, estas presentaciones se dieron por la<br />autogestión y el trabajo mancomunado con otros artistas locales.</p>\n<p>Chico, repique y piano, djembes africanos, quinto, conga y tumba, bongo,<br />shekere, cencerros, güira y caxexe, la melodía del piano o una melódica,<br />surdos y toms se conectan para crear momentos musicales que, a causa de la<br />improvisación y la experimentación, son únicos en si mismos.</p>\n<p>Integrantes: Noelia Ramirez, Matias Berrios, Roxana Beroiz, Pablo Gonzalez,<br />Vania Jomñuk, Gerardo Luna, Verónica Saldivia, Patricia Silva, Doriana<br />Villarroel, Sebastian Borden, Melisa Dunand, Laura Andreone, Cintia Rivas,<br />Wilson Flores y César Vernieri. Dirección: Cristian Borden.</p>",
+    "urltag": "la-tarambana",
+    "social": {
+        "facebook": "231428133555990",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 51,
+    "nombre": "Ingrediente Especial",
+    "bio": "<p>Ingrediente Especial es una banda de Rock, Reggae y Ska que comenzó en 2011, aunque la idea principal fue un año antes, donde un grupo de amigos planearon hacer una banda, y por temas de estudio entre otras cosas se separaron y retomaron la idea un tiempo después.<br /><br />El grupo está integrado por:<br />Adrian Rodriguez - Voz Principal<br />Mariano Grizuela - Saxo<br />Juan Pablo Fernández - Primera Guitarra<br />Rodrigo Fernández - Batería<br />Diego Montiel - Segunda Guitarra<br />Patricio Barría - Bajo</p>\n<p>Actualmente tienen temas propios aunque también hacen covers, las letras las compone Adrián y la parte musical de los temas básicamente se encarga Juan Pablo. Tocaron en el Polimodal 10, en La Posta y en el Complejo Cultural. </p>",
+    "urltag": "ingrediente-especial",
+    "social": {
+        "facebook": "pages/Ingrediente Especial-Rock-Nacional/295534927151440",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 52,
+    "nombre": "Funeral Electrico",
+    "bio": "<div>Funeral Eléctrico es un proyecto solísta de Luciano Chiappero, un joven músico de la localidad de Río Turbio, el cual es conocido por conformar bandas como Destructivos (Grunge) o Estallar (Punk).</div>\n<div> </div>\n<div>Influenciado por bandas como Nirvana, El Otro Yo, The Ramones, Pixies, Sonic Youth, Billordo, El Cuervo, Misfits, Fun People, V8, Minor Threat, The Doors, Led Zeppelin, Love Battery, Attaque 77, The Strookes, Babasónicos, Charly García, Mudhoney, Pescado Rabioso, Beck, entre otros, Funeral Eléctrico propone un sonido Indie con bastante Low Fi, y la clásica influencia Grunge y Punk Rock que caracteriza a Luciano.</div>\n<div> </div>\n<div>Este proyecto ya tiene un demo grabado en diciembre del 2012, y en 2013 saldrá nuevo material.</div>",
+    "urltag": "funeral-electrico",
+    "social": {
+        "facebook": "FuneralElectrico",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 53,
+    "nombre": "Destructivos",
+    "bio": "<p><span>Destructivos es una banda de Grunge oriunda de la Cuenca Carbonífera (Río Turbio y 28 de Noviembre), formada a fines de abril del 2011. Inicialmente estaba conformada por Luciano Chiappero (Guitarra/Voz), Juanca Rojas (Bajo/Coros) y Sergio Alvarez (Batería), formación que hacía covers de Nirvana y El Otro Yo. En Septiembre de ese año se integra Luis Velasquez (Guitarra Principal), formación con la cual empiezan a sacar a la luz sus temas propios.</span></p>\n<div>Llega el 2012, en ese año se le dan muchas oportunidades con la banda, tocaron el 24 de Marzo (presentando la totalidad de los temas propios que tenían junto a covers) junto a Ricardo Soulé (ex Vox Dei), y meses después harían soporte a Bulldog. Luego de eso la banda sufre una separación momentanea.</div>\n<div> </div>\n<div>Destructivos retoma su actividad en noviembre del mismo año, solo que sin Luis, ya que después de la separación momentánea, el se fue a tocar a otra banda. Se presentan con la formación inicial (el trio del 2011) en un recital que hubo en una plaza de Río Turbio, ese día quedaron seleccionados como teloneros para tocar junto a El Otro Yo, una de las grandes influencias de la banda desde sus inicios.</div>\n<div> </div>\n<div>Para ese recital, Destructivos cambia de formación a la actual, definiendo su sonido de forma definitiva, incorporando a Jeremías Alarcón y a Juan Santana, y para el 2013 se espera algo de material en audio, un disco/demo para difundirse un poco más.</div>\n<div> </div>\n<div>Destructivos es: Luciano Chiappero (Voz/Guitarra), Juanca Rojas (Bajo/Coros), Jeremías Alarcón (Guitarra), Juan Santana (Guitarra/Voz) y Sergio Alvarez (Batería).</div>",
+    "urltag": "destructivos",
+    "social": {
+        "facebook": "destructivoswaskagrunge",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 54,
+    "nombre": "Estallar",
+    "bio": "<p><span>Estallar es una banda Punk Rock de Río Turbio, y se puede decir que es una de las únicas bandas de este género en este pueblo junto a Pitterpunk. Esta banda se formó a fines de marzo del 2012, ya que Luciano (Bajo) y Luis (Batería) querían tocar punk, así que llaman a Nehuen para que toque la guitarra, quedando así conformado Estallar.</span></p>\n<div> </div>\n<div>El nombre Estallar surge debido a uno de los trabajos discográficos de Attaque 77, que por cierto, aunque falte Ciro Pertusi en la banda, no es un mal disco.</div>\n<div> </div>\n<div>Estallar se presentó a tocar en la Batalla de las Bandas, y pese a no haber ganado, esto los impulsa a seguir tocando ya que para ser su primer presentación fueron bastante aceptados por el público local. En ese entonces, la banda tenía un sonido bastante melódico, principalmente influenciado por Blink-182 e Infierno 18.</div>\n<div> </div>\n<div>Después de este recital, ingresa Maxi, hermano de Nehuen, como guitarrista rítmico y voz, ya que en ese entonces cantaba Luciano, y el no quería ser cantante ya que en las otras bandas que conforma ya era cantante. En eso, la banda empieza a sonar más agresiva, similar a Bulldog, Cadena Perpetua, los anteriormente mencionados Infierno 18 y más que todo a los primeros años de Attaque 77, y con algo de influencia de punk de afuera como Ramones, Green Day, Bad Religion o NOFX.</div>\n<div> </div>\n<div>Estallar es: Maxi Navarro (Guitarra/Voz), Nehuen Navarro (Guitarra/Coros), Luciano Chiappero (Bajo/Voz) y Luis Clark (Batería).</div>",
+    "urltag": "estallar",
+    "social": {
+        "facebook": "somosestallar",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 55,
+    "nombre": "Niko Bizarro",
+    "bio": "<p>Niko Bizarro (Nicolás Gomez) es un actor y youtubber riogalleguense, de 20 años, ¿que es un youtubber?, Nico define esto como un artista que sube su material a la red social Youtube, en formato de video. En su caso hace videos bizarros y de humor en general, lleva ya bastante tiempo en esto y tiene 2 canales en la red social, comenzó con esto hace 3 años, cuando tuvo su primera cámara y creó su primer canal. El primero se llama Una noche en Montecarlo (Version WTF), intentando hacerlo con diversos angulos y situaciones bizarras y/o ilógicas. </p>",
+    "urltag": "nikobizarro",
+    "social": {
+        "facebook": "NikoooG",
+        "twitter": "NikoBizarro",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "NikoBizarro",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+},
+        {
+    "id": 56,
+    "nombre": "Pateando Basura",
+    "bio": "<p>Pateando Basura es una banda riogalleguense de Punk Rock, formada hace ya varios años, actualmente está formada por:<br /><br />Roberto (1ra Guitarra y Voz)</p>\n<p>Nicolás (Bateria)</p>\n<p>Ezequiel (2da Guitarra y Coros)</p>\n<p>Leandro Bajo y Coros)<br /><br /></p>\n<p>Además de recorrer distintos escenarios de la localidad, con diferentes bandas de punk locales, lograron ser banda soporte de Flema y Dos Minutos en el recital del año 2011.</p>",
+    "urltag": "pateando-basura",
+    "social": {
+        "facebook": "pateandobasura.punkrock",
+        "twitter": "Twitter",
+        "sitioweb": "Sitio Web",
+        "soundcloud": "SoundCloud",
+        "youtube": "Youtube",
+        "grooveshark": "GrooveShark",
+        "vimeo": "Vimeo"
+    }
+}
+]

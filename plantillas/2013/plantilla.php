@@ -17,6 +17,9 @@ require("navegacion.php");
 require("cuerpo.php");
 
 
+require("barralateral.php");
+
+
 
 require("pie.php");
 

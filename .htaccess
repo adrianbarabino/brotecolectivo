@@ -86,4 +86,3 @@ AuthName "Desarrollo"
 AuthUserFile "/home/brotecol/.htpasswds/nuevo-brote/passwd"
 AuthType Basic
 
-require user nuevo

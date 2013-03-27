@@ -1,6 +1,3 @@
-define(['libs/reproductor-ttw'], function(ttw){
-    return{
-      iniciar: function(){
 
 $('#reproductor').ttwMusicPlayer(myPlaylist, {
 
@@ -40,6 +37,4 @@ $('#reproductor').ttwMusicPlayer(myPlaylist, {
 });
     $('#reproductor').show();
     console.log("Reproductor LISTO!");
-}
-}
- });
+

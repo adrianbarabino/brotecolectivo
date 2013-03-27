@@ -2,7 +2,8 @@
 
 
 
-    <div class="container">
+<!-- Content -->
+			<div id="content">
 
 		<?php
 

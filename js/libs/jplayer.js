@@ -1,4 +1,4 @@
-define(['libs/ajuste-thumbs'], function(bootstrap){
+
 
  /*
  * jPlayer Plugin for jQuery JavaScript Library
@@ -2209,4 +2209,3 @@ define(['libs/ajuste-thumbs'], function(bootstrap){
 
 })(jQuery);
 
-});
