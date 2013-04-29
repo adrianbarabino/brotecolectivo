@@ -13,6 +13,10 @@
 	cantidad_de_pag = "";
 	paginacion_actual = "";
 	artistas_json = [];
+	function capitaliseFirstLetter(string)
+	{
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
 	function range(start, stop, step){
     if (typeof stop=='undefined'){
         // one param defined
@@ -63,6 +67,7 @@ function iniciar(){
 		var destino_final = "#" + destino_total.substring(4);
 		console.log("La pagina a ir es: " + pagina);
 		console.log("Venimos de la pagina: "+pagina_actual)
+
 		anterior = pagina_actual;
 		if(pagina == pagina_actual){
 			console.log("nada para hacer");
@@ -252,6 +257,9 @@ function iniciar(){
 		actual = pagina_actual;
 		console.log(pagina_actual);
 		console.log("Ahora Pagina Actual es "+ pagina_actual);
+		web_titulo_actual = document.title.split('-');
+		web_titulo_ventana = web_titulo_actual[0] + " - " + capitaliseFirstLetter(pagina_actual);
+		$.address.title(web_titulo_ventana);
 
 	};
 	});

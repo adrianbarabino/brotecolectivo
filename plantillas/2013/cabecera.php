@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8"/>
-    <title><?php echo $configuracion['sitioweb']; ?></title>
+    <title><?php echo $configuracion['tituloweb']; ?> - Inicio</title>
     <link rel="stylesheet" type="text/css" href="/css/estilo.php" />
     <!--[if lt IE 9]>
       <script src="/js/css3-mediaqueries.js"></script>
