@@ -39,6 +39,9 @@ function iniciar(){
 	var idestado;
 	idestado = 100;
 	$.address.state('/').init(function() {
+	if ($.browser.mozilla){
+		$.address.value(window.location.pathname);
+	};
 	$("nav ul li a").address();
 	}).change(function (event){
 		console.log(event);
