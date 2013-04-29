@@ -48,8 +48,13 @@ if($_POST['tabla']){
     }else{
         $order2 = "asc";
     }
+        if($tabla == "fechas"){
 
-        $consulta = $consulta."ORDER BY  ".$order." ".$order2." ";
+        $consulta = $consulta."ORDER BY `F`.".$order." ".$order2." ";
+        }else{
+        $consulta = $consulta."ORDER BY `".$tabla."`.".$order." ".$order2." ";
+            
+        }
     }
     if($_POST['limit']){
         $limit = $_POST['limit'];
@@ -69,7 +74,7 @@ if($tabla == "fechas"){
 
     // lines for testing
      if($tabla == "fechas"){
-        echo $consulta;
+
      }
 if ($resultado = $mysqli->query($consulta)) {
 
@@ -133,6 +138,7 @@ if ($resultado = $mysqli->query($consulta)) {
                     unset ($cadena);
 
                     $fecha_lugar = $row['nombre'];
+                    $fecha_titulo = $row['titulo'];
                     $fecha_direccion = $row['direccion'];
                     $fecha_coordenadas = $row['coordenadas'];
                     $fecha_interior = $row['interior'];
@@ -146,6 +152,7 @@ if ($resultado = $mysqli->query($consulta)) {
                      $respuesta .= '{';
                      $respuesta .= '"id": '.$fecha_id.' ,';
                      $respuesta .= '"bandas": "'.$fecha_bandas.'",';
+                     $respuesta .= '"titulo": "'.$fecha_titulo.'",';
                      $respuesta .= '"lugar": "'.$fecha_lugar.'",';
                      $respuesta .= '"direccion": "'.$fecha_direccion.'",';
                      $respuesta .= '"coordenadas": "'.$fecha_coordenadas.'",';

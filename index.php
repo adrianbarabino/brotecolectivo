@@ -16,15 +16,8 @@ $pagina = strtolower($_GET['pagina']);
 
 
 
-if(!$pagina) {
-
-
 
  $pagina = "inicio";
-
-
-
-}
 
 
 
