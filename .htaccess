@@ -16,6 +16,9 @@ RewriteRule ^ /artistas/%1/? [R=302,NC,L]
 #
 RewriteCond %{QUERY_STRING} ^pagina=agenda-cultural&tag=([^/]+)$ [NC]
 RewriteRule ^ /agenda-cultural/%1/? [R=302,NC,L]
+#
+RewriteCond %{QUERY_STRING} ^pagina=agenda-cultural&tag=([^/]+)$ [NC]
+RewriteRule ^ /fecha/%1/? [R=302,NC,L]
 # 
 RewriteCond %{QUERY_STRING} ^pagina=artistas [NC]
 RewriteRule ^ /artistas/? [R=301,NC,L]
@@ -53,6 +56,7 @@ RewriteRule ^noticias-([^/]+) index.php?pagina=inicio&page=$1
 RewriteRule ^agenda-cultural-([^/]+)/ index.php?pagina=agenda&page=$1&interior=nada
 RewriteRule ^agenda-cultural-([^/]+) index.php?pagina=agenda&page=$1&interior=nada
 RewriteRule ^agenda-cultural/([^/]+)/ index.php?pagina=agenda&tag=$1
+RewriteRule ^fecha/([^/]+)/ index.php?pagina=agenda&tag=$1
 RewriteRule ^galeria-de-fotos/([^/]+)/ index.php?pagina=galeria-de-fotos&tag=$1
 RewriteRule ^galeria-de-fotos/([^/]+) index.php?pagina=galeria-de-fotos&tag=$1
 

@@ -85,7 +85,17 @@
 
 
 
-
+      <div id="single" style="position:relative;left:500px;display:none;">
+        <h1 class="titulo-single"></h1>
+        <div id="mapa_evento"></div>
+        <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
+        <article class="bio-single">
+        </article>
+        <article class="ubicacion">
+          <h2></h2>
+          <h3></h3>
+        </article>
+      </div>
       <ul class="thumbnails" id="artistas" style="position:relative;left:5000px;display:none;">
       <li class="span3" id="artista1">
         <a class="thumbnail" style="padding:0;" href="#">
