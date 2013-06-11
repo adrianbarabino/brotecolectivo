@@ -59,38 +59,18 @@
             <div id="to-top"></div>
         </footer>
          <!-- /container -->
-        <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+   
+    <!-- Acá va todo el JS -->
     
 
 
 <div id="reproductor" style="display:none;"></div>
-<!-- JS -->
-    <script src="/js/jquery-1.6.4.min.js"></script>
-    <script src="/js/jquery.js"></script>
-    <!--  <script src="/js/less-grid-4.js"></script> -->
-    <script src="/js/custom.js"></script>
-    <script src="/js/tabs.js"></script>
-    <script src="/js/date.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="http://cdn.jquerytools.org/1.2.7/tiny/jquery.tools.min.js"></script>
+    <script src="/js/libs/tabs.js"></script>
+    <script src="/js/libs/date.js"></script>
 
-    <!-- Masonry -->
-    <script src="/js/masonry.min.js" ></script>
-    <script src="/js/imagesloaded.js" ></script>
-    <!-- ENDS Masonry -->
-    
-    <script src="/js/jquery.flexslider-min.js"></script>
-    <!-- modernizr -->
-    <script src="/js/modernizr.js"></script>
-    <!-- prettyPhoto -->
-    <script  src="/js/superfish-1.4.8/js/hoverIntent.js"></script>
-    <script  src="/js/superfish-1.4.8/js/superfish.js"></script>
-    <script  src="/js/superfish-1.4.8/js/supersubs.js"></script>
-    <!-- ENDS superfish -->
-    <script  src="/js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
-
-    <script  src="/js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
     <!--[if IE 6]>
     <link rel="stylesheet" href="css/ie6-hacks.css" media="screen" />
     <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
@@ -135,11 +115,13 @@ function YaCargoLetras(){
     <!-- empiezan los otros JS -->
 
     <script src="http://openlayers.org/dev/OpenLayers.js"></script>
-    <script src="/js/brotecolectivo.js"></script>    
     <script src="/js/libs/bootstrap.js"></script>
-    <script src="/js/modernizr.js"></script>
+    <script src="/js/libs/preefixfree.min.js"></script>
+    <script src="/js/libs/modernizr.js"></script>
     <script src="/js/libs/jplayer.js"></script>
     <script src="/js/libs/reproductor-ttw.js"></script>
+    <script src="/js/libs/underscore.min.js"></script>    
+    <script src="/js/brotecolectivo.js"></script>    
     <script>
 var request;
 var myPlaylist = [];

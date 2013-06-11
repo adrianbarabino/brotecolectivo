@@ -69,5 +69,34 @@
 $(document).on("ready", iniciar);
 
 function iniciar () {
+	$('#to-top').click(function(){
+		$('html, body').animate({ scrollTop: 0 }, 300);
+	});
+	
+	//##########################################
+	// Resize event
+	//##########################################
+	
+	$(window).resize(function() {
+		tooltipPosition();
+		masonryStart();
+	}).trigger("resize");
+
+
+	
+		
+	
+	
+	//##########################################
+	// Mobile nav
+	//##########################################
+
+	var mobnavContainer = $("#mobile-nav");
+	var mobnavTrigger = $("#nav-open");
+	
+	mobnavTrigger.click(function(){
+		mobnavContainer.slideToggle();
+	});
+
 	console.log("Brote Colectivo iniciado!");
 }
