@@ -72,6 +72,14 @@ function iniciar () {
 	$('#to-top').click(function(){
 		$('html, body').animate({ scrollTop: 0 }, 300);
 	});
+		
+	$("ul.sf-menu").superfish({ 
+        animation: {height:'show'},   // slide-down effect without fade-in 
+        delay:     200 ,              // 1.2 second delay on mouseout 
+        autoArrows:  false,
+        speed: 200
+    });
+    
 	
 	//##########################################
 	// Resize event

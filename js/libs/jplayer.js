@@ -1418,6 +1418,11 @@
 				var x = e.pageX - offset.left;
 				var w = this.css.jq.volumeBar.width();
 				var v = x/w;
+				// Si es menor de 0.8%, le damos el valor 0, osea, silencio, esto es para evitar que
+				// se vuelva dificil lograr "mutear" el reproductor, modificación realizada el 12/06 a las 10.28
+				if(v<0.08){
+					v = 0;
+				}
 				this.volume(v);
 			}
 			if(this.options.muted) {
@@ -1425,6 +1430,7 @@
 			}
 		},
 		volumeBarValue: function(e) { // Handles clicks on the volumeBarValue
+
 			this.volumeBar(e);
 
 		},

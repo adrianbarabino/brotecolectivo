@@ -66,10 +66,13 @@
 
 <div id="reproductor" style="display:none;"></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="http://cdn.jquerytools.org/1.2.7/tiny/jquery.tools.min.js"></script>
     <script src="/js/libs/tabs.js"></script>
     <script src="/js/libs/date.js"></script>
+    <script  src="/js/libs/hoverIntent.js"></script>
+    <script  src="/js/libs/superfish.js"></script>
+    <script  src="/js/libs/supersubs.js"></script>
 
     <!--[if IE 6]>
     <link rel="stylesheet" href="css/ie6-hacks.css" media="screen" />
@@ -120,7 +123,7 @@ function YaCargoLetras(){
     <script src="/js/libs/modernizr.js"></script>
     <script src="/js/libs/jplayer.js"></script>
     <script src="/js/libs/reproductor-ttw.js"></script>
-    <script src="/js/libs/underscore.min.js"></script>    
+    <script src="/js/libs/swig.js"></script>    
     <script src="/js/brotecolectivo.js"></script>    
     <script>
 var request;
@@ -130,7 +133,7 @@ request = $.getJSON("http://api.brotecolectivo.com/canciones/", function (data) 
                 console.log(data);
                 var elemento = {
                     title: val.titulo,
-                    artist: "<a href='http://www.brotecolectivo.com/artistas/'+val.banda_urltag+'/'>"+val.banda+"</a>",
+                    artist: "<a href='http://www.brotecolectivo.com/artistas/"+val.banda_urltag+"/'>"+val.banda+"</a>",
                     cover: "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/"+val.banda_urltag+".jpg&w=125&h=125&zc=1",
                     oga: val.permalink,
                     genero: val.genero,
