@@ -12,3 +12,4 @@ Estoy remodelando el sitio totalmente, ahora funcionará con AJAX en su totalida
 * Mayor interacción para usuarios
 * Presskits del sitio para las bandas
 * Entre muchas otras cosas...
+* Implementaci�n total de BackBoneJS
