@@ -119,11 +119,17 @@ function YaCargoLetras(){
 
     <script src="http://openlayers.org/dev/OpenLayers.js"></script>
     <script src="/js/libs/bootstrap.js"></script>
-    <script src="/js/libs/preefixfree.min.js"></script>
+    <script src="/js/libs/prefixfree.min.js"></script>
     <script src="/js/libs/modernizr.js"></script>
     <script src="/js/libs/jplayer.js"></script>
     <script src="/js/libs/reproductor-ttw.js"></script>
     <script src="/js/libs/swig.js"></script>    
+    <script src="/js/libs/backbone.min.js"></script>    
+    <script src="/js/init.js"></script>    
+    <script src="/js/backbone/models/article.js"></script>    
+    <script src="/js/backbone/collections/articles.js"></script>    
+    <script src="/js/backbone/views/article.js"></script>    
+    <script src="/js/backbone/routers/base.js"></script>    
     <script src="/js/brotecolectivo.js"></script>    
     <script>
 var request;

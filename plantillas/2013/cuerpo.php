@@ -9,7 +9,7 @@
 
 
 
-		require("./contenido/".$pagina.".php")
+		require("./contenido/inicio.php")
 
 
 

@@ -86,8 +86,7 @@ function iniciar () {
 	//##########################################
 	
 	$(window).resize(function() {
-		tooltipPosition();
-		masonryStart();
+
 	}).trigger("resize");
 
 
@@ -106,5 +105,53 @@ function iniciar () {
 		mobnavContainer.slideToggle();
 	});
 
+
+
+
+
 	console.log("Brote Colectivo iniciado!");
 }
+	//####################################################
+	//  Comienza Backbone
+	//####################################################
+
+$(document).ready(function(){
+	console.log('Starting app');
+
+	window.collections.articles = new BroteColectivo.Collections.ArticlesCollection();
+	window.routers.base = new BroteColectivo.Routers.BaseRouter();
+
+
+	window.collections.articles.on('add', function(model){
+		var view = new BroteColectivo.Views.ArticleView(model);
+
+		view.render();
+
+		view.$el.insertAfter('#inicio');
+	});
+
+	var xhr = $.get('http://api.brotecolectivo.com/noticias/');
+
+	xhr.done(function(data){
+		data.forEach(function(item){
+			console.log(item);
+			window.collections.articles.add(item);
+		});
+
+		Backbone.history.start({
+			root : '/',
+			pushState : true,
+			silent : false
+		});
+	});
+
+	$('nav li:first').on('click', function () {
+		Backbone.history.navigate('', {trigger:true})
+	})
+});
+
+
+
+	//####################################################
+	//  Fin de Backbone
+	//####################################################
