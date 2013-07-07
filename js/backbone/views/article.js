@@ -17,6 +17,8 @@ BroteColectivo.Views.ArticleView = Backbone.View.extend({
 
 		this.template = swig.compile($("#Article_tpl").html());
 		swig.init({
+		  allowErrors: true,
+		    encoding: 'utf8',
 			autoescape:false
 		})
 	},

@@ -127,8 +127,11 @@ function YaCargoLetras(){
     <script src="/js/libs/backbone.min.js"></script>    
     <script src="/js/init.js"></script>    
     <script src="/js/backbone/models/article.js"></script>    
+    <script src="/js/backbone/models/artista.js"></script>    
     <script src="/js/backbone/collections/articles.js"></script>    
+    <script src="/js/backbone/collections/artistas.js"></script>    
     <script src="/js/backbone/views/article.js"></script>    
+    <script src="/js/backbone/views/artista.js"></script>    
     <script src="/js/backbone/routers/base.js"></script>    
     <script src="/js/brotecolectivo.js"></script>    
     <script>

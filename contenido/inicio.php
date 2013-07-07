@@ -29,9 +29,9 @@
               <a href="http://brotecolectivo.com/entradas/{{ post.urltag }}.jpg" data-rel="prettyPhoto" title="Continuando con el objetivo de conocer artistas de nuestra provincia, dialogamos con Eduardo Guajardo, reconocido m&uacute;sico santacruce&ntilde;o de 45 a&ntilde;os, quien se define..."><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/{{ post.urltag }}.jpg&w=150&h=100&zc=1" alt="{{ post.titulo }}" class="foto-entrada"/></a>
 </div>
             <div class="excerpt">
-
+            {% autoescape false %}
             {{ post.contenido_corto }}</div>
-            
+            {% endautoescape %}
             <a href="javascript:void(0);" class="read-more">leer mas</a>
             
           </article>
@@ -57,47 +57,18 @@
           <h3></h3>
         </article>
       </div>
-      <ul class="thumbnails" id="artistas" style="position:relative;left:5000px;display:none;">
-      <li class="span3" id="artista1">
+      <ul class="thumbnails" id="artistas" style="position:relative;left:0px;display:none;">
+         <script id="Artista_tpl" type="text/template">
+         <li class="span3" id="{{ post.urltag }}">
         <a class="thumbnail" style="padding:0;" href="#">
-          <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
+          <img data-src="holder.js/300x200" alt="300x200"  src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/{{ post.urltag }}.jpg&w=300&h=200&zc=1" alt="">
           <div class="caption">
-            <h3></h3>
-            <p></p>
+            <h3>{{ post.nombre }}</h3>
+            <p>{{ post.bio_corta }}</p>
           </div>
         </a>
       </li>
-
-      <li class="span3" id="artista2"> 
-        <a class="thumbnail" style="padding:0;" href="#">
-          <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
-          <div class="caption">
-            <h3></h3>
-            <p></p>
-          </div>
-        </a>
-      </li>
-
-      <li class="span3" id="artista3">
-        <a class="thumbnail" style="padding:0;" href="#">
-          <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
-          <div class="caption">
-            <h3></h3>
-            <p></p>
-          </div>
-        </a>
-      </li>
-      
-
-      <li class="span3" id="artista4">
-        <a class="thumbnail" style="padding:0;" href="#">
-          <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
-          <div class="caption">
-            <h3></h3>
-            <p></p>
-          </div>
-        </a>
-      </li>
+        </script>
   
     </ul>
 <div class="pagination"></div>

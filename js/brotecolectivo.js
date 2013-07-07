@@ -120,6 +120,7 @@ $(document).ready(function(){
 
 	window.collections.articles = new BroteColectivo.Collections.ArticlesCollection();
 	window.routers.base = new BroteColectivo.Routers.BaseRouter();
+	window.collections.artistas = new BroteColectivo.Collections.ArtistasCollection();
 
 
 	window.collections.articles.on('add', function(model){
@@ -128,6 +129,12 @@ $(document).ready(function(){
 		view.render();
 		$('#inicio').append(view.$el);
 	});
+	window.collections.artistas.on('add', function(model){
+		var view = new BroteColectivo.Views.ArtistaView(model);
+
+		view.render();
+		$('#artistas').append(view.$el);
+	});
 
 	var xhr = $.get('http://api.brotecolectivo.com/noticias/?order2=desc&corto=si');
 
@@ -135,7 +142,7 @@ $(document).ready(function(){
 		data.forEach(function(item){
 			console.log(item);
 			window.collections.articles.add(item);
-		});
+	});
 
 		var route = new BroteColectivo.Routers.BaseRouter();
 		Backbone.history.start({
