@@ -126,11 +126,10 @@ $(document).ready(function(){
 		var view = new BroteColectivo.Views.ArticleView(model);
 
 		view.render();
-
-		view.$el.insertAfter('#inicio');
+		$('#inicio').append(view.$el);
 	});
 
-	var xhr = $.get('http://api.brotecolectivo.com/noticias/');
+	var xhr = $.get('http://api.brotecolectivo.com/noticias/?order2=desc&corto=si');
 
 	xhr.done(function(data){
 		data.forEach(function(item){
@@ -138,15 +137,19 @@ $(document).ready(function(){
 			window.collections.articles.add(item);
 		});
 
+		var route = new BroteColectivo.Routers.BaseRouter();
 		Backbone.history.start({
-			root : '/',
 			pushState : true,
-			silent : false
+			root: "/"
 		});
 	});
 
-	$('nav li:first').on('click', function () {
-		Backbone.history.navigate('', {trigger:true})
+	$('nav li a').on('click', function () {
+		var url = $(this).attr("rel");
+		console.log(url);
+		url = url.split(":")
+		url = url[1];
+		Backbone.history.navigate(url+'/', {trigger:true})
 	})
 });
 

@@ -21,8 +21,8 @@ BroteColectivo.Views.ArticleView = Backbone.View.extend({
 		})
 	},
 	navigate: function () {
-		console.log("le hice click", this.model.get("title"));
-		Backbone.history.navigate('article/'+this.model.get("urltag"), {trigger:true})
+		console.log("le hice click", this.model.get("titulo"));
+		Backbone.history.navigate('noticia/'+this.model.get("urltag")+'/', {trigger:true})
 	},
 	upvote : function (e) {
 		e.stopPropagation();

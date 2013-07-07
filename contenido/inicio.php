@@ -25,14 +25,14 @@
             </div>
             
             
-            <div class="excerpt">
               <div class="feature-image">
-              <a href="http://brotecolectivo.com/entradas/{{ post.urltag }}.jpg" data-rel="prettyPhoto" title="Continuando con el objetivo de conocer artistas de nuestra provincia, dialogamos con Eduardo Guajardo, reconocido m&uacute;sico santacruce&ntilde;o de 45 a&ntilde;os, quien se define..."><img src="http://brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/{{ post.urltag }}.jpg&w=150&h=100&zc=1" alt="{{ post.titulo }}" class="foto-entrada"/></a>
+              <a href="http://brotecolectivo.com/entradas/{{ post.urltag }}.jpg" data-rel="prettyPhoto" title="Continuando con el objetivo de conocer artistas de nuestra provincia, dialogamos con Eduardo Guajardo, reconocido m&uacute;sico santacruce&ntilde;o de 45 a&ntilde;os, quien se define..."><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/{{ post.urltag }}.jpg&w=150&h=100&zc=1" alt="{{ post.titulo }}" class="foto-entrada"/></a>
 </div>
+            <div class="excerpt">
 
             {{ post.contenido_corto }}</div>
             
-            <a href="http://brotecolectivo.com/noticia/{{ post.urltag }}/" class="read-more">leer mas</a>
+            <a href="javascript:void(0);" class="read-more">leer mas</a>
             
           </article>
 
