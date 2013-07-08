@@ -123,7 +123,7 @@ function YaCargoLetras(){
     <script src="/js/libs/modernizr.js"></script>
     <script src="/js/libs/jplayer.js"></script>
     <script src="/js/libs/reproductor-ttw.js"></script>
-    <script src="/js/libs/swig.js"></script>    
+    <script src="/js/libs/underscore.min.js"></script>    
     <script src="/js/libs/backbone.min.js"></script>    
     <script src="/js/init.js"></script>    
     <script src="/js/backbone/models/article.js"></script>    
