@@ -32,13 +32,7 @@
 				
 				
 				<!-- pager -->
-        		<ul class="pager">
-					<li class="paged">Page 1 of 2</li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-				</ul>
-				<div class="clearfix"></div>
+
 	        	<!-- ENDS pager -->
 			
 			</div>

@@ -9,34 +9,44 @@
                     <li class="first-col">
                         
                         <div class="widget-block">
-                            <h4>Recent posts</h4>
-                            <div class="recent-post">
-                                <a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
-                                <div class="post-head">
-                                    <a href="#">Pellentesque habitant morbi senectus</a><span>March 12, 2011</span>
+                            <h4>Ultimas Noticias</h4>
+
+                            <?php
+
+$ultimas_noticias = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/noticias/?order2=desc&limit=5"));
+foreach ($ultimas_noticias as $noticia){
+    
+$noticiafecha = date("F d, Y", $noticia->fecha);    
+$noticiatitulo = $noticia->titulo;
+$noticiaurltag = $noticia->urltag;
+?>
+      
+       <div class="recent-post">
+            
+
+            
+           <a href="http://brotecolectivo.com/noticia/<?php echo $noticiaurltag; ?>/" class="thumb"><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/entradas/<?php echo $noticiaurltag; ?>.jpg&w=54&h=54&zc=1" width="54" height="54" alt="Post" /></a>
+
+<div class="post-head">
+                                    <a href="#"><?php echo $noticiatitulo; ?></a><span><?php echo $noticiafecha; ?></span>
                                 </div>
                             </div>
-                            <div class="recent-post">
-                                <a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
-                                <div class="post-head">
-                                    <a href="#">Pellentesque habitant morbi senectus</a><span>March 12, 2011</span>
-                                </div>
-                            </div>
-                            <div class="recent-post">
-                                <a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
-                                <div class="post-head">
-                                    <a href="#">Pellentesque habitant morbi senectus</a><span>March 12, 2011</span>
-                                </div>
-                            </div>
-                        </div>
+                            
+          
+        
+
+<?php
+};
+?>
                     </li>
                     
                     <li class="second-col">
                         
                         <div class="widget-block">
-                            <h4>Dummy text</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies ege. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada.</p>
+                            <h4>¿Qué es Brote Colectivo?</h4>
+                            <p>Somos un sitio de difusión cultural provincial, nos encargamos de darle un espacio a los grupos artísticos de <b>Santa Cruz</b>, donde podrán exponer lo que hacen, ya sea en formato de audio/video o difundiendo fechas próximas. </p>
+                            <p>Este espacio se dará sin distinción política ni económica, todo grupo o artista será tratado por igual, por lo cual, este espacio será cedido gratis, aunque solo a bandas de la zona.</p>
+                            <p>Esperamos el crecimiento de este sitio, tanto como el crecimiento de la cultura local, a pesar de haber artistas o grupos con mayor antiguedad, todos debemos crecer un poco más, formando así este brote colectivo </p>
                         </div>
                         
                     </li>
@@ -44,13 +54,19 @@
                     <li class="third-col">
                         
                         <div class="widget-block">
-                            <div id="tweets" class="footer-col tweet">
-                                <h4>Twitter widget</h4>
-                            </div>
+                            <div class="footer-col">
+                                <h4>Facebook</h4>
+                            <fb:like-box href="http://www.facebook.com/BroteColectivo" width="292" height="400" stream="false" show_faces="true" header="false" class=" fb_iframe_widget" fb-xfbml-state="rendered"><span style="vertical-align: bottom; width: 292px; height: 400px;"><iframe name="f2c68b5868" width="292px" height="400px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like_box Facebook Social Plugin" src="http://www.facebook.com/plugins/like_box.php?href=http%3A%2F%2Fwww.facebook.com%2FBroteColectivo&amp;show_faces=true&amp;header=false&amp;stream=false&amp;width=292&amp;height=400&amp;app_id=388734317865660&amp;locale=es_LA&amp;sdk=joey&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D25%23cb%3Df20d8de518%26origin%3Dhttp%253A%252F%252Fwww.brotecolectivo.com%252Ff328d1564%26domain%3Dwww.brotecolectivo.com%26relation%3Dparent.parent" style="border: none; visibility: visible; width: 292px; height: 400px;" class=""></iframe></span></fb:like-box>
+                        </div>
                         </div>
                         
                     </li>   
-                </ul>               
+                </ul>        
+                <div id="copy">
+                    Sitio desarrollado por <a href="http://www.adrianbarabino.com.ar" target="_blank">Adrian Gustavo Barabino</a> - Template <b>Modus</b> por <a href="http://luiszuno.com" target="_blank">LUISZUNO</a>                 - La página fue creada en 0,00277304649353 segundos                
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_AR"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"></a><br><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Brote Colectivo</span> se encuentra bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_AR">Licencia Creative Commons Atribución-NoComercial-CompartirIgual 3.0 Unported</a>.
+                <fb:facepile href="http://www.facebook.com/brotecolectivo" max_rows="1" width="300" class=" fb_iframe_widget" fb-xfbml-state="rendered"><span style="vertical-align: bottom; width: 300px; height: 70px;"><iframe name="f5d9be084" width="300px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:facepile Facebook Social Plugin" src="http://www.facebook.com/plugins/facepile.php?href=http%3A%2F%2Fwww.facebook.com%2Fbrotecolectivo&amp;max_rows=1&amp;width=300&amp;app_id=388734317865660&amp;locale=es_LA&amp;sdk=joey&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D25%23cb%3Df3e42564b4%26origin%3Dhttp%253A%252F%252Fwww.brotecolectivo.com%252Ff328d1564%26domain%3Dwww.brotecolectivo.com%26relation%3Dparent.parent" style="border: none; visibility: visible; width: 300px; height: 70px;" class=""></iframe></span></fb:facepile>
+            </div>       
                 <div class="clearfix"></div>
                 
                 

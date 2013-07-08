@@ -13,9 +13,16 @@
             
             <!-- posts list -->
             <div id="posts-list">
-              <section id="inicio">
+              <section id="inicio" style="display:none;">
+  
+            <h2>Home</h2>
+
+  
+              
+            </section>
+              <section id="noticias" style="display:none;">
         <script id="Article_tpl" type="text/template">
-           <article class="format-standard" id="<%= post.urltag %>">
+           
             
 
             
@@ -32,12 +39,11 @@
             <%= post.contenido_corto %></div>
             <a href="javascript:void(0);" class="read-more">leer mas</a>
             
-          </article>
+          
 
         </script>
             
           
-
   
               
             </section>
@@ -57,7 +63,7 @@
       </div>
       <ul class="thumbnails" id="artistas" style="position:relative;left:0px;display:none;">
          <script id="Artista_tpl" type="text/template">
-         <li class="span3" id="<%= post.urltag %>">
+         
         <a class="thumbnail" style="padding:0;" href="#">
           <img data-src="holder.js/300x200" alt="300x200"  src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/<%= post.urltag %>.jpg&w=300&h=200&zc=1" alt="">
           <div class="caption">
@@ -65,10 +71,20 @@
             <p><%= post.bio_corta %></p>
           </div>
         </a>
-      </li>
+      
         </script>
   
     </ul>
-<div class="pagination"></div>
+    <!-- sample template for pagination UI -->
+    <script type="text/html" id="tmpServerPagination">
+      <div class="breadcrumb">
+
+          <% if (currentPage < totalPages) { %>
+            <a href="#" class="btn long servernext">Show More</a>
+          <% } %>
+
+        </div>
+      </script>
+<div id="pagination"></div>
             </div>
             <!-- ENDS posts list -->

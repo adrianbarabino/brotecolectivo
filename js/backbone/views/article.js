@@ -1,6 +1,6 @@
 BroteColectivo.Views.ArticleView = Backbone.View.extend({
 	events:{
-		"click > article" : "navigate",
+		"click > article .read-more" : "navigate",
 		"click .likes_up" : "upvote",
 		"click .likes_down": "downvote",
 		"show" : "show"
@@ -8,14 +8,31 @@ BroteColectivo.Views.ArticleView = Backbone.View.extend({
 	className:"",
 	initialize : function(model){
 		var self = this;
-
 		this.model = model;
+		var index = this.collection.indexOf(this.model);
+		var modelAbove = this.collection.at(index-1);
+		console.log("Este es el "+index)
 
 		this.model.on('change', function(){
 			self.render();
 		});
+		var plantilla_init = $("#Article_tpl").html();
+		var plantilla = '<article class="format-standard" id="<%= post.urltag %>">'+plantilla_init+'</article>';
+		if(index>5){
+		plantilla = '<article class="format-standard loop mas-5" id="<%= post.urltag %>">'+plantilla_init+'</article>';
 
-		this.template = _.template($("#Article_tpl").html());
+			if(index>20){
+				console.log("Hola!");
+			plantilla = '<article class="format-standard loop mas-20" id="<%= post.urltag %>">'+plantilla_init+'</article>';
+
+			}
+			if(index>40){
+			plantilla = '<article class="format-standard loop mas-40" id="<%= post.urltag %>">'+plantilla_init+'</article>';
+
+			}		
+		}
+
+		this.template = _.template(plantilla);
 
 	},
 	navigate: function () {

@@ -9,83 +9,83 @@
 // 14.02.2013 a las 19:00 HS
 
 
-$(document).ready(function(){
-    		var ancho = $(window).width();
+// $(document).ready(function(){
+//     		var ancho = $(window).width();
 			
-    	$(".thumbnail img").each(function(index) {
-    		var value = $(this).attr("src") 
-    		if (ancho < 767) {
-    			value = value.replace("w=300&h=200", "w=700&h=100"); 
-    		}
-    		if (ancho < 400){
-			if (value.indexOf("h=200") == -1) {
-			value = value.replace("w=700&h=100", "w=300&h=100"); 
+//     	$(".thumbnail img").each(function(index) {
+//     		var value = $(this).attr("src") 
+//     		if (ancho < 767) {
+//     			value = value.replace("w=300&h=200", "w=700&h=100"); 
+//     		}
+//     		if (ancho < 400){
+// 			if (value.indexOf("h=200") == -1) {
+// 			value = value.replace("w=700&h=100", "w=300&h=100"); 
 
-			}else{
-			value = value.replace("w=700&h=200", "w=300&h=100"); 
+// 			}else{
+// 			value = value.replace("w=700&h=200", "w=300&h=100"); 
 
-			}    		}else{
-    			// Está todo bien, no hace falta hacer nada ahora.
-    		}
-    		$(this).attr("src", value);
-    	});
-    });
+// 			}    		}else{
+//     			// Está todo bien, no hace falta hacer nada ahora.
+//     		}
+//     		$(this).attr("src", value);
+//     	});
+//     });
 
-    $(window).resize(function() {
-	var width = $(window).width();
-	if (width < 767) {
+//     $(window).resize(function() {
+// 	var width = $(window).width();
+// 	if (width < 767) {
 		
 	
-    	$(".thumbnail img").each(function(index) {
+//     	$(".thumbnail img").each(function(index) {
 
-			var value = $(this).attr("src") 
-			if (value.indexOf("h=200") == -1) {
-			value = value.replace("w=300&h=100", "w=700&h=100"); 
+// 			var value = $(this).attr("src") 
+// 			if (value.indexOf("h=200") == -1) {
+// 			value = value.replace("w=300&h=100", "w=700&h=100"); 
 
-			}else{
-			value = value.replace("w=300&h=200", "w=700&h=100"); 
+// 			}else{
+// 			value = value.replace("w=300&h=200", "w=700&h=100"); 
 
-			}
+// 			}
 
-			$(this).attr("src", value);
+// 			$(this).attr("src", value);
 
-		});
+// 		});
 
-	}
-		if (width < 400) {
-		// Do Something
+// 	}
+// 		if (width < 400) {
+// 		// Do Something
 	
-    	$(".thumbnail img").each(function(index) {
+//     	$(".thumbnail img").each(function(index) {
 
-			var value = $(this).attr("src") 
-			if (value.indexOf("h=200") == -1) {
-			value = value.replace("w=700&h=100", "w=300&h=100"); 
+// 			var value = $(this).attr("src") 
+// 			if (value.indexOf("h=200") == -1) {
+// 			value = value.replace("w=700&h=100", "w=300&h=100"); 
 
-			}else{
-			value = value.replace("w=700&h=200", "w=300&h=100"); 
+// 			}else{
+// 			value = value.replace("w=700&h=200", "w=300&h=100"); 
 
-			}
+// 			}
 
-			// can then use it as
-			$(this).attr("src", value);
+// 			// can then use it as
+// 			$(this).attr("src", value);
 
-		});
+// 		});
 
-	}
-		if (width > 767) {
-		// Do Something
+// 	}
+// 		if (width > 767) {
+// 		// Do Something
 	
-    	$(".thumbnail img").each(function(index) {
+//     	$(".thumbnail img").each(function(index) {
 
-			var value = $(this).attr("src") // value = 9.61 use $("#text").text() if you are not on select box...
-			value = value.replace("w=700&h=100", "w=300&h=200"); // value = 9:61
-			// can then use it as
-			$(this).attr("src", value);
+// 			var value = $(this).attr("src") // value = 9.61 use $("#text").text() if you are not on select box...
+// 			value = value.replace("w=700&h=100", "w=300&h=200"); // value = 9:61
+// 			// can then use it as
+// 			$(this).attr("src", value);
 
-		});
+// 		});
 
-	}
-		console.log("Ajuste de Thumbs LISTO! ");
+// 	}
+// 		console.log("Ajuste de Thumbs LISTO! ");
 
-	});
+// 	});
 

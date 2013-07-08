@@ -118,6 +118,7 @@ function iniciar () {
 $(document).ready(function(){
 	console.log('Starting app');
 
+
 	window.collections.articles = new BroteColectivo.Collections.ArticlesCollection();
 	window.routers.base = new BroteColectivo.Routers.BaseRouter();
 	window.collections.artistas = new BroteColectivo.Collections.ArtistasCollection();
@@ -127,7 +128,7 @@ $(document).ready(function(){
 		var view = new BroteColectivo.Views.ArticleView(model);
 
 		view.render();
-		$('#inicio').append(view.$el);
+		$('#noticias').append(view.$el);
 	});
 	window.collections.artistas.on('add', function(model){
 		var view = new BroteColectivo.Views.ArtistaView(model);
