@@ -16,34 +16,15 @@ BroteColectivo.Views.ArtistaView = Backbone.View.extend({
 		});
 		var plantilla_init = $("#Artista_tpl").html();
 		var plantilla = '<li class="span3" id="<%= post.urltag %>">'+plantilla_init+'</li>';
-		if(index>8-1){
-		plantilla = '<li class="span3 loop mas-8" id="<%= post.urltag %>">'+plantilla_init+'</li>';
+		if(index>7){
+			console.log("Indice es: "+index+ " y el proximo será: "+indice_artistas);
+		indice_artistas_nuevo = indice_artistas+8;
+		if(indice_artistas+15 == index){
+		indice_artistas = indice_artistas_nuevo;
+		}
 
-			if(index>16-1){
-				console.log("Hola!");
-			plantilla = '<li class="span3 loop mas-16" id="<%= post.urltag %>">'+plantilla_init+'</li>';
-
-			}
-			if(index>24-1){
-			plantilla = '<li class="span3 loop mas-24" id="<%= post.urltag %>">'+plantilla_init+'</li>';
-
-			}	
-			if(index>32-1){
-			plantilla = '<li class="span3 loop mas-32" id="<%= post.urltag %>">'+plantilla_init+'</li>';
-
-			}		
-			if(index>40-1){
-			plantilla = '<li class="span3 loop mas-40" id="<%= post.urltag %>">'+plantilla_init+'</li>';
-
-			}		
-			if(index>48-1){
-			plantilla = '<li class="span3 loop mas-48" id="<%= post.urltag %>">'+plantilla_init+'</li>';
-
-			}			
-			if(index>56-1){
-			plantilla = '<li class="span3 loop mas-56" id="<%= post.urltag %>">'+plantilla_init+'</li>';
-
-			}		
+		plantilla = '<li class="span3 loop mas-'+indice_artistas_nuevo+'" id="<%= post.urltag %>">'+plantilla_init+'</li>';
+	
 		}
 
 		this.model.on('change', function(){

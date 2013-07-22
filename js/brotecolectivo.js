@@ -2,6 +2,7 @@
 	var actual;
 	var anterior;
 	var indice_modelo = 0;
+	var indice_artistas = 0;
 	var init = true, 
     	state = window.history.pushState !== undefined;
     var pagina;
