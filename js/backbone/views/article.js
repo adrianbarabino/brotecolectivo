@@ -17,19 +17,16 @@ BroteColectivo.Views.ArticleView = Backbone.View.extend({
 			self.render();
 		});
 		var plantilla_init = $("#Article_tpl").html();
+
 		var plantilla = '<article class="format-standard" id="<%= post.urltag %>">'+plantilla_init+'</article>';
+		console.log("El indice es "+index+ " y el indice_modelo es "+indice_modelo);
 		if(index>5){
-		plantilla = '<article class="format-standard loop mas-5" id="<%= post.urltag %>">'+plantilla_init+'</article>';
-
-			if(index>20){
-				console.log("Hola!");
-			plantilla = '<article class="format-standard loop mas-20" id="<%= post.urltag %>">'+plantilla_init+'</article>';
-
+			indice_modelo_nuevo = indice_modelo+5;
+			if(indice_modelo+10 == index){
+				indice_modelo = indice_modelo_nuevo;
 			}
-			if(index>40){
-			plantilla = '<article class="format-standard loop mas-40" id="<%= post.urltag %>">'+plantilla_init+'</article>';
-
-			}		
+		plantilla = '<article class="format-standard loop mas-'+indice_modelo_nuevo+'" id="<%= post.urltag %>">'+plantilla_init+'</article>';
+	
 		}
 
 		this.template = _.template(plantilla);

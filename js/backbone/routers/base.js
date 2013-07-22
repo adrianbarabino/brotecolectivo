@@ -33,28 +33,34 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 	noticias: function(){
 		var self = this;
 		console.log("Root");
+		if($('#noticias .abierto').length > 0){
+		    $('#noticias').show();
+		}else{
 		$('#noticias').fadeOut('slow', function() {
 		    $('#noticias').fadeIn('slow');
-		});				$(".head").text("Noticias Culturales");
+		});
+
+		}
+		$(".head").text("Noticias Culturales");
 		$(".subhead").text("sitio de difusión cultural en Santa Cruz, Argentina");
-		$(".mas-40, .mas-20, .mas-5").slideUp();
+		$("[class*=mas]").slideUp();
 		$("#cargar-mas").remove()
 		$("#noticias").append('<a href="javascript:void(0)" id="cargar-mas" data-cantidad="5" class="btn btn-info btn-large btn-block" >Cargar mas</a>');
 		$("#cargar-mas").on("click", function () {
 			var cantidad = $("#cargar-mas").attr("data-cantidad");
+			var nueva_cantidad = parseInt(cantidad)+5;
 			$(".mas-"+cantidad).slideDown();
-			if(cantidad == 5){
-				 $("#cargar-mas").attr("data-cantidad", 20);
-			}
-			if(cantidad == 20){
-				 $("#cargar-mas").attr("data-cantidad", 40);
-			}
-			if(cantidad == 40){
+			if($(".mas-"+nueva_cantidad).length > 0){
+
+			$("#cargar-mas").attr("data-cantidad", nueva_cantidad)
+
+			}else{
 				 $("#cargar-mas").hide();
-				 $("#cargar-mas").attr("data-cantidad", 5);
+				 $("#cargar-mas").attr("data-cantidad", 5);				
+				
 			}
 
-		})
+		})		
 		$("body").removeClass("sin-sidebar");
 		$("aside#sidebar").fadeIn();
 		$(".current-menu-item").removeClass('current-menu-item');
@@ -66,6 +72,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			$(this).html($(this).parent().parent().attr("contenido_corto"));
 			padre = $(this).parent();
 			$('.abierto h1').slideDown();
+			$('.abierto .read-more').slideDown();
 			$(this).parent().parent().removeClass("abierto");
 		});
 	},
@@ -167,6 +174,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$('#noticias #'+id_de_articulo+' .excerpt').html(info[0].contenido);
 				$('#noticias #'+id_de_articulo).addClass("abierto");
 				$('#noticias #'+id_de_articulo+' h1').slideUp();
+				$('#noticias #'+id_de_articulo+' .read-more').slideUp();
 			});
 		});
 
