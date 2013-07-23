@@ -35,7 +35,7 @@ BroteColectivo.Views.ArtistaView = Backbone.View.extend({
 	},
 	navigate: function () {
 		console.log("le hice click", this.model.get("nombre"));
-		Backbone.history.navigate('agenda-cultural/'+this.model.get("urltag")+'/', {trigger:true})
+		Backbone.history.navigate('artistas/'+this.model.get("urltag")+'/', {trigger:true})
 	},
 	render: function(data) {
 		var self = this;

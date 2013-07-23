@@ -64,13 +64,15 @@
       <ul class="thumbnails" id="artistas" style="position:relative;left:0px;display:none;">
          <script id="Artista_tpl" type="text/template">
          
-        <a class="thumbnail" style="padding:0;" href="#">
+        <section class="thumbnail" style="padding:0;">
           <img data-src="holder.js/300x200" alt="300x200"  src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/<%= post.urltag %>.jpg&w=300&h=200&zc=1" alt="">
           <div class="caption">
             <h3><%= post.nombre %></h3>
+            <div class="bio">
             <p><%= post.bio_corta %></p>
+            </div>
           </div>
-        </a>
+        </section>
       
         </script>
   

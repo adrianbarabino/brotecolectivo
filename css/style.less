@@ -85,7 +85,7 @@ body.sin-sidebar{
 	}
 }
 
-#artistas.thumbnails li, #artistas.thumbnails li a{
+#artistas.thumbnails div > li, #artistas.thumbnails div > li section{
 	height:320px;
 	margin-bottom:3em;
 }
@@ -1928,3 +1928,22 @@ background-image: linear-gradient(#505155, #2e302f);
 }
 
 /* Finaliza el CSS del Overlay */
+
+
+/* Comienza el estilo para Artistas */
+
+ul#artistas li.abierto{
+	width:98%;
+	height:auto;
+	
+}
+ul#artistas li.abierto section{
+	border:0;
+	cursor:default;
+	height:auto;
+
+}
+
+ul#artistas li.abierto img{
+	float:right;
+}

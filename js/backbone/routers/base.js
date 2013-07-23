@@ -79,24 +79,30 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 	artistas: function(){
 		var self = this;
 		console.log("Root");
+		$('#artistas > div').show();
+		$("#artistas .abierto .bio").each(function (i, info) {
+			$(this).html($(this).parent().parent().parent().parent().attr("bio_corta"));
+			padre = $(this).parent();
+			$('#artistas .abierto h3').slideDown();
+			// $('#artistas .abierto .read-more').slideDown();
+			var url_foto = $("#artistas .abierto img").attr("src");
+			var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
+			$("#artistas .abierto img").attr("src", url_foto_nueva);
+			$(this).parent().parent().parent().removeClass("abierto");
+		});
 		$(".head").text("Artistas");
 		$(".subhead").text("catálogo de artistas de la provincia");
 		$('#inicio').fadeOut('slow', function () {
 			$('#noticias').fadeOut('slow');
 			$('#artistas').fadeIn('slow');
 		});
+
 		$("body").addClass("sin-sidebar");
 		$("aside#sidebar").fadeOut();
 		$(".current-menu-item").removeClass('current-menu-item');
 		$("nav ul#nav li:contains('artist')").addClass('current-menu-item');
-		var xhr = $.get('http://api.brotecolectivo.com/artistas/?order2=desc');
 
-		xhr.done(function(data){
-			data.forEach(function(item){
-				console.log(item);
-				window.collections.artistas.add(item);
-		});
-		$(".loop").slideUp();
+		$("#artistas .loop").slideUp();
 		$("#cargar-mas").remove()
 		$("#posts-list").append('<a href="javascript:void(0)" id="cargar-mas" data-cantidad="8" class="btn btn-info btn-large btn-block" >Cargar mas</a>');
 		$("#cargar-mas").on("click", function () {
@@ -114,7 +120,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			}
 
 		})		
-		});
+
 		$("#inicio .abierto .excerpt").each(function (i, info) {
 			$(this).html($(this).parent().parent().attr("contenido_corto"));
 			$(this).parent().parent().removeClass("abierto");
@@ -123,25 +129,42 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 	artistaSingle: function(id){
 		console.log("artistaSingle", id);
-		$("body").removeClass("sin-sidebar");
-		$("aside#sidebar").fadeIn();
-		$('#inicio').fadeOut('400', function () {
-			$('#artistas').fadeIn();
-		});
-		$(".current-menu-item").removeClass('current-menu-item');
-		$("nav ul#nav li:contains('artist')").addClass('current-menu-item');
-
+		$("#cargar-mas").remove()
+		$("body").addClass("sin-sidebar");
+		$("aside#sidebar").fadeOut();
+		$('#noticias').fadeOut('slow')
+		$('#inicio').fadeOut('slow')
+		$('#artistas').fadeOut('10', function() {
+		    $('#artistas').fadeIn('slow');
+			$(".current-menu-item").removeClass('current-menu-item');
+			$("nav ul#nav li:contains('artistas')").addClass('current-menu-item');
+			$('#artistas > div').hide();
+			$('#artistas #'+id).parent().show();
+			$("html, body").animate({ scrollTop: 180 }, "slow");
+			$(".head").text("Cargando...");
+			$(".subhead").text("Noticias culturales en Brote Colectivo");
+		});		
 		
-		$('#inicio > div').hide();
-		$('#inicio #'+id).parent().show();
+
 		var id_de_articulo;
-		var obtenerId = $.getJSON('http://api.brotecolectivo.com/noticias/obtenerId/'+id+'/', function(data){
+		var obtenerId = $.getJSON('http://api.brotecolectivo.com/bandas/obtenerId/'+id+'/', function(data){
 			console.log(data);
 			id_de_articulo = data[0].id;
-			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/noticias/'+id_de_articulo, function(info){
-				console.log(info[0].contenido);
-				$('#inicio #'+id_de_articulo+' .excerpt').html(info[0].contenido);
-				$('#inicio #'+id_de_articulo).addClass("abierto");
+			console.log("Cargaremos: "+ 'http://api.brotecolectivo.com/artistas/'+id_de_articulo)
+			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/artistas/'+id_de_articulo, function(info){
+				console.log(info);
+				console.log(info.bio);
+				$(".head").text(info.nombre);
+
+				var url_foto = $("#artistas #"+id_de_articulo +" img").attr("src");
+				var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
+				$("#artistas #"+id_de_articulo +" img").attr("src", url_foto_nueva);
+
+
+				$('#artistas #'+id_de_articulo+' .bio').html(info.bio);
+				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
+				$('#artistas #'+id_de_articulo+' h3').slideUp();
+				$('#artistas #'+id_de_articulo+' .read-more').slideUp();
 			});
 		});
 

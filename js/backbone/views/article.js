@@ -20,9 +20,9 @@ BroteColectivo.Views.ArticleView = Backbone.View.extend({
 
 		var plantilla = '<article class="format-standard" id="<%= post.urltag %>">'+plantilla_init+'</article>';
 		console.log("El indice es "+index+ " y el indice_modelo es "+indice_modelo);
-		if(index>5){
+		if(index>4){
 			indice_modelo_nuevo = indice_modelo+5;
-			if(indice_modelo+10 == index){
+			if(indice_modelo+9 == index){
 				indice_modelo = indice_modelo_nuevo;
 			}
 		plantilla = '<article class="format-standard loop mas-'+indice_modelo_nuevo+'" id="<%= post.urltag %>">'+plantilla_init+'</article>';

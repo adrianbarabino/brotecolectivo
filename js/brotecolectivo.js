@@ -16,6 +16,11 @@
 	paginacion_actual = "";
 	artistas_json = [];
 	var map;
+	function cambiar_thumb (url, ancho, alto) {
+		url = url.split("&");
+		url = url[0]+"&w="+ancho+"&h="+alto+"&"+url[3];
+		return url;
+	}
 	function iniciar_mapa(lat, lon, texto, wrapper) {
 		var map;
 		var markers = [];
@@ -147,11 +152,23 @@ $(document).ready(function(){
 			window.collections.articles.add(item);
 	});
 
+		var xhr = $.get('http://api.brotecolectivo.com/artistas/?order2=desc');
+
+		xhr.done(function(data){
+			data.forEach(function(item){
+				console.log(item);
+				window.collections.artistas.add(item);
+	});
+
 		var route = new BroteColectivo.Routers.BaseRouter();
 		Backbone.history.start({
 			pushState : true,
 			root: "/"
 		});
+			
+		});
+
+
 	});
 
 	$('nav li a').on('click', function () {
