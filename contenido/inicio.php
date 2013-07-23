@@ -26,7 +26,7 @@
             
 
             
-            <h1><a href="http://brotecolectivo.com/noticia/<%= post.urltag %>/" class="post-heading"><%= post.titulo %></a></h1>
+            <h1><a href="javascript:void(0);" class="post-heading"><%= post.titulo %></a></h1>
             <div class="meta"> Publicado el <%= post.fecha_corta %>
           , Bandas relacionadas: <%= post.bandas %>  - <fb:comments-count href="http://www.brotecolectivo.com/noticia/<%= post.urltag %>/"></fb:comments-count> comentarios
             </div>

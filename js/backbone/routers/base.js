@@ -14,6 +14,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 	},
 	root: function(){
+		$(document).attr("title", "Inicio"+titulo_inicial);
 		$("#cargar-mas").remove()
 		var self = this;
 		console.log("Root");
@@ -31,6 +32,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$('#inicio > div').show();
 	},
 	noticias: function(){
+		$(document).attr("title", "Noticias"+titulo_inicial);
 		var self = this;
 		console.log("Root");
 		if($('#noticias .abierto').length > 0){
@@ -77,6 +79,8 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		});
 	},
 	artistas: function(){
+		$(document).attr("title", "Artistas"+titulo_inicial);
+
 		var self = this;
 		console.log("Root");
 		$('#artistas > div').show();
@@ -155,6 +159,8 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				console.log(info);
 				console.log(info.bio);
 				$(".head").text(info.nombre);
+				$(document).attr("title", info.nombre+titulo_inicial);
+
 
 				var url_foto = $("#artistas #"+id_de_articulo +" img").attr("src");
 				var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
@@ -194,6 +200,8 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/noticias/'+id_de_articulo, function(info){
 				console.log(info[0].contenido);
 				$(".head").text(info[0].titulo);
+				$(document).attr("title", info[0].titulo+titulo_inicial);
+
 				$('#noticias #'+id_de_articulo+' .excerpt').html(info[0].contenido);
 				$('#noticias #'+id_de_articulo).addClass("abierto");
 				$('#noticias #'+id_de_articulo+' h1').slideUp();

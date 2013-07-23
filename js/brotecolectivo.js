@@ -1,5 +1,6 @@
 	var artistas_json;
 	var actual;
+	var titulo_inicial = " - Brote Colectivo";
 	var anterior;
 	var indice_modelo = 0;
 	var indice_artistas = 0;

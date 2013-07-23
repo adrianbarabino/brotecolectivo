@@ -1,6 +1,7 @@
 BroteColectivo.Views.ArticleView = Backbone.View.extend({
 	events:{
 		"click > article .read-more" : "navigate",
+		"click > article h1" : "navigate",
 		"click .likes_up" : "upvote",
 		"click .likes_down": "downvote",
 		"show" : "show"
