@@ -146,7 +146,6 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			$('#artistas #'+id).parent().show();
 			$("html, body").animate({ scrollTop: 180 }, "slow");
 			$(".head").text("Cargando...");
-			$(".subhead").text("Noticias culturales en Brote Colectivo");
 		});		
 		
 
@@ -159,6 +158,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				console.log(info);
 				console.log(info.bio);
 				$(".head").text(info.nombre);
+				$(".subhead").text(info.bio_corta);
 				$(document).attr("title", info.nombre+titulo_inicial);
 
 

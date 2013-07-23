@@ -153,7 +153,7 @@ $(document).ready(function(){
 			window.collections.articles.add(item);
 	});
 
-		var xhr = $.get('http://api.brotecolectivo.com/artistas/?order2=desc');
+		var xhr = $.get('http://api.brotecolectivo.com/artistas/?order2=desc&corto=si');
 
 		xhr.done(function(data){
 			data.forEach(function(item){
