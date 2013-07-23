@@ -22,6 +22,9 @@
 		url = url[0]+"&w="+ancho+"&h="+alto+"&"+url[3];
 		return url;
 	}
+	function sacar_HTML(html) {
+	    return html.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>?/gi, '');
+	}
 	function iniciar_mapa(lat, lon, texto, wrapper) {
 		var map;
 		var markers = [];

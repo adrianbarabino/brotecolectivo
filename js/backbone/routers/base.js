@@ -158,7 +158,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				console.log(info);
 				console.log(info.bio);
 				$(".head").text(info.nombre);
-				$(".subhead").text(info.bio_corta);
+				$(".subhead").html(sacar_HTML(info.bio_corta));
 				$(document).attr("title", info.nombre+titulo_inicial);
 
 
