@@ -141,6 +141,7 @@ function YaCargoLetras(){
     <script src="/js/libs/reproductor-ttw.js"></script>
     <script src="/js/libs/underscore.min.js"></script>    
     <script src="/js/libs/backbone.min.js"></script>    
+    <script src="/js/libs/jquery.youtubeplaylist.js"></script>    
     <script src="/js/init.js"></script>    
     <script src="/js/backbone/models/article.js"></script>    
     <script src="/js/backbone/models/artista.js"></script>    
