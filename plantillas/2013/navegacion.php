@@ -47,7 +47,6 @@ function esta_activo($elemento){
 					<li <?php esta_activo("artistas"); ?>><a id="nav_artistas" rel="address:/artistas" href="<?php enlace_interno("artistas/"); ?>">artistas</a>
 					</li>
 					<li <?php esta_activo("agenda-cultural"); ?>><a id="nav_agenda-cultural" rel="address:/agenda-cultural" href="<?php enlace_interno("agenda-cultural/"); ?>">agenda cultural</a></li>
-					<li <?php esta_activo("mp3"); ?>><a id="nav_reproductor-mp3" rel="address:/reproductor-mp3" href="<?php enlace_interno("reproductor-mp3/"); ?>">reproductor mp3</a></li>
 				</ul>
 				<div id="nav-open"><a href="#">Menu</a></div>
 			</div>
@@ -76,7 +75,6 @@ function esta_activo($elemento){
 						<li <?php esta_activo("artistas"); ?>><a id="nav_artistas" rel="address:/artistas" href="<?php enlace_interno("artistas/"); ?>">artistas<span class="subheader"> de la provincia</span></a>
 						</li>
 						<li <?php esta_activo("agenda-cultural"); ?>><a id="nav_agenda-cultural" rel="address:/agenda-cultural" href="<?php enlace_interno("agenda-cultural/"); ?>">agenda cultural<span class="subheader"> eventos</span></a></li>
-						<li <?php esta_activo("mp3"); ?>><a id="nav_reproductor-mp3" rel="address:/reproductor-mp3" href="<?php enlace_interno("reproductor-mp3/"); ?>">reproductor mp3<span class="subheader"> musica on demand</span></a></li>
 					</ul>
 				</nav>
 				
