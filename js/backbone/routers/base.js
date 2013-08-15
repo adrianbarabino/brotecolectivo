@@ -173,13 +173,19 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
 				$('#artistas #'+id_de_articulo+' h3').slideUp();
 				$('#artistas #'+id_de_articulo+' .read-more').slideUp();
-				$("#artistas #"+id_de_articulo).append('<div class="reproductor" id="reproductorvideo"><h2>Videos</h2><div class="reproductordevideo"><div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul></div></div></div>');
+				$("#artistas #"+id_de_articulo).append('<div class="reproductor" style="display:none;" id="reproductorvideo"><h2>Videos</h2><div class="reproductordevideo"><div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul></div></div></div>');
 				var obtenerVideos = $.getJSON('http://api.brotecolectivo.com/videos/?banda='+id_de_articulo, function(data){
-					$.each(data, function (i, item) {
-						console.log(item);
-						$("ul.videosbanda").append('<li><a href="http://www.youtube.com/watch?v='+item.idyoutube+'">'+item.titulo+'</a></li>');
-					});
-					$("ul.videosbanda").ytplaylist();
+
+					if(data[0]){
+						$.each(data, function (i, item) {
+							console.log(item);
+							$("ul.videosbanda").append('<li><a href="http://www.youtube.com/watch?v='+item.idyoutube+'">'+item.titulo+'</a></li>');
+						});
+						$("ul.videosbanda").ytplaylist();
+						console.log("Voy a abrir un video");
+						$('#artistas #'+id_de_articulo+' #reproductorvideo').slideDown();
+					}
+
 				});
 
 			});
