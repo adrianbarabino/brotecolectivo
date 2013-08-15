@@ -173,7 +173,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
 				$('#artistas #'+id_de_articulo+' h3').slideUp();
 				$('#artistas #'+id_de_articulo+' .read-more').slideUp();
-				$("#artistas #"+id_de_articulo).append('<div class="reproductor" style="display:none;" id="reproductorvideo"><h2>Videos</h2><div class="reproductordevideo"><div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul></div></div></div>');
+				$("#artistas #"+id_de_articulo).append('<div class="reproductor" style="display:none;" id="reproductorvideo"><h2><span class="activo">Videos</span> <span class="small">Noticias</span> <span class="small">Fechas</span></h2><div class="reproductordevideo"><div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul></div></div></div>');
 				var obtenerVideos = $.getJSON('http://api.brotecolectivo.com/videos/?banda='+id_de_articulo, function(data){
 
 					if(data[0]){

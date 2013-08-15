@@ -92,15 +92,25 @@ function iniciar () {
         speed: 200
     });
     
+	$(document).on("click", "h2 span.small", function(){
+		// Cuando hago click en un botón h2 spam small 
+		// hago de que se desactive el activo y (this)
+		// sea activo.
+		$(this).parent().find(".activo").addClass("small");
+		$(this).parent().find(".activo").removeClass("activo");
+		console.log($(this).parent().find(".activo"));
+		$(this).addClass("activo");
+		$(this).removeClass("small");
+	});
+	$(document).on("click", "#boton_volver", function(){
+			var url = window.location.pathname.split("/")[1]
+		Backbone.history.navigate(url+"/", {trigger:true});
+		$("#boton_volver").remove();
+	});
 	
 	//##########################################
 	// Resize event
 	//##########################################
-	$(document).on("click", "#boton_volver", function(){
-				var url = window.location.pathname.split("/")[1]
-		Backbone.history.navigate(url+"/", {trigger:true});
-		$("#boton_volver").remove();
-	});
 	$(window).resize(function() {
 
 	}).trigger("resize");
