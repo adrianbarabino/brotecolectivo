@@ -9,7 +9,7 @@ function leer_contenido_completo($url){
 }
 
 ?><!doctype html>
-<html class="no-js">
+<html class="no-js" xmlns:fb="http://ogp.me/ns/fb#">
 
   <head>
     <meta charset="utf-8"/>

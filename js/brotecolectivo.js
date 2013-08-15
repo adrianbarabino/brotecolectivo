@@ -1,5 +1,5 @@
 	var artistas_json;
-	var boton_volver='<a class="btn btn-success" id="boton_volver" href="javascript:void(0);"><i class="icon-long-arrow-left  icon-large"></i> Volver</a>';
+	var boton_volver='<div id="contenidoTop"><a class="btn btn-success" id="boton_volver" href="javascript:void(0);"><i class="icon-long-arrow-left  icon-large"></i> Volver</a></div>';
 	var actual;
 	var titulo_inicial = " - Brote Colectivo";
 	var anterior;
@@ -18,6 +18,8 @@
 	paginacion_actual = "";
 	artistas_json = [];
 	var map;
+	var objeto_reproductor = new Object();
+
 	var opts = {
   lines: 13, // The number of lines to draw
   length: 20, // The length of each line
@@ -98,6 +100,7 @@
 
 $(document).on("eventosCargados", function (info, id_de_articulo) {
 	console.log("Se ejecutó el EMIT");
+	$("#cargando_info").hide();
 	console.log(id_de_articulo)
 	if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length > 0){
 									console.log("Hay items en la lista de Videos");

@@ -43,6 +43,7 @@
             ratingLevel:'.rating-level',
             ratingLevelOn:'.on',
             title: '.title',
+            urltag: 'li',
             duration: '.duration',
             buy:'.buy',
             buyNotActive:'.not-active',
@@ -218,11 +219,19 @@
 
             function playlistNext() {
                 var index = (current + 1 < myPlaylist.length) ? current + 1 : 0;
+                console.log("Click en NEXT");
+                var urltag = $("#reproductor :data(index=="+index+")").attr("data-urltag");
+                 objeto_reproductor.actual = urltag;
+                localStorage.setItem('reproductor', JSON.stringify(objeto_reproductor));               
                 playlistAdvance(index);
             }
 
             function playlistPrev() {
                 var index = (current - 1 >= 0) ? current - 1 : myPlaylist.length - 1;
+                console.log("Click en PREV");
+                var urltag = $("#reproductor :data(index=="+index+")").attr("data-urltag");
+                 objeto_reproductor.actual = urltag;
+                localStorage.setItem('reproductor', JSON.stringify(objeto_reproductor));               
                 playlistAdvance(index);
             }
 
@@ -248,6 +257,7 @@
                     $track.find(cssSelector.rating).html($ratings.clone());
 
                     $track.find(cssSelector.title).html(trackName(j));
+                    $track.attr('data-urltag', trackUrltag(j));
 
 
                     $track.find(cssSelector.artist).html(trackArtist(j));
@@ -290,7 +300,10 @@
                 }
 
                 $tracks.find('.title').click(function() {
+                    console.log("Auch, me hiciste click");
                     playlistAdvance($(this).parents('li').data('index'));
+                    objeto_reproductor.actual = $(this).parents('li').attr("data-urltag");
+                    localStorage.setItem('reproductor', JSON.stringify(objeto_reproductor));
                 });
 
 
@@ -568,6 +581,15 @@
         function trackGenero(index) {
             if (!isUndefined(myPlaylist[index].genero))
                 return myPlaylist[index].genero;
+            else if (!isUndefined(myPlaylist[index].mp3))
+                return fileName(myPlaylist[index].mp3);
+            else if (!isUndefined(myPlaylist[index].oga))
+                return fileName(myPlaylist[index].oga);
+            else return '';
+        }
+        function trackUrltag(index) {
+            if (!isUndefined(myPlaylist[index].urltag))
+                return myPlaylist[index].urltag;
             else if (!isUndefined(myPlaylist[index].mp3))
                 return fileName(myPlaylist[index].mp3);
             else if (!isUndefined(myPlaylist[index].oga))

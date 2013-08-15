@@ -124,7 +124,61 @@ function YaCargoLetras(){
 
 
 </script>
+<script type="text/javascript">
+(function(){
 
+    var matcher = /\s*(?:((?:(?:\\\.|[^.,])+\.?)+)\s*([!~><=]=|[><])\s*("|')?((?:\\\3|.)*?)\3|(.+?))\s*(?:,|$)/g;
+
+    function resolve(element, data) {
+
+        data = data.match(/(?:\\\.|[^.])+(?=\.|$)/g);
+
+        var cur = jQuery.data(element)[data.shift()];
+
+        while (cur && data[0]) {
+            cur = cur[data.shift()];
+        }
+
+        return cur || undefined;
+
+    }
+
+    jQuery.expr[':'].data = function(el, i, match) {
+
+        matcher.lastIndex = 0;
+
+        var expr = match[3],
+            m,
+            check, val,
+            allMatch = null,
+            foundMatch = false;
+
+        while (m = matcher.exec(expr)) {
+
+            check = m[4];
+            val = resolve(el, m[1] || m[5]);
+
+            switch (m[2]) {
+                case '==': foundMatch = val == check; break;
+                case '!=': foundMatch = val != check; break;
+                case '<=': foundMatch = val <= check; break;
+                case '>=': foundMatch = val >= check; break;
+                case '~=': foundMatch = RegExp(check).test(val); break;
+                case '>': foundMatch = val > check; break;
+                case '<': foundMatch = val < check; break;
+                default: if (m[5]) foundMatch = !!val;
+            }
+
+            allMatch = allMatch === null ? foundMatch : allMatch && foundMatch;
+
+        }
+
+        return allMatch;
+
+    };
+
+}());
+</script>
 <!-- overlayed element -->
 
 <div class="apple_overlay" id="overlay">
@@ -153,6 +207,13 @@ function YaCargoLetras(){
     <script src="/js/backbone/routers/base.js"></script>    
     <script src="/js/brotecolectivo.js"></script>    
     <script>
+function Cargar_Cancion_Actual () {
+    if(localStorage.getItem('reproductor').length > 0){
+        console.log("Estoy cargando la cancion actual")
+      $("[data-urltag='"+JSON.parse(localStorage.getItem('reproductor')).actual+"'] .title").trigger("click");
+      $(".jp-pause").trigger("click");
+    }
+  }
 var request;
 var myPlaylist = [];
 request = $.getJSON("http://api.brotecolectivo.com/canciones/", function (data) {
@@ -164,7 +225,8 @@ request = $.getJSON("http://api.brotecolectivo.com/canciones/", function (data) 
                     cover: "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/"+val.banda_urltag+".jpg&w=125&h=125&zc=1",
                     oga: val.permalink,
                     genero: val.genero,
-                    duration: val.duracion
+                    duration: val.duracion,
+                    urltag: val.urltag
                 }
                 if(val.idletra){
                     elemento.letra = "<a href='http://www.brotecolectivo.com/letras/"+val.urltag+"/' onclick='javascript:MirarLetra();' class='overlay', letra='', rel='#overlay'>Letra</a>";
@@ -217,10 +279,14 @@ $('#reproductor').ttwMusicPlayer(myPlaylist, {
     $('#reproductor').show();
     YaCargoLetras();
     console.log("Reproductor LISTO!");
+      setTimeout(Cargar_Cancion_Actual, 1000);
 
         });
 </script>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
 
+<!-- AddThis Smart Layers END -->
     <script src="/js/libs/ajuste-thumbs.js"></script>
 <script>
 
