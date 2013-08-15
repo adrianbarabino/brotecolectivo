@@ -1949,7 +1949,7 @@ ul#artistas li.abierto img{
 }
 
 
-#reproductorvideo{
+#info_relacionada_artista{
 	display: inline-block;
 width: 80%;
 background: #222 url("../img/main-pattern.png");
@@ -1963,6 +1963,7 @@ font-family: 'Oswald', helvetica, arial, sans-serif;
 }
 
 h2 span{
+	cursor:pointer;
 	transition: all 0.2s ease-in-out;
 }
 h2 span.small{
@@ -1981,19 +1982,21 @@ h2 span.activo{
 
 }
 
-#reproductorvideo iframe{
+#info_relacionada_artista iframe{
 	width:80%;
 	padding:0.5em;
 }
 
-#reproductorvideo h2{
+#info_relacionada_artista h2{
 	width: 80%;
 background: #111;
 padding: 0.2em 0;
 margin: 0.2em auto;
 }
-
-#reproductorvideo .videosbanda li a{
+#info_relacionada_artista .seccion ul{
+	margin-top:1em;
+}
+#info_relacionada_artista .seccion ul li a{
 	color: rgb(240, 242, 240);
 background: #25B871;
 font-weight: bolder;
@@ -2007,6 +2010,10 @@ padding: 0.3em;
 box-shadow: inset 0 0 130px -10px #3CB141;
 }
 
+#cargando_info{
+	margin: 6em 0;
+	padding-bottom: 1em;
+}
 
 
 

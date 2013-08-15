@@ -142,6 +142,7 @@ function YaCargoLetras(){
     <script src="/js/libs/underscore.min.js"></script>    
     <script src="/js/libs/backbone.min.js"></script>    
     <script src="/js/libs/jquery.youtubeplaylist.js"></script>    
+    <script src="/js/libs/spin.min.js"></script>    
     <script src="/js/init.js"></script>    
     <script src="/js/backbone/models/article.js"></script>    
     <script src="/js/backbone/models/artista.js"></script>    
@@ -159,7 +160,7 @@ request = $.getJSON("http://api.brotecolectivo.com/canciones/", function (data) 
                 console.log(data);
                 var elemento = {
                     title: val.titulo,
-                    artist: "<a href='http://www.brotecolectivo.com/artistas/"+val.banda_urltag+"/'>"+val.banda+"</a>",
+                    artist: "<a href='javascript:void(0);' rel='address:/artistas/"+val.banda_urltag+"'>"+val.banda+"</a>",
                     cover: "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/"+val.banda_urltag+".jpg&w=125&h=125&zc=1",
                     oga: val.permalink,
                     genero: val.genero,

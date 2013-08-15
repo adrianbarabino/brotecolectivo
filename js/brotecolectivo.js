@@ -18,6 +18,24 @@
 	paginacion_actual = "";
 	artistas_json = [];
 	var map;
+	var opts = {
+  lines: 13, // The number of lines to draw
+  length: 20, // The length of each line
+  width: 10, // The line thickness
+  radius: 30, // The radius of the inner circle
+  corners: 1, // Corner roundness (0..1)
+  rotate: 0, // The rotation offset
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  color: '#fff', // #rgb or #rrggbb
+  speed: 1, // Rounds per second
+  trail: 60, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: 'auto', // Top position relative to parent in px
+  left: 'auto' // Left position relative to parent in px
+};
 	function cambiar_thumb (url, ancho, alto) {
 		url = url.split("&");
 		url = url[0]+"&w="+ancho+"&h="+alto+"&"+url[3];
@@ -78,6 +96,34 @@
     return result;
 };
 
+$(document).on("eventosCargados", function (info, id_de_articulo) {
+	console.log("Se ejecutó el EMIT");
+	console.log(id_de_articulo)
+	if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length > 0){
+									console.log("Hay items en la lista de Videos");
+									$('#artistas #'+id_de_articulo+" h2 span:contains('Videos')").click();
+								}else{
+									console.log("No hay items en la lista de Videos");
+									if($('#artistas #'+id_de_articulo+' .noticias_relacionadas li').length > 0){
+										console.log("Hay items en la lista de Noticias");
+										$('#artistas #'+id_de_articulo+" h2 span:contains('Noticias')").click();
+									}
+								}
+								if($('#artistas #'+id_de_articulo+' .noticias li').length == 0){
+										console.log("No hay items en la lista Noticias");
+
+									$('#artistas #'+id_de_articulo+" h2 span:contains('Noticias')").remove();
+								}
+								if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length == 0){
+									if($('#artistas #'+id_de_articulo+' .noticias li').length == 0){
+										console.log("No hay items en las listas: Noticias y Videos");
+
+								$('#artistas #'+id_de_articulo+" h2 span:contains('Eventos')").click();
+								$('#artistas #'+id_de_articulo+" h2 span:contains('Noticias')").remove();
+								$('#artistas #'+id_de_articulo+" h2 span:contains('Videos')").remove();
+							}
+						}
+})
 $(document).on("ready", iniciar);
 
 function iniciar () {
@@ -92,6 +138,7 @@ function iniciar () {
         speed: 200
     });
     
+
 	$(document).on("click", "h2 span.small", function(){
 		// Cuando hago click en un botón h2 spam small 
 		// hago de que se desactive el activo y (this)
@@ -101,6 +148,19 @@ function iniciar () {
 		console.log($(this).parent().find(".activo"));
 		$(this).addClass("activo");
 		$(this).removeClass("small");
+		$(this).parent().parent().find(".seccion").slideUp();
+		if($(this).text() == "Videos"){
+		$(this).parent().parent().find(".reproductordevideo").slideDown();
+
+		}					
+		if($(this).text() == "Eventos"){
+		$(this).parent().parent().find(".eventos_relacionados").slideDown();
+
+		}					
+		if($(this).text() == "Noticias"){
+		$(this).parent().parent().find(".noticias_relacionadas").slideDown();
+
+		}
 	});
 	$(document).on("click", "#boton_volver", function(){
 			var url = window.location.pathname.split("/")[1]
@@ -197,6 +257,23 @@ $(document).ready(function(){
 		url = url[1];
 		Backbone.history.navigate(url+'/', {trigger:true})
 	})
+	$(document).on("click", "#info_relacionada_artista li a", function(){
+		var url = $(this).attr("rel");
+		console.log(url);
+		url = url.split(":")
+		url = url[1];
+		Backbone.history.navigate(url+'/', {trigger:true})
+	})
+
+	$(document).on("click", "#reproductor .artist a", function(){
+		var url = $(this).attr("rel");
+		console.log(url);
+		url = url.split(":")
+		url = url[1];
+		Backbone.history.navigate(url+'/', {trigger:true})
+	})
+
+
 });
 
 

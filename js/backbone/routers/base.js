@@ -89,7 +89,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			$(this).html($(this).parent().parent().parent().parent().attr("bio_corta"));
 			padre = $(this).parent();
 			$('#artistas .abierto h3').slideDown();
-			$("#reproductorvideo").remove();
+			$("#info_relacionada_artista").remove();
 			// $('#artistas .abierto .read-more').slideDown();
 			var url_foto = $("#artistas .abierto img").attr("src");
 			var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
@@ -110,6 +110,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 		$("#artistas .loop").slideUp();
 		$("#cargar-mas").remove()
+		$("#boton_volver").remove()
 		$("#posts-list").append('<a href="javascript:void(0)" id="cargar-mas" data-cantidad="8" class="btn btn-info btn-large btn-block" >Cargar mas</a>');
 		$("#cargar-mas").on("click", function () {
 			var cantidad = $("#cargar-mas").attr("data-cantidad");
@@ -173,7 +174,23 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
 				$('#artistas #'+id_de_articulo+' h3').slideUp();
 				$('#artistas #'+id_de_articulo+' .read-more').slideUp();
-				$("#artistas #"+id_de_articulo).append('<div class="reproductor" style="display:none;" id="reproductorvideo"><h2><span class="activo">Videos</span> <span class="small">Noticias</span> <span class="small">Fechas</span></h2><div class="reproductordevideo"><div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul></div></div></div>');
+
+				$("#artistas #"+id_de_articulo).append('<div class="reproductor" id="info_relacionada_artista"> \
+					<h2><span class="small">Videos</span> <span class="small">Noticias</span>  \
+					<span class="small">Eventos</span></h2> \
+					<div id="cargando_info"></div> \
+					<div class="reproductordevideo seccion" style="display:none;"> \
+					<div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul> \
+					</div></div> \
+					<div class="noticias_relacionadas seccion" style="display:none;"> \
+					<ul class="noticias"></ul> \
+					</div> \
+					<div class="eventos_relacionados seccion" style="display:none;"> \
+					<ul class="eventos"></ul> \
+					</div> \
+					</div>');
+				var target = document.getElementById('cargando_info');
+				var spinner = new Spinner(opts).spin(target);
 				var obtenerVideos = $.getJSON('http://api.brotecolectivo.com/videos/?banda='+id_de_articulo, function(data){
 
 					if(data[0]){
@@ -183,9 +200,59 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 						});
 						$("ul.videosbanda").ytplaylist();
 						console.log("Voy a abrir un video");
-						$('#artistas #'+id_de_articulo+' #reproductorvideo').slideDown();
+						
 					}
 
+					var obtenerNoticias = $.getJSON('http://api.brotecolectivo.com/noticias/?banda='+id_de_articulo+'&corto=1', function(data){
+
+						if(data[0]){
+							$.each(data, function (i, item) {
+								console.log(item);
+								$("ul.noticias").append('<li><a href="javascript:void(0);" rel="address:/noticia/'+item.urltag+'">'+item.titulo+'</a></li>');
+							});
+							if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length == 0){
+
+							
+							$('#artistas #'+id_de_articulo+" h2 span:contains('Videos')").remove();
+							}
+						}
+
+						var obtenerFechas = $.getJSON('http://api.brotecolectivo.com/fechas/?banda='+id_de_articulo+'&limit=5&order=fechas.id&corto=1&order2=desc', function(data){
+							$("#cargando_info").hide();
+								console.log("Hola2!")
+
+							if(data[0]){
+								$.each(data, function (i, item) {
+									console.log(i);
+									console.log(item);
+									console.log(data.length);
+									$("ul.eventos").append('<li><a href="javascript:void(0);" rel="address:/agenda-cultural/'+item.urltag+'">'+item.fecha_corta+' - '+item.titulo+'</a></li>');
+									if(i+1 == data.length){
+										$(document).trigger("eventosCargados", id_de_articulo);
+									}
+								});
+								
+
+							}else{
+								console.log("Hola!")
+								if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length == 0){
+									if($('#artistas #'+id_de_articulo+' .noticias li').length == 0){
+										$("#info_relacionada_artista").hide();
+									}
+								}else{
+									console.log("naranja")
+									$('#artistas #'+id_de_articulo+" h2 span:contains('Videos')").click();
+								}
+								if($('#artistas #'+id_de_articulo+' .noticias li').length == 0){
+
+								$('#artistas #'+id_de_articulo+" h2 span:contains('Noticias')").remove();
+								}						
+								$('#artistas #'+id_de_articulo+" h2 span:contains('Eventos')").remove();						
+								
+							}
+
+						});
+					});
 				});
 
 			});
