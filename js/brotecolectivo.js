@@ -1,5 +1,5 @@
 	var artistas_json;
-	var boton_volver='<div id="contenidoTop"><a class="btn btn-success" id="boton_volver" href="javascript:void(0);"><i class="icon-long-arrow-left  icon-large"></i> Volver</a></div>';
+	var boton_volver='<div id="contenidoTop" style="margin-top:-1em;margin-bottom:0.5em;"><a class="btn btn-mini btn-success" id="boton_volver" href="javascript:void(0);"><i class="icon-long-arrow-left  icon-large"></i> Volver</a></div>';
 	var actual;
 	var titulo_inicial = " - Brote Colectivo";
 	var anterior;
@@ -167,7 +167,11 @@ function iniciar () {
 	});
 	$(document).on("click", "#boton_volver", function(){
 			var url = window.location.pathname.split("/")[1]
+		if(url == "noticia"){
+			url = "noticias";
+		}
 		Backbone.history.navigate(url+"/", {trigger:true});
+
 		$("#boton_volver").remove();
 	});
 	

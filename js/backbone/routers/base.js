@@ -171,8 +171,8 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 				$("#contenidoTop").remove();
 				$("#cargando_info").remove();
-				$('#artistas #'+id_de_articulo).prepend(boton_volver);
-				$("#boton_volver a").text(" Volver a Artistas");
+				$('#artistas #'+id_de_articulo+" > li").prepend(boton_volver);
+				$("#boton_volver").html('<i class="icon-long-arrow-left  icon-large"></i>  Volver a Artistas');
 				$('#artistas #'+id_de_articulo+' .bio').html(info.bio);
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
 				$('#artistas #'+id_de_articulo+' h3').slideUp();
@@ -279,6 +279,9 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			$("nav ul#nav li:contains('noticias')").addClass('current-menu-item');
 			$('#noticias > div').hide();
 			$('#noticias #'+id).parent().show();
+			$('#contenidoTop').remove();
+			$('#noticias #'+id).prepend(boton_volver);
+			$("#boton_volver").html('<i class="icon-long-arrow-left  icon-large"></i>  Volver a Noticias');
 			$("html, body").animate({ scrollTop: 180 }, "slow");
 			$(".head").text("Cargando...");
 			$(".subhead").text("Noticias culturales en Brote Colectivo");
