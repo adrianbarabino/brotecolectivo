@@ -1,4 +1,5 @@
 	var artistas_json;
+	var boton_volver='<a class="btn btn-success" id="boton_volver" href="javascript:void(0);"><i class="icon-long-arrow-left  icon-large"></i> Volver</a>';
 	var actual;
 	var titulo_inicial = " - Brote Colectivo";
 	var anterior;
@@ -95,7 +96,11 @@ function iniciar () {
 	//##########################################
 	// Resize event
 	//##########################################
-	
+	$(document).on("click", "#boton_volver", function(){
+				var url = window.location.pathname.split("/")[1]
+		Backbone.history.navigate(url+"/", {trigger:true});
+		$("#boton_volver").remove();
+	});
 	$(window).resize(function() {
 
 	}).trigger("resize");

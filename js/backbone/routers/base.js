@@ -163,12 +163,12 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$(".subhead").html(sacar_HTML(info.bio_corta));
 				$(document).attr("title", info.nombre+titulo_inicial);
 
-
 				var url_foto = $("#artistas #"+id_de_articulo +" img").attr("src");
 				var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
 				$("#artistas #"+id_de_articulo +" img").attr("src", url_foto_nueva);
 
 
+				$('#artistas #'+id_de_articulo).prepend(boton_volver);
 				$('#artistas #'+id_de_articulo+' .bio').html(info.bio);
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
 				$('#artistas #'+id_de_articulo+' h3').slideUp();

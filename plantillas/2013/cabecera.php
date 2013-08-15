@@ -14,7 +14,9 @@ function leer_contenido_completo($url){
   <head>
     <meta charset="utf-8"/>
     <title><?php echo $configuracion['tituloweb']; ?> - Inicio</title>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/estilo.php" />
+
     <!--[if lt IE 9]>
       <script src="/js/css3-mediaqueries.js"></script>
     <![endif]-->
