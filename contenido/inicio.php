@@ -11,6 +11,7 @@
             
             
             
+            <div id="cargando_pagina"></div>
             <!-- posts list -->
             <div id="posts-list">
               <section id="inicio" style="display:none;">
@@ -28,7 +29,7 @@
             
             <h1><a href="javascript:void(0);" class="post-heading"><%= post.titulo %></a></h1>
             <div class="meta"> Publicado el <%= post.fecha_corta %>
-          , Bandas relacionadas: <%= post.bandas %>  - <fb:comments-count href="http://www.brotecolectivo.com/noticia/<%= post.urltag %>/"></fb:comments-count> comentarios
+          , Artistas relacionados: <%= post.bandas %>  - <fb:comments-count href="http://www.brotecolectivo.com/noticia/<%= post.urltag %>/"></fb:comments-count> comentarios
             </div>
             
             
@@ -50,7 +51,7 @@
 
 
 
-      <div id="single" style="position:relative;left:500px;display:none;">
+      <div id="single" style="display:none;">
         <h1 class="titulo-single"></h1>
         <div id="mapa_evento"></div>
         <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
@@ -70,6 +71,22 @@
             <h3><%= post.nombre %></h3>
             <div class="bio">
             <p><%= post.bio_corta %></p>
+            </div>
+          </div>
+        </section>
+      
+        </script>
+  
+    </ul>
+      <ul class="thumbnails" id="fechas" style="position:relative;left:0px;display:none;">
+         <script id="Fecha_tpl" type="text/template">
+         
+        <section class="thumbnail" style="padding:0;">
+          <img data-src="holder.js/300x200" alt="300x200"  src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/<%= post.urltag %>.jpg&w=300&h=200&zc=1" alt="">
+          <div class="caption">
+            <h3><%= post.titulo %></h3>
+            <div class="bio">
+            <p><%= post.contenido_corto %></p>
             </div>
           </div>
         </section>

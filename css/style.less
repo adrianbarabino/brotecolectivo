@@ -100,7 +100,7 @@ body.sin-sidebar{
 	}
 }
 
-#artistas.thumbnails div > li, #artistas.thumbnails div > li section{
+#artistas.thumbnails div > li, #artistas.thumbnails div > li section,#fechas.thumbnails div > li, #fechas.thumbnails div > li section{
 	height:320px;
 	margin-bottom:3em;
 }
@@ -1941,28 +1941,39 @@ background-image: linear-gradient(#505155, #2e302f);
     height:35px;
     width:35px;
 }
+#cargando_pagina{
+	background: #222;
+display: inline-block;
+margin: 9em 20em;
+width: 20%;
+vertical-align: top;
+position: absolute;
+}
 
 /* Finaliza el CSS del Overlay */
 
 
 /* Comienza el estilo para Artistas */
 
-ul#artistas li.abierto{
+ul#artistas li.abierto,ul#fechas li.abierto{
 	width:98%;
 	height:auto;
 	
 }
-ul#artistas li.abierto section{
+ul#artistas li.abierto section, ul#fechas li.abierto section{
 	border:0;
 	cursor:default;
 	height:auto;
 
 }
 
-ul#artistas li.abierto img{
+ul#artistas li.abierto img,ul#fechas li.abierto img{
 	float:right;
 }
 
+#fechas h3{
+	font-size:20px;
+}
 
 #info_relacionada_artista{
 	display: inline-block;

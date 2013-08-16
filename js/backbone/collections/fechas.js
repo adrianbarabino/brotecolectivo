@@ -22,4 +22,4 @@ BroteColectivo.Collections.FechasCollection = Backbone.Collection.extend({
     }
 });
 
-BroteColectivo.Collections.fechas = BroteColectivo.Collections.FechasCollection;
+BroteColectivo.Collections.artistas = BroteColectivo.Collections.FechasCollection;

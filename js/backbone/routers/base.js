@@ -4,13 +4,17 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		"inicio/" :  "root",
 		"noticias/" :  "noticias",
 		"artistas/" :  "artistas",
+		"agenda-cultural/" :  "fechas",
 		"noticia/:id/": "articleSingle",
 		"noticia/:id": "articleSingle",
 		"artistas/:id/": "artistaSingle",
-		"artistas/:id": "artistaSingle"
+		"artistas/:id": "artistaSingle",
+		"agenda-cultural/:id/": "fechaSingle",
+		"agenda-cultural/:id": "fechaSingle"
 	},
 	initialize : function(){
 		var self = this;
+		$("#cargando_pagina").fadeOut();
 
 	},
 	root: function(){
@@ -98,8 +102,9 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		});
 		$(".head").text("Artistas");
 		$(".subhead").text("catálogo de artistas de la provincia");
+		ocultarPaginas(true);
 		$('#inicio').fadeOut('slow', function () {
-			$('#noticias').fadeOut('slow');
+
 			$('#artistas').fadeIn('slow');
 		});
 
@@ -109,7 +114,59 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$("nav ul#nav li:contains('artist')").addClass('current-menu-item');
 
 		$("#artistas .loop").slideUp();
-		$("#cargar-mas").remove()
+		$("#posts-list").append('<a href="javascript:void(0)" id="cargar-mas" data-cantidad="8" class="btn btn-info btn-large btn-block" >Cargar mas</a>');
+		$("#cargar-mas").on("click", function () {
+			var cantidad = $("#cargar-mas").attr("data-cantidad");
+			var nueva_cantidad = parseInt(cantidad)+8;
+			$(".mas-"+cantidad).slideDown();
+			if($(".mas-"+nueva_cantidad).length > 0){
+
+			$("#cargar-mas").attr("data-cantidad", nueva_cantidad)
+
+			}else{
+				 $("#cargar-mas").hide();
+				 $("#cargar-mas").attr("data-cantidad", 8);				
+				
+			}
+
+		})		
+
+		$("#inicio .abierto .excerpt").each(function (i, info) {
+			$(this).html($(this).parent().parent().attr("contenido_corto"));
+			$(this).parent().parent().removeClass("abierto");
+		});
+	},
+	fechas: function(){
+		$(document).attr("title", "Agenda Cultural"+titulo_inicial);
+
+		var self = this;
+		console.log("Root");
+		$('#fechas > div').show();
+
+		$("#fechas .abierto .bio").each(function (i, info) {
+			$(this).html($(this).parent().parent().parent().parent().attr("contenido_corto"));
+			padre = $(this).parent();
+			$('#fechas .abierto h3').slideDown();
+			$("#info_relacionada_fecha").remove();
+			// $('#fechas .abierto .read-more').slideDown();
+			var url_foto = $("#fechas .abierto img").attr("src");
+			var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
+			$("#fechas .abierto img").attr("src", url_foto_nueva);
+			$(this).parent().parent().parent().removeClass("abierto");
+		});
+		$(".head").text("Agenda Cultural");
+		$(".subhead").text("todos los próximos eventos culturales de la provincia");
+		ocultarPaginas(true);
+		$('#inicio').fadeOut('slow', function () {
+			$('#fechas').fadeIn('slow');
+		});
+
+		$("body").addClass("sin-sidebar");
+		$("aside#sidebar").fadeOut();
+		$(".current-menu-item").removeClass('current-menu-item');
+		$("nav ul#nav li:contains('agenda')").addClass('current-menu-item');
+
+		$("#fechas .loop").slideUp();
 		$("#contenidoTop").remove()
 		$("#posts-list").append('<a href="javascript:void(0)" id="cargar-mas" data-cantidad="8" class="btn btn-info btn-large btn-block" >Cargar mas</a>');
 		$("#cargar-mas").on("click", function () {
@@ -133,6 +190,50 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			$(this).parent().parent().removeClass("abierto");
 		});
 	},
+		fechaSingle: function(id){
+		console.log("fechaSingle", id);
+		ocultarPaginas(true);
+		$('#fechas').fadeOut('10', function() {
+		    $('#single').fadeIn('slow');
+			$(".current-menu-item").removeClass('current-menu-item');
+			$("nav ul#nav li:contains('agenda')").addClass('current-menu-item');
+			$('#fechas > div').hide();
+			$("html, body").animate({ scrollTop: 180 }, "slow");
+			$(".head").text("Cargando...");
+		});		
+		
+
+		var id_de_articulo;
+		var obtenerId = $.getJSON('http://api.brotecolectivo.com/fechas/obtenerId/'+id+'/', function(data){
+			console.log(data);
+			id_de_articulo = data[0].id;
+						console.log("Cargaremos: "+ 'http://api.brotecolectivo.com/artistas/'+id_de_articulo)
+			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/fechas/'+id_de_articulo, function(info){
+				console.log(info);
+				console.log(info.contenido);
+				$("#mapa_evento").hide();
+				coordenadas = info.coordenadas.split(',');
+	    		console.log(coordenadas);
+	    		
+				$(".head").text(info.titulo);
+				console.log("Aca estoy ahora");
+				$(".subhead").html(sacar_HTML(info.contenido_corto));
+				console.log("Aca estoy ahora¿?");
+				$(document).attr("title", info.titulo+titulo_inicial);
+
+				$("#single img").attr("src", "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/"+ info.urltag+".jpg&w=300&h=200&zc=1");
+
+				$("#contenidoTop").remove();
+				$("#cargando_info").remove();
+				$('#single').prepend(boton_volver);
+				$("#boton_volver").html('<i class="icon-long-arrow-left  icon-large"></i>  Volver a Agenda Cultural');
+				$('#single .bio-single').html(info.contenido);
+				$('#single .ubicacion h2').html(info.lugar);
+				$('#single .ubicacion h3').html(info.direccion);
+				$('#single > h1').html(info.titulo);
+			});
+		});
+		},
 
 	artistaSingle: function(id){
 		console.log("artistaSingle", id);
@@ -273,6 +374,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 		$('#artistas').fadeOut('slow')
 		$('#inicio').fadeOut('slow')
+		$('#fechas').fadeOut('slow')
 		$('#noticias').fadeOut('10', function() {
 		    $('#noticias').fadeIn('slow');
 			$(".current-menu-item").removeClass('current-menu-item');
@@ -290,10 +392,13 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 		var id_de_articulo;
 		var obtenerId = $.getJSON('http://api.brotecolectivo.com/noticias/obtenerId/'+id+'/', function(data){
+			console.log("Estoy cargando un articulo")
 			console.log(data);
 			id_de_articulo = data[0].id;
+			console.log("cargare "+id_de_articulo);
+			console.log("Estoy cargando un articulo")
 			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/noticias/'+id_de_articulo, function(info){
-				console.log(info[0].contenido);
+				console.log(info[0]);
 				$(".head").text(info[0].titulo);
 				$(document).attr("title", info[0].titulo+titulo_inicial);
 

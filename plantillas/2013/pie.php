@@ -220,7 +220,47 @@ function YaCargoLetras(){
   <div class="contentWrap"></div>
 </div>
     <!-- empiezan los otros JS -->
-
+    <script src="/js/libs/spin.min.js"></script>    
+    <script>
+        var opts = {
+  lines: 13, // The number of lines to draw
+  length: 20, // The length of each line
+  width: 10, // The line thickness
+  radius: 30, // The radius of the inner circle
+  corners: 1, // Corner roundness (0..1)
+  rotate: 0, // The rotation offset
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  color: '#222', // #rgb or #rrggbb
+  speed: 1, // Rounds per second
+  trail: 60, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: 'auto', // Top position relative to parent in px
+  left: 'auto' // Left position relative to parent in px
+};
+                    var target = document.getElementById('cargando_pagina');
+                var spinner = new Spinner(opts).spin(target);
+                    var opts = {
+  lines: 13, // The number of lines to draw
+  length: 20, // The length of each line
+  width: 10, // The line thickness
+  radius: 30, // The radius of the inner circle
+  corners: 1, // Corner roundness (0..1)
+  rotate: 0, // The rotation offset
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  color: '#fff', // #rgb or #rrggbb
+  speed: 1, // Rounds per second
+  trail: 60, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: 'auto', // Top position relative to parent in px
+  left: 'auto' // Left position relative to parent in px
+};
+                </script>
     <script src="http://openlayers.org/dev/OpenLayers.js"></script>
     <script src="/js/libs/bootstrap.js"></script>
     <script src="/js/libs/prefixfree.min.js"></script>
@@ -230,14 +270,16 @@ function YaCargoLetras(){
     <script src="/js/libs/underscore.min.js"></script>    
     <script src="/js/libs/backbone.min.js"></script>    
     <script src="/js/libs/jquery.youtubeplaylist.js"></script>    
-    <script src="/js/libs/spin.min.js"></script>    
     <script src="/js/init.js"></script>    
     <script src="/js/backbone/models/article.js"></script>    
     <script src="/js/backbone/models/artista.js"></script>    
+    <script src="/js/backbone/models/fecha.js"></script>    
     <script src="/js/backbone/collections/articles.js"></script>    
     <script src="/js/backbone/collections/artistas.js"></script>    
+    <script src="/js/backbone/collections/fechas.js"></script>    
     <script src="/js/backbone/views/article.js"></script>    
     <script src="/js/backbone/views/artista.js"></script>    
+    <script src="/js/backbone/views/fecha.js"></script>    
     <script src="/js/backbone/routers/base.js"></script>    
     <script src="/js/brotecolectivo.js"></script>    
     <script>
@@ -252,7 +294,7 @@ var request;
 var myPlaylist = [];
 request = $.getJSON("http://api.brotecolectivo.com/canciones/", function (data) {
             $.each(data, function (i, val) {
-                console.log(data);
+                
                 var elemento = {
                     title: val.titulo,
                     artist: "<a href='javascript:void(0);' rel='address:/artistas/"+val.banda_urltag+"'>"+val.banda+"</a>",

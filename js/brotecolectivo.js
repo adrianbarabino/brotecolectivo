@@ -5,6 +5,7 @@
 	var anterior;
 	var indice_modelo = 0;
 	var indice_artistas = 0;
+	var indice_fechas = 0;
 	var init = true, 
     	state = window.history.pushState !== undefined;
     var pagina;
@@ -20,24 +21,31 @@
 	var map;
 	var objeto_reproductor = new Object();
 
-	var opts = {
-  lines: 13, // The number of lines to draw
-  length: 20, // The length of each line
-  width: 10, // The line thickness
-  radius: 30, // The radius of the inner circle
-  corners: 1, // Corner roundness (0..1)
-  rotate: 0, // The rotation offset
-  direction: 1, // 1: clockwise, -1: counterclockwise
-  color: '#fff', // #rgb or #rrggbb
-  speed: 1, // Rounds per second
-  trail: 60, // Afterglow percentage
-  shadow: false, // Whether to render a shadow
-  hwaccel: false, // Whether to use hardware acceleration
-  className: 'spinner', // The CSS class to assign to the spinner
-  zIndex: 2e9, // The z-index (defaults to 2000000000)
-  top: 'auto', // Top position relative to parent in px
-  left: 'auto' // Left position relative to parent in px
-};
+	function ocultarPaginas (side) {
+		if(side == true){
+
+		$("body").addClass("sin-sidebar");
+		$("aside#sidebar").fadeOut();
+		}else{
+			
+		$("body").removeClass("sin-sidebar");
+		$("aside#sidebar").fadeIn();
+		}
+		$('#noticias').fadeOut('slow')
+		$('#artistas').fadeOut('slow')
+		$('#inicio').fadeOut('slow')
+		$('#fechas').fadeOut('slow')
+		$('#single').fadeOut('slow')
+		$('#single .bio-single').html("");
+		$('#single h1').html("");
+		$('#single h2').html("");
+		$('#single h3').html("");
+		$('#single img').attr("src", "/img/cargando.gif");
+		$("#cargarmas").remove();
+		$("#contenidoTop").remove()
+
+
+	}
 	function cambiar_thumb (url, ancho, alto) {
 		url = url.split("&");
 		url = url[0]+"&w="+ancho+"&h="+alto+"&"+url[3];
@@ -46,19 +54,16 @@
 	function sacar_HTML(html) {
 	    return html.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>?/gi, '');
 	}
-	function iniciar_mapa(lat, lon, texto, wrapper) {
 		var map;
+	function iniciar_mapa(lat, lon, texto, wrapper) {
 		var markers = [];
-		var map = new OpenLayers.Map(wrapper);
-		var proj4326 = new OpenLayers.Projection("EPSG:4326");
-		var projmerc = new OpenLayers.Projection("EPSG:900913");
-		var layerOSM = new OpenLayers.Layer.OSM("Street Map");
-		map.addLayers([layerOSM]);
-		var lonLat = new OpenLayers.LonLat( lat, lon )
-		  .transform(
-		  new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-		  map.getProjectionObject() // to Spherical Mercator Projection
-		);
+		map = new OpenLayers.Map(wrapper);
+            map.addLayer(new OpenLayers.Layer.OSM());
+	    var lonLat = new OpenLayers.LonLat( lat, lon)
+	      .transform(
+	        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+	        map.getProjectionObject() // to Spherical Mercator Projection
+	      );
 
 		var zoom=13;
 
@@ -67,12 +72,8 @@
 
 		markers.addMarker(new OpenLayers.Marker(lonLat));
 		map.setCenter (lonLat, zoom);
-		if (!map.getCenter()) map.zoomToMaxExtent();
 
-		var markerslayer;
-		var marcador;
 
-		map.addControl(new OpenLayers.Control.LayerSwitcher());
         
     };
 	function capitaliseFirstLetter(string)
@@ -215,6 +216,7 @@ $(document).ready(function(){
 	window.collections.articles = new BroteColectivo.Collections.ArticlesCollection();
 	window.routers.base = new BroteColectivo.Routers.BaseRouter();
 	window.collections.artistas = new BroteColectivo.Collections.ArtistasCollection();
+	window.collections.fechas = new BroteColectivo.Collections.FechasCollection();
 
 
 	window.collections.articles.on('add', function(model){
@@ -228,6 +230,12 @@ $(document).ready(function(){
 
 		view.render();
 		$('#artistas').append(view.$el);
+	});
+	window.collections.fechas.on('add', function(model){
+		var view = new BroteColectivo.Views.FechaView(model);
+
+		view.render();
+		$('#fechas').append(view.$el);
 	});
 
 	var xhr = $.get('http://api.brotecolectivo.com/noticias/?order2=desc&corto=si');
@@ -245,7 +253,7 @@ $(document).ready(function(){
 				console.log(item);
 				window.collections.artistas.add(item);
 	});
-
+		
 		var route = new BroteColectivo.Routers.BaseRouter();
 		Backbone.history.start({
 			pushState : true,
@@ -253,7 +261,6 @@ $(document).ready(function(){
 		});
 			
 		});
-
 
 	});
 
@@ -279,7 +286,21 @@ $(document).ready(function(){
 		url = url[1];
 		Backbone.history.navigate(url+'/', {trigger:true})
 	})
-
+		
+	console.log("Antes de cargas fechas");
+	console.time('carga-fechas');
+var fechasxhr = $.ajax({
+		url: 'http://api.brotecolectivo.com/fechas/?order=fechas.id&limit=15&order2=desc&corto=si',
+		async: true,
+		dataType: "json"
+	}).done(function(data){
+			data.forEach(function(item){
+				console.log(item);
+				window.collections.fechas.add(item);
+		});
+		});
+	console.timeEnd('carga-fechas');
+	console.log("Despues de cargas fechas");
 
 });
 
