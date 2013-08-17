@@ -54,7 +54,7 @@
 	function artista_al_azar (info) {
 		if(recargando == false){
 			recargando = true;
-			$(".bandaazar a#bandaazar p").remove();
+			$(".bandaazar a#bandaazar .info-artista").html("");
 			$(".bandaazar .azarfinal").remove();
 			$(".bandaazar a#bandaazar").attr("cargando...");
 			$(".bandaazar a#bandaazar figure img").attr("src", "http://www.brotecolectivo.com/img/cargando.gif");
@@ -66,8 +66,8 @@
 			$(".bandaazar a#bandaazar").attr("title", data[0].bio_corta)
 			$(".bandaazar a#bandaazar h2").html(data[0].nombre);
 			$(".bandaazar a#bandaazar figure img").attr("src", "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/"+data[0].urltag+".jpg&w=300&h=200&zc=1");
-			$(".bandaazar a#bandaazar").append("<p>"+data[0].bio_corta+"</p>");
-
+			$(".bandaazar a#bandaazar .info-artista").append("<p>"+data[0].bio_corta+"</p>");
+ 
 			var tiene_canciones = $.getJSON('http://api.brotecolectivo.com/canciones/?limit=1&banda='+data[0].id, function (dataB) {
 				recargando = false;
 				if(dataB[0]){

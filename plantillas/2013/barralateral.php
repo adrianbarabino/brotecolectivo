@@ -38,8 +38,11 @@ $bandabio = $banda->bio_corta;
 								<figure>
 									<img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/<?php echo $bandaurltag; ?>.jpg&w=300&h=200&zc=1" alt="">
 								</figure>
-							<p><?php echo $bandabio; ?></p>
-							</a>
+								<div class="info-artista">
+									
+								<?php echo $bandabio; ?>
+								</div>
+								</a>
 							<?php
 														$tiene_canciones = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/canciones/?limit=1&banda=".$bandaid));
 														if($tiene_canciones){ 
