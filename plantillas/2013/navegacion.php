@@ -58,7 +58,7 @@ function esta_activo($elemento){
 				
 			<div class="wrapper">
 					
-				<a href="index.html" id="logo"><img  src="/img/logo.png" alt="Tandem"></a>
+				<a href="javascript:void(0)" rel="address:/inicio" id="logo"><img  src="/img/logo.png" alt="Tandem"></a>
 				
 				<nav>
 					<ul id="nav" class="sf-menu">

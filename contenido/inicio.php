@@ -15,8 +15,61 @@
             <!-- posts list -->
             <div id="posts-list">
               <section id="inicio" style="display:none;">
-  
-            <h2>Home</h2>
+  <article class="format-standard">
+           
+            
+
+            
+            <div class="meta"></div>
+            
+            
+              <div class="feature-image">
+              <a href="http://brotecolectivo.com/entradas/20-06-agenda-del-finde.jpg" data-rel="prettyPhoto" ><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/20-06-agenda-del-finde.jpg&amp;w=150&amp;h=100&amp;zc=1" class="foto-entrada"></a>
+</div>
+            <div class="excerpt"><br>
+              <p>
+                Brote Colectivo es un sitio de información cultural referida a artistas que residen en la provincia de Santa Cruz.
+                Proponemos en este espacio brindarte la posibilidad de descubrir el labor de los diferentes artistas que se
+                encuentran en nuestro sitio.
+              </p>
+              <p>
+                Si es la primera vez que navegás en este sitio, recomendamos utilizar el reproductor de música que se encuentra en la parte inferior del sitio, y navegar mediante el menú de arriba en la sección de Noticias y Artistas.
+              </p>
+              </div>
+
+            
+          
+
+        </article>
+          <article class="slider">
+            
+          <h2>Últimas noticias</h2>
+
+
+          <div id="slide-home">
+ 
+          <ul class="bjqs">
+    <?php
+                  $noticias_al_azar = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/noticias/?limit=5&importantes=si&order=noticias.id&corto=si"));
+
+                    $indice_noticia = 0;
+    foreach ($noticias_al_azar as $noticia){
+                    $indice_noticia++;
+  $noticiatitulo = $noticia->titulo;
+  $noticiaurltag = $noticia->urltag;
+  $noticiacontenido = $noticia->contenido_corto;
+  ?>
+          <li><a href="javascript:void(0)" rel="address:/noticia/<?php echo $noticiaurltag; ?>"><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/entradas/<?php echo $noticiaurltag; ?>.jpg&w=500&h=200&zc=1" title="<?php echo $noticiatitulo; ?>"></a></li>
+
+
+<?php
+}
+?>
+
+</ul> 
+</div>
+          </article>
+
 
   
               
@@ -34,7 +87,7 @@
             
             
               <div class="feature-image">
-              <a href="http://brotecolectivo.com/entradas/<%= post.urltag %>.jpg" data-rel="prettyPhoto" title="Continuando con el objetivo de conocer artistas de nuestra provincia, dialogamos con Eduardo Guajardo, reconocido m&uacute;sico santacruce&ntilde;o de 45 a&ntilde;os, quien se define..."><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/<%= post.urltag %>.jpg&w=150&h=100&zc=1" alt="<%= post.titulo %>" class="foto-entrada"/></a>
+              <a href="http://brotecolectivo.com/entradas/<%= post.urltag %>.jpg" data-rel="prettyPhoto" title=""><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/<%= post.urltag %>.jpg&w=150&h=100&zc=1" alt="<%= post.titulo %>" class="foto-entrada"/></a>
 </div>
             <div class="excerpt">
             <%= post.contenido_corto %></div>
@@ -52,14 +105,25 @@
 
 
       <div id="single" style="display:none;">
-        <h1 class="titulo-single"></h1>
         <div id="mapa_evento"></div>
-        <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
+        <section class="info-evento">
+          <h2>
+
+        </h2>
+
+        <div class="seccion donde">
+        
+        </div>
+        <div class="seccion cuando" style="display:none;">
+            
+        </div>
+        </section>
+        <figure>
+          
+          <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
+        </figure>   
+
         <article class="bio-single">
-        </article>
-        <article class="ubicacion">
-          <h2></h2>
-          <h3></h3>
         </article>
       </div>
       <ul class="thumbnails" id="artistas" style="position:relative;left:0px;display:none;">

@@ -16,10 +16,11 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		var self = this;
 		$("#cargando_pagina").fadeOut();
 
+
 	},
 	root: function(){
 		$(document).attr("title", "Inicio"+titulo_inicial);
-		$("#cargar-mas").remove()
+		ocultarPaginas(false);
 		var self = this;
 		console.log("Root");
 		$('#inicio').fadeOut('slow', function() {
@@ -27,8 +28,6 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		});				$(".head").text("Bienvenido a Brote Colectivo");
 		$(".subhead").text("sitio de difusión cultural en Santa Cruz, Argentina");
 
-		$("body").removeClass("sin-sidebar");
-		$("aside#sidebar").fadeIn();
 		$(".current-menu-item").removeClass('current-menu-item');
 		$("nav ul#nav li:contains('inicio')").addClass('current-menu-item');
 		$('#artistas').slideUp('slow');
@@ -168,12 +167,15 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 		$("#fechas .loop").slideUp();
 		$("#contenidoTop").remove()
+		if($("#fechas .loop").length > 0){
+
 		$("#posts-list").append('<a href="javascript:void(0)" id="cargar-mas" data-cantidad="8" class="btn btn-info btn-large btn-block" >Cargar mas</a>');
+		}
 		$("#cargar-mas").on("click", function () {
 			var cantidad = $("#cargar-mas").attr("data-cantidad");
 			var nueva_cantidad = parseInt(cantidad)+8;
-			$(".mas-"+cantidad).slideDown();
-			if($(".mas-"+nueva_cantidad).length > 0){
+			$("#fechas .mas-"+cantidad).slideDown();
+			if($("#fechas .mas-"+nueva_cantidad).length > 0){
 
 			$("#cargar-mas").attr("data-cantidad", nueva_cantidad)
 
@@ -211,37 +213,55 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/fechas/'+id_de_articulo, function(info){
 				console.log(info);
 				console.log(info.contenido);
-				$("#mapa_evento").hide();
+				$("#mapa_evento").html("");
+				$("#mapa_evento").show();
 				coordenadas = info.coordenadas.split(',');
 	    		console.log(coordenadas);
+				iniciar_mapa(coordenadas[1], coordenadas[0],"", "mapa_evento");
 	    		
 				$(".head").text(info.titulo);
 				console.log("Aca estoy ahora");
 				$(".subhead").html(sacar_HTML(info.contenido_corto));
 				console.log("Aca estoy ahora¿?");
 				$(document).attr("title", info.titulo+titulo_inicial);
-
-				$("#single img").attr("src", "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/"+ info.urltag+".jpg&w=300&h=200&zc=1");
-
+				$("#single .info-evento > h2").html("")
+				$("#single .info-evento > h2").append('<span class="activo">¿Dónde?</span> <span class="small">¿Cuándo?</span>');
+				$("#single figure img").attr("src", "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/"+ info.urltag+".jpg&w=300&h=200&zc=1");
+				$("#single .seccion.donde").html("");
+				$("#single .seccion.donde").append("<h2>"+info.lugar+"</h2><h3>"+info.direccion+" <small>"+info.ciudad+"</small></h3>")
 				$("#contenidoTop").remove();
 				$("#cargando_info").remove();
+				fecha_inicio = moment(info.fecha_inicio);
+				fecha_actual = moment();
+				diferencia = fecha_inicio.diff(fecha_actual);
+
+				console.log("la diferencia es: "+fecha_inicio.diff(fecha_actual));
+				endDate = new Date(fecha_inicio.format("YYYY"),fecha_inicio.format("M")-1,fecha_inicio.format("DD"),fecha_inicio.format("HH"),fecha_inicio.format("mm"));
+				console.log('Date('+fecha_inicio.format("YYYY")+','+fecha_inicio.format("M")+'-1,'+fecha_inicio.format("DD")+','+fecha_inicio.format("HH")+','+fecha_inicio.format("mm")+');');
+				
+				$("#single .info-evento .cuando").countdown('destroy'); 
+				
+				if(diferencia < 0){
+
+				$("#single .info-evento .cuando").countdown({ since: endDate, format: 'DHM' });
+				$("#single .info-evento .cuando").prepend("<span>Este evento ya sucedió hace:</span><br>");
+				}else{
+					
+				$("#single .info-evento .cuando").countdown({ until: endDate, format: 'DHM' });
+				$("#single .info-evento .cuando").prepend("<span>El evento será dentro de:</span><br>");
+				}
+
 				$('#single').prepend(boton_volver);
 				$("#boton_volver").html('<i class="icon-long-arrow-left  icon-large"></i>  Volver a Agenda Cultural');
 				$('#single .bio-single').html(info.contenido);
-				$('#single .ubicacion h2').html(info.lugar);
-				$('#single .ubicacion h3').html(info.direccion);
-				$('#single > h1').html(info.titulo);
+				$(".info-evento span.small:contains('¿Dónde?')").click();
 			});
 		});
 		},
 
 	artistaSingle: function(id){
 		console.log("artistaSingle", id);
-		$("#cargar-mas").remove()
-		$("body").addClass("sin-sidebar");
-		$("aside#sidebar").fadeOut();
-		$('#noticias').fadeOut('slow')
-		$('#inicio').fadeOut('slow')
+		ocultarPaginas(true);
 		$('#artistas').fadeOut('10', function() {
 		    $('#artistas').fadeIn('slow');
 			$(".current-menu-item").removeClass('current-menu-item');
@@ -370,11 +390,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 	},
 	articleSingle : function(id){
 		console.log("articleSingle", id);
-		$("#cargar-mas").remove()
-
-		$('#artistas').fadeOut('slow')
-		$('#inicio').fadeOut('slow')
-		$('#fechas').fadeOut('slow')
+		ocultarPaginas(false);
 		$('#noticias').fadeOut('10', function() {
 		    $('#noticias').fadeIn('slow');
 			$(".current-menu-item").removeClass('current-menu-item');

@@ -6,6 +6,8 @@
 	var indice_modelo = 0;
 	var indice_artistas = 0;
 	var indice_fechas = 0;
+	var total_fechas;
+	var indice_fechas_nuevo = 0;
 	var init = true, 
     	state = window.history.pushState !== undefined;
     var pagina;
@@ -40,8 +42,9 @@
 		$('#single h1').html("");
 		$('#single h2').html("");
 		$('#single h3').html("");
+		$('#artistas div.reproductor').remove();
 		$('#single img').attr("src", "/img/cargando.gif");
-		$("#cargarmas").remove();
+		$("#cargar-mas").remove();
 		$("#contenidoTop").remove()
 
 
@@ -59,7 +62,13 @@
 		var markers = [];
 		map = new OpenLayers.Map(wrapper);
             map.addLayer(new OpenLayers.Layer.OSM());
+            console.log(lat);
 	    var lonLat = new OpenLayers.LonLat( lat, lon)
+	    	 .transform(
+	        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+	        map.getProjectionObject() // to Spherical Mercator Projection
+	      );
+	    var lonLat2 = new OpenLayers.LonLat( lat-=-0.03, lon)
 	      .transform(
 	        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
 	        map.getProjectionObject() // to Spherical Mercator Projection
@@ -71,7 +80,7 @@
 		map.addLayer(markers);
 
 		markers.addMarker(new OpenLayers.Marker(lonLat));
-		map.setCenter (lonLat, zoom);
+		map.setCenter (lonLat2, zoom);
 
 
         
@@ -163,6 +172,18 @@ function iniciar () {
 		}					
 		if($(this).text() == "Noticias"){
 		$(this).parent().parent().find(".noticias_relacionadas").slideDown();
+
+		}					
+		if($(this).text() == "¿Dónde?"){
+		$(this).parent().parent().find(".donde").slideDown();
+
+		}				
+		if($(this).text() == "Mapa"){
+		$(this).parent().parent().find(".mapa").slideDown();
+
+		}			
+		if($(this).text() == "¿Cuándo?"){
+		$(this).parent().parent().find(".cuando").slideDown();
 
 		}
 	});
@@ -271,27 +292,27 @@ $(document).ready(function(){
 		url = url[1];
 		Backbone.history.navigate(url+'/', {trigger:true})
 	})
-	$(document).on("click", "#info_relacionada_artista li a", function(){
+	function navegacion (){
 		var url = $(this).attr("rel");
 		console.log(url);
 		url = url.split(":")
 		url = url[1];
 		Backbone.history.navigate(url+'/', {trigger:true})
-	})
 
-	$(document).on("click", "#reproductor .artist a", function(){
-		var url = $(this).attr("rel");
-		console.log(url);
-		url = url.split(":")
-		url = url[1];
-		Backbone.history.navigate(url+'/', {trigger:true})
-	})
+	}
+
+
+          	$(document).on("click", "#info_relacionada_artista li a", navegacion);
+	$(document).on("click", "#reproductor .artist a", navegacion);
+	$(document).on("click", "a#logo", navegacion);
+	
+	$(document).on("click", ".bandaazar a", navegacion);
 		
 	console.log("Antes de cargas fechas");
 	console.time('carga-fechas');
 var fechasxhr = $.ajax({
-		url: 'http://api.brotecolectivo.com/fechas/?order=fechas.id&limit=15&order2=desc&corto=si',
-		async: true,
+		url: 'http://api.brotecolectivo.com/fechas/?order=fechas.id&nuevas=si&order2=desc&corto=si',
+		async: false,
 		dataType: "json"
 	}).done(function(data){
 			data.forEach(function(item){

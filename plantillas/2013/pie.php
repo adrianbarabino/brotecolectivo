@@ -119,10 +119,24 @@ $noticiaurltag = $noticia->urltag;
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="http://cdn.jquerytools.org/1.2.7/tiny/jquery.tools.min.js"></script>
     <script src="/js/libs/tabs.js"></script>
-    <script src="/js/libs/date.js"></script>
+    <!-- <script src="/js/libs/date.js"></script> -->
     <script  src="/js/libs/hoverIntent.js"></script>
     <script  src="/js/libs/superfish.js"></script>
     <script  src="/js/libs/supersubs.js"></script>
+    <script  src="/js/libs/bjqs.js"></script>
+    <script>
+    function crear_slide() {
+        $('#slide-home').bjqs({
+            animtype      : 'slide',
+            height        : 220,
+            width         : 500
+          });  
+        }
+    $(document).on("ready", function () {
+        setTimeout(crear_slide, 1000);
+
+    });
+    </script>
 
     <!--[if IE 6]>
     <link rel="stylesheet" href="css/ie6-hacks.css" media="screen" />
@@ -263,6 +277,8 @@ function YaCargoLetras(){
                 </script>
     <script src="http://openlayers.org/dev/OpenLayers.js"></script>
     <script src="/js/libs/bootstrap.js"></script>
+    <script src="/js/libs/countdown.js"></script>
+    <script src="/js/libs/moment.min.js"></script>
     <script src="/js/libs/prefixfree.min.js"></script>
     <script src="/js/libs/modernizr.js"></script>
     <script src="/js/libs/jplayer.js"></script>
@@ -300,6 +316,7 @@ request = $.getJSON("http://api.brotecolectivo.com/canciones/", function (data) 
                     artist: "<a href='javascript:void(0);' rel='address:/artistas/"+val.banda_urltag+"'>"+val.banda+"</a>",
                     cover: "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/"+val.banda_urltag+".jpg&w=125&h=125&zc=1",
                     oga: val.permalink,
+                    mp3: val.permalink.substring(0, val.permalink.length-3)+"mp3",
                     genero: val.genero,
                     duration: val.duracion,
                     urltag: val.urltag

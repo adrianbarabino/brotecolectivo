@@ -16,6 +16,7 @@ function leer_contenido_completo($url){
     <title><?php echo $configuracion['tituloweb']; ?> - Inicio</title>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/estilo.php" />
+    <link rel="stylesheet" type="text/css" href="/css/bjqs.css" />
 
     <!--[if lt IE 9]>
       <script src="/js/css3-mediaqueries.js"></script>
@@ -30,15 +31,16 @@ function leer_contenido_completo($url){
     
     
     <!-- GOOGLE FONTS -->
-    <link href='http://fonts.googleapis.com/css?family=Allan:700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Allan' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     
     <!-- Lessgrid -->
     <link rel="stylesheet" media="all" href="/css/lessgrid.css"/>
-    
+    <?php
 
-    
+    require("seo.php");
+    ?>
 
   </head>
   
