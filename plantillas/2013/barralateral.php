@@ -3,7 +3,7 @@
 	        	<aside id="sidebar">
 	        		
 	        		<div class="block">
-		        		<h4>Proximos recitales</h4>
+		        		<h4>Proximos eventos</h4>
 						<ul>
 							<?php
 							$fechas_al_azar = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/fechas/?limit=5&nuevas=si&corto=si"));
