@@ -8,8 +8,34 @@ function leer_contenido_completo($url){
    return $texto;
 }
 
+function recortar_texto($texto, $longitud = 180) { 
+if((strlen($texto) > $longitud)) { 
+    $pos_espacios = strpos($texto, ' ', $longitud) - 1; 
+    if($pos_espacios > 0) { 
+        $caracteres = count_chars(substr($texto, 0, ($pos_espacios + 1)), 1); 
+        if ($caracteres[ord('<')] > $caracteres[ord('>')]) { 
+            $pos_espacios = strpos($texto, ">", $pos_espacios) - 1; 
+        } 
+        $texto = substr($texto, 0, ($pos_espacios + 1)).''; 
+    } 
+    if(preg_match_all("|(<([\w]+)[^>]*>)|", $texto, $buffer)) { 
+        if(!empty($buffer[1])) { 
+            preg_match_all("|</([a-zA-Z]+)>|", $texto, $buffer2); 
+            if(count($buffer[2]) != count($buffer2[1])) { 
+                $cierrotags = array_diff($buffer[2], $buffer2[1]); 
+                $cierrotags = array_reverse($cierrotags); 
+                foreach($cierrotags as $tag) { 
+                        $texto .= '</'.$tag.'>'; 
+                } 
+            } 
+        } 
+    } 
+ 
+} 
+return $texto; 
+} 
 ?><!doctype html>
-<html class="no-js" xmlns:fb="http://ogp.me/ns/fb#">
+<html lang="es" class="no-js" xmlns:fb="http://ogp.me/ns/fb#">
 
   <head>
     <meta charset="utf-8"/>
@@ -39,7 +65,7 @@ function leer_contenido_completo($url){
     <link rel="stylesheet" media="all" href="/css/lessgrid.css"/>
     <?php
 
-    require("seo.php");
+    require($configuracion['ruta_plantillas']."./seo.php");
     ?>
 
   </head>

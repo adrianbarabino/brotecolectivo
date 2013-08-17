@@ -6,22 +6,22 @@
 
 
 
-require("cabecera.php");
+require($configuracion['ruta_plantillas']."./cabecera.php");
 
 
 
-require("navegacion.php");
+require($configuracion['ruta_plantillas']."./navegacion.php");
 
 
 
-require("cuerpo.php");
+require($configuracion['ruta_plantillas']."./cuerpo.php");
 
 
-require("barralateral.php");
+require($configuracion['ruta_plantillas']."./barralateral.php");
 
 
 
-require("pie.php");
+require($configuracion['ruta_plantillas']."./pie.php");
 
 
 
