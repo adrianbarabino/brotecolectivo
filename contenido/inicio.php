@@ -26,7 +26,7 @@
               <div class="feature-image">
               <a href="http://brotecolectivo.com/entradas/20-06-agenda-del-finde.jpg" data-rel="prettyPhoto" ><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/20-06-agenda-del-finde.jpg&amp;w=150&amp;h=100&amp;zc=1" class="foto-entrada"></a>
 </div>
-            <div class="excerpt"><br>
+            <div class="excerpt">
               <p>
                 Brote Colectivo es un sitio de información cultural referida a artistas que residen en la provincia de Santa Cruz.
                 Proponemos en este espacio brindarte la posibilidad de descubrir el labor de los diferentes artistas que se

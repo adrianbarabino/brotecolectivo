@@ -305,6 +305,8 @@ $(document).ready(function(){
           	$(document).on("click", "#info_relacionada_artista li a", navegacion);
 	$(document).on("click", "#reproductor .artist a", navegacion);
 	$(document).on("click", "a#logo", navegacion);
+	$(document).on("click", "a#pastel", navegacion);
+	$(document).on("click", ".bjqs > li > a", navegacion);
 	
 	$(document).on("click", ".bandaazar a", navegacion);
 		

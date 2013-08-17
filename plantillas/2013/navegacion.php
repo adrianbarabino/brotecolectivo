@@ -58,7 +58,8 @@ function esta_activo($elemento){
 				
 			<div class="wrapper">
 					
-				<a href="javascript:void(0)" rel="address:/inicio" id="logo"><img  src="/img/logo.png" alt="Tandem"></a>
+				<a href="javascript:void(0)" rel="address:/inicio" id="logo"><img  src="/img/logo.png" alt="Brote Colectivo"></a>
+				<a href="javascript:void(0)" rel="address:/noticia/primer-aniversario" id="pastel"><img  src="/img/pastel.png" alt="1 Año de Brote Colectivo"></a>
 				
 				<nav>
 					<ul id="nav" class="sf-menu">
@@ -92,9 +93,9 @@ function esta_activo($elemento){
 			<!-- social -->
 			<div id="social-bar">
 				<ul>
-					<li><a href="http://www.facebook.com"  title="Become a fan"><img src="/img/social/facebook_32.png"  alt="Facebook" /></a></li>
-					<li><a href="http://www.twitter.com" title="Follow my tweets"><img src="/img/social/twitter_32.png"  alt="Facebook" /></a></li>
-					<li><a href="http://www.google.com"  title="Add to the circle"><img src="/img/social/google_plus_32.png" alt="Facebook" /></a></li>
+					<li><a href="https://www.facebook.com/brotecolectivo"  title="Brote Colectivo en Facebook"><img src="/img/social/facebook_32.png"  alt="Facebook" /></a></li>
+					<li><a href="https://www.twitter.com/brotecolectivo" title="Seguinos!"><img src="/img/social/twitter_32.png"  alt="Facebook" /></a></li>
+					<li><a href="https://plus.google.com/117825299837047703581/posts"  title="Agreganos a tus círculos"><img src="/img/social/google_plus_32.png" alt="Facebook" /></a></li>
 				</ul>
 			</div>
 			<!-- ENDS social -->
