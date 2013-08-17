@@ -23,22 +23,40 @@ $fechabio = $fecha->contenido_corto;
 	        		</div>
 	        		
 	        		<div class="block bandaazar">
-		        		<h4>Artista al azar</h4>
+		        		<h4>Artista al azar <i class="icon-refresh"></i></h4>
 							<?php
 							$bandas_al_azar = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/artistas/?limit=1&random=si&corto=si"));
 foreach ($bandas_al_azar as $banda){
      
+$bandaid = $banda->id;
 $bandanombre = $banda->nombre;
 $bandaurltag = $banda->urltag;
 $bandabio = $banda->bio_corta;
 ?>
-							<a href="javascript:void(0);" rel="address:/artistas/<?php echo $bandaurltag; ?>" title="<?php echo $bandabio; ?>">
+							<a href="javascript:void(0);" id="bandaazar" rel="address:/artistas/<?php echo $bandaurltag; ?>" title="<?php echo $bandabio; ?>">
 								<h2><?php echo $bandanombre; ?></h2>
 								<figure>
 									<img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/<?php echo $bandaurltag; ?>.jpg&w=300&h=200&zc=1" alt="">
 								</figure>
 							<p><?php echo $bandabio; ?></p>
 							</a>
+							<?php
+														$tiene_canciones = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/canciones/?limit=1&banda=".$bandaid));
+														if($tiene_canciones){ 
+															?>
+															<span id="escuchar-banda" style="margin-top: -4.7em;margin-left: 0.5em;color:white;" class="btn btn-small btn-success azarfinal" href="javascript:void(0)" data-urltag="<?php echo $bandaurltag; ?>">
+  <i class="icon-play-sign"></i> Escuchar</span>
+  <?php
+														}else{ 
+?>
+<a id="info-banda" style="margin-top: -4.7em;margin-left: 0.5em;color:white" class="btn btn-small btn-info link_brote azarfinal" rel="address:/artistas/<?php echo $bandaurltag; ?>" >
+  <i class="icon-info-sign"></i> Ver más</a>
+<?php
+														};
+
+
+							?>
+							
 							<?php
 						}
 						?>

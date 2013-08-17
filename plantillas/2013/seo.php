@@ -252,10 +252,11 @@ $palabras_clave = $resultado['tags'];
 $resultado = $consulta->fetch_assoc();
                   $noticia = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/fechas/".$resultado['id']."/"));
 
-$fecha_contenido = $noticia[0]->contenido;
-$fecha_titulo = $noticia[0]->titulo;
-$fecha_lugar = $noticia[0]->lugar;
-$palabras_clave = $noticia[0]->tags;
+$fecha_contenido = $noticia->contenido;
+$fecha_titulo = $noticia->titulo;
+$fecha_lugar = $noticia->lugar;
+$palabras_clave = $noticia->tags;
+$fecha_inicio_fb = $noticia->fecha_corta;
 ?>
  <script type="text/javascript">
   function asistireRecital()

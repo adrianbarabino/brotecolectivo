@@ -4,6 +4,7 @@
 	var titulo_inicial = " - Brote Colectivo";
 	var anterior;
 	var indice_modelo = 0;
+	var recargando = false;
 	var indice_artistas = 0;
 	var indice_fechas = 0;
 	var total_fechas;
@@ -46,7 +47,42 @@
 		$('#single img').attr("src", "/img/cargando.gif");
 		$("#cargar-mas").remove();
 		$("#contenidoTop").remove()
+		$(".fb-comments").remove();
 
+
+	}
+	function artista_al_azar (info) {
+		if(recargando == false){
+			recargando = true;
+			$(".bandaazar a#bandaazar p").remove();
+			$(".bandaazar .azarfinal").remove();
+			$(".bandaazar a#bandaazar").attr("cargando...");
+			$(".bandaazar a#bandaazar figure img").attr("src", "http://www.brotecolectivo.com/img/cargando.gif");
+		var artista = $.getJSON("http://api.brotecolectivo.com/artistas/?limit=1&random=si&corto=si", function (data) {
+
+
+
+			$(".bandaazar a#bandaazar").attr("rel", "address:/artistas/"+data[0].urltag)
+			$(".bandaazar a#bandaazar").attr("title", data[0].bio_corta)
+			$(".bandaazar a#bandaazar h2").html(data[0].nombre);
+			$(".bandaazar a#bandaazar figure img").attr("src", "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/"+data[0].urltag+".jpg&w=300&h=200&zc=1");
+			$(".bandaazar a#bandaazar").append("<p>"+data[0].bio_corta+"</p>");
+
+			var tiene_canciones = $.getJSON('http://api.brotecolectivo.com/canciones/?limit=1&banda='+data[0].id, function (dataB) {
+				recargando = false;
+				if(dataB[0]){
+					$(".bandaazar").append('<span id="escuchar-banda" style="margin-top: -4.7em;margin-left: 0.5em;color:white;" class="btn btn-small btn-success azarfinal" href="javascript:void(0)" data-urltag="'+data[0].urltag+'"><i class="icon-play-sign"></i> Escuchar</span>');
+
+				}else{
+
+					$(".bandaazar").append('<a id="info-banda" style="margin-top: -4.7em;margin-left: 0.5em;color:white" class="btn btn-small btn-info link_brote azarfinal" rel="address:/artistas/'+data[0].urltag+'" ><i class="icon-info-sign"></i> Ver más</a>');
+
+
+				}
+			})
+		});
+
+		}
 
 	}
 	function cambiar_thumb (url, ancho, alto) {
@@ -151,7 +187,11 @@ function iniciar () {
         speed: 200
     });
     
-
+	$(document).on("click", "#escuchar-banda", function(){
+		console.log("Hice click!");
+	 $("#reproductor [rel*='"+$(this).attr('data-urltag')+"']:first").parent().parent().find(".title").trigger("click");
+	});
+	
 	$(document).on("click", "h2 span.small", function(){
 		// Cuando hago click en un botón h2 spam small 
 		// hago de que se desactive el activo y (this)
@@ -306,14 +346,16 @@ $(document).ready(function(){
 	$(document).on("click", "#reproductor .artist a", navegacion);
 	$(document).on("click", "a#logo", navegacion);
 	$(document).on("click", "a#pastel", navegacion);
+	$(document).on("click", "a.link_brote", navegacion);
 	$(document).on("click", ".bjqs > li > a", navegacion);
+	$(document).on("click", ".bandaazar h4 i", artista_al_azar);
 	
 	$(document).on("click", ".bandaazar a", navegacion);
 		
 	console.log("Antes de cargas fechas");
 	console.time('carga-fechas');
 var fechasxhr = $.ajax({
-		url: 'http://api.brotecolectivo.com/fechas/?order=fechas.id&nuevas=si&order2=desc&corto=si',
+		url: 'http://api.brotecolectivo.com/fechas/?order=fechas.fecha_inicio&order2=asc&nuevas=si&order2=desc&corto=si',
 		async: false,
 		dataType: "json"
 	}).done(function(data){

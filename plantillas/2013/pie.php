@@ -308,7 +308,7 @@ function Cargar_Cancion_Actual () {
   }
 var request;
 var myPlaylist = [];
-request = $.getJSON("http://api.brotecolectivo.com/canciones/", function (data) {
+request = $.getJSON("http://api.brotecolectivo.com/canciones/?order2=asc&order=bandas.nombre", function (data) {
             $.each(data, function (i, val) {
                 
                 var elemento = {

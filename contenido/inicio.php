@@ -3,8 +3,8 @@
             <div id="masthead">
           <span class="head">Bienvenido a Brote Colectivo</span><span class="subhead">sitio de difusión cultural en Santa Cruz, Argentina</span>
           <ul class="breadcrumbs">
-            <li><a href="index.php">home</a></li>
-            <li>/ bienvenido</li>
+            <li ><a href="javascript:void(0)" id="bread1">home</a></li>
+            <li id="bread2">/ bienvenido</li>
           </ul>
         </div>
             <!-- ENDS masthead -->
@@ -82,7 +82,7 @@
             
             <h1><a href="javascript:void(0);" class="post-heading"><%= post.titulo %></a></h1>
             <div class="meta"> Publicado el <%= post.fecha_corta %>
-          , Artistas relacionados: <%= post.bandas %>  - <fb:comments-count href="http://www.brotecolectivo.com/noticia/<%= post.urltag %>/"></fb:comments-count> comentarios
+          , Artistas relacionados: <%= post.bandas %>  - <div style="display:inline-block; "class="fb-comments-count" data-href="http://www.brotecolectivo.com/noticia/<%= post.urltag %>/">0</div> comentarios
             </div>
             
             
