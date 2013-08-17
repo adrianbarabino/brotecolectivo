@@ -68,11 +68,11 @@ $bandabio = $banda->bio_corta;
 	        		        		<div class="block links">
 	        		        			<h4>Sitios amigos</h4>
 	        		        			<ul>
-	        		        				<li class="cat-item"><a href="http://www.eldiarionuevodia.com.ar/">El Diario Nuevo Día</a></li>
-	        		        				<li class="cat-item"><a href="http://cuencaunder.blogspot.com.ar/">Cuenca Under</a></li>
-	        		        				<li class="cat-item"><a href="http://factoreme.blogspot.com.ar/">Factor Eme</a></li>
-	        		        				<li class="cat-item"><a href="http://santacruzmetal-rg.blogspot.com.ar/">Santa Cruz Metal</a></li>
-	        		        				<li class="cat-item"><a href="http://fmabril.net/">FM Abril</a></li>
+	        		        				<li class="cat-item"><a target="_blank" href="http://www.eldiarionuevodia.com.ar/">El Diario Nuevo Día</a></li>
+	        		        				<li class="cat-item"><a target="_blank" href="http://cuencaunder.blogspot.com.ar/">Cuenca Under</a></li>
+	        		        				<li class="cat-item"><a target="_blank" href="http://factoreme.blogspot.com.ar/">Factor Eme</a></li>
+	        		        				<li class="cat-item"><a target="_blank" href="http://santacruzmetal-rg.blogspot.com.ar/">Santa Cruz Metal</a></li>
+	        		        				<li class="cat-item"><a target="_blank" href="http://fmabril.net/">FM Abril</a></li>
 	        		        			</ul>
 	        		        		</div>
 	        		        		<div class="block_publi">

@@ -85,12 +85,12 @@ $noticiaurltag = $noticia->urltag;
            </div>       
            <div id="copylogos">
                
-                    <a href="https://www.github.com/adrianbarabino/brotecolectivo/" title="BroteColectivo está en Github!">
+                    <a href="https://www.github.com/adrianbarabino/brotecolectivo/" target="_blank" title="BroteColectivo está en Github!">
                             <figure>
                                 <img src="https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Logo.png" alt="">
                             </figure>  
                      </a>    
-                      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_AR" title="Brote colectivo está bajo una Licencia Creative Commons Atribución-NoComercial-CompartirIgual 3.0 Unported">    
+                      <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_AR" title="Brote colectivo está bajo una Licencia Creative Commons Atribución-NoComercial-CompartirIgual 3.0 Unported">    
                     <figure style="width:14%">
                         <img alt="Licencia Creative Commons" style="border-width:0" src="http://mirrors.creativecommons.org/presskit/logos/cc.logo.large.png">
                     </figure>    
