@@ -14,7 +14,7 @@ $fechacorta = $fecha->fecha_corta;
 $fechaurltag = $fecha->urltag;
 $fechabio = $fecha->contenido_corto;
 ?>
-							<li class="cat-item"><a href="javascript:void(0);" rel="address:/agenda-cultural/<?php echo $fechaurltag; ?>" title="<?php echo $fechabio; ?>"><?php echo $fechacorta; ?> - <?php echo $fechanombre; ?></a></li>
+							<li class="cat-item"><a href="javascript:void(0);" rel="address:/agenda-cultural/<?php echo $fechaurltag; ?>" class="link_brote" title="<?php echo $fechabio; ?>"><?php echo $fechacorta; ?> - <?php echo $fechanombre; ?></a></li>
 							<?php
 						}
 						?>
