@@ -116,8 +116,8 @@ $noticiaurltag = $noticia->urltag;
 
 <div id="reproductor" style="display:none;"></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <script src="http://cdn.jquerytools.org/1.2.7/tiny/jquery.tools.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
     <script src="/js/libs/tabs.js"></script>
     <!-- <script src="/js/libs/date.js"></script> -->
     <script  src="/js/libs/hoverIntent.js"></script>
@@ -278,6 +278,7 @@ function YaCargoLetras(){
     <script src="http://openlayers.org/dev/OpenLayers.js"></script>
     <script src="/js/libs/bootstrap.js"></script>
     <script src="/js/libs/countdown.js"></script>
+    <script src="/js/libs/lightbox-2.6.min.js"></script>
     <script src="/js/libs/moment.min.js"></script>
     <script src="/js/libs/prefixfree.min.js"></script>
     <script src="/js/libs/modernizr.js"></script>

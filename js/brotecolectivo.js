@@ -44,7 +44,7 @@
 		$('#single h2').html("");
 		$('#single h3').html("");
 		$('#artistas div.reproductor').remove();
-		$('#single img').attr("src", "/img/cargando.gif");
+		$('#single a figure img').attr("src", "/img/cargando.gif");
 		$("#cargar-mas").remove();
 		$("#contenidoTop").remove()
 		$(".fb-comments").remove();
@@ -176,17 +176,16 @@ $(document).on("eventosCargados", function (info, id_de_articulo) {
 $(document).on("ready", iniciar);
 
 function iniciar () {
-	$('#to-top').click(function(){
-		$('html, body').animate({ scrollTop: 0 }, 300);
+		$(document).on("click", "#boton_volver", function(){
+		console.log("Click en el boton volver");
+			var url = window.location.pathname.split("/")[1]
+		if(url == "noticia"){
+			url = "noticias";
+		}
+		Backbone.history.navigate(url+"/", {trigger:true});
+
+		$("#boton_volver").remove();
 	});
-		
-	$("ul.sf-menu").superfish({ 
-        animation: {height:'show'},   // slide-down effect without fade-in 
-        delay:     200 ,              // 1.2 second delay on mouseout 
-        autoArrows:  false,
-        speed: 200
-    });
-    
 	$(document).on("click", "#escuchar-banda", function(){
 		console.log("Hice click!");
 	 $("#reproductor [rel*='"+$(this).attr('data-urltag')+"']:first").parent().parent().find(".title").trigger("click");
@@ -227,15 +226,19 @@ function iniciar () {
 
 		}
 	});
-	$(document).on("click", "#boton_volver", function(){
-			var url = window.location.pathname.split("/")[1]
-		if(url == "noticia"){
-			url = "noticias";
-		}
-		Backbone.history.navigate(url+"/", {trigger:true});
-
-		$("#boton_volver").remove();
+	$('#to-top').click(function(){
+		$('html, body').animate({ scrollTop: 0 }, 300);
 	});
+		
+	$("ul.sf-menu").superfish({ 
+        animation: {height:'show'},   // slide-down effect without fade-in 
+        delay:     200 ,              // 1.2 second delay on mouseout 
+        autoArrows:  false,
+        speed: 200
+    });
+    
+
+
 	
 	//##########################################
 	// Resize event

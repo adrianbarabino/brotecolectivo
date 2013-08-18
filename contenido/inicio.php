@@ -87,7 +87,7 @@
             
             
               <div class="feature-image">
-              <a href="http://brotecolectivo.com/entradas/<%= post.urltag %>.jpg" data-rel="prettyPhoto" title=""><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/<%= post.urltag %>.jpg&w=150&h=100&zc=1" alt="<%= post.titulo %>" class="foto-entrada"/></a>
+              <a href="http://brotecolectivo.com/entradas/<%= post.urltag %>.jpg" rel="lightbox" title=""><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=http://brotecolectivo.com/entradas/<%= post.urltag %>.jpg&w=150&h=100&zc=1" alt="<%= post.titulo %>" class="foto-entrada"/></a>
 </div>
             <div class="excerpt">
             <%= post.contenido_corto %></div>
@@ -118,10 +118,11 @@
             
         </div>
         </section>
-        <figure>
-          
-          <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
-        </figure>   
+        <a class="foto_evento" data-lightbox="foto_evento"  rel="lightbox" href="javascript:void(0)">
+          <figure>
+            <img data-src="holder.js/300x200" alt="300x200"  src="/img/cargando.gif" alt="">
+          </figure>   
+        </a>
 
         <article class="bio-single">
         </article>
@@ -130,7 +131,9 @@
          <script id="Artista_tpl" type="text/template">
          
         <section class="thumbnail" style="padding:0;">
+        <a href="javascript:void(0)" data-tipo="lightbox">
           <img data-src="holder.js/300x200" alt="300x200"  src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/contenido/imagenes/bandas/<%= post.urltag %>.jpg&w=300&h=200&zc=1" alt="">
+        </a>
           <div class="caption">
             <h3><%= post.nombre %></h3>
             <div class="bio">
@@ -146,7 +149,7 @@
          <script id="Fecha_tpl" type="text/template">
          
         <section class="thumbnail" style="padding:0;">
-          <img data-src="holder.js/300x200" alt="300x200"  src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/<%= post.urltag %>.jpg&w=300&h=200&zc=1" alt="">
+            <img data-src="holder.js/300x200" alt="300x200"  src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/<%= post.urltag %>.jpg&w=300&h=200&zc=1" alt="">
           <div class="caption">
             <h3><%= post.titulo %></h3>
             <div class="bio">
@@ -158,16 +161,6 @@
         </script>
   
     </ul>
-    <!-- sample template for pagination UI -->
-    <script type="text/html" id="tmpServerPagination">
-      <div class="breadcrumb">
-
-          <% if (currentPage < totalPages) { %>
-            <a href="#" class="btn long servernext">Show More</a>
-          <% } %>
-
-        </div>
-      </script>
 <div id="pagination"></div>
             </div>
             <!-- ENDS posts list -->

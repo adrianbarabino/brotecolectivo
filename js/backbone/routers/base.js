@@ -101,6 +101,8 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			$(this).html($(this).parent().parent().parent().parent().attr("bio_corta"));
 			padre = $(this).parent();
 			$('#artistas .abierto h3').slideDown();
+			$('#artistas .abierto a[data-tipo^=lightbox]').attr("href", "javascript:void(0)")
+			$('#artistas .abierto a[data-tipo^=lightbox]').attr("rel", "")
 			$("#info_relacionada_artista").remove();
 			// $('#artistas .abierto .read-more').slideDown();
 			var url_foto = $("#artistas .abierto img").attr("src");
@@ -153,6 +155,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$("#bread1").text("home");
 		$("#bread2").text("agenda cultural");
 		$('#fechas > div').show();
+
 
 		$("#fechas .abierto .bio").each(function (i, info) {
 			$(this).html($(this).parent().parent().parent().parent().attr("contenido_corto"));
@@ -207,6 +210,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		fechaSingle: function(id){
 		console.log("fechaSingle", id);
 		ocultarPaginas(true);
+
 		$('#fechas').fadeOut('10', function() {
 		    $('#single').fadeIn('slow');
 			$(".current-menu-item").removeClass('current-menu-item');
@@ -241,8 +245,10 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$(document).attr("title", info.titulo+titulo_inicial);
 				$("#single .info-evento > h2").html("")
 				$("#single .info-evento > h2").append('<span class="activo">¿Dónde?</span> <span class="small">¿Cuándo?</span>');
+				$("#single a.foto_evento").attr("href", "http://www.brotecolectivo.com/fechas/"+ info.urltag+".jpg");
 				$("#single figure img").attr("src", "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/"+ info.urltag+".jpg&w=300&h=200&zc=1");
 				$("#single .seccion.donde").html("");
+
 				$("#single .seccion.donde").append("<h2>"+info.lugar+"</h2><h3>"+info.direccion+" <small>"+info.ciudad+"</small></h3>")
 				$("#contenidoTop").remove();
 				$("#cargando_info").remove();
@@ -314,6 +320,8 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$("#boton_volver").html('<i class="icon-long-arrow-left  icon-large"></i>  Volver a Artistas');
 				$('#artistas #'+id_de_articulo+' .bio').html(info.bio);
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
+				$('#artistas #'+id_de_articulo+' a[data-tipo^=lightbox]').attr("href", "http://www.brotecolectivo.com/contenido/imagenes/bandas/"+info.urltag+".jpg")
+				$('#artistas #'+id_de_articulo+' a[data-tipo^=lightbox]').attr("rel", "lightbox")
 				$('#artistas #'+id_de_articulo+' h3').slideUp();
 				$('#artistas #'+id_de_articulo+' .read-more').slideUp();
 
