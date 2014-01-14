@@ -53,9 +53,7 @@ return $texto;
     <link rel="stylesheet" media="screen" href="/css/lightbox.css" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
-    
 
-    
     
     <!-- GOOGLE FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Allan' rel='stylesheet' type='text/css'>

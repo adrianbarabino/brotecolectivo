@@ -1,6 +1,5 @@
 
 
-
         <footer>
             <div class="wrapper">
             
@@ -13,7 +12,7 @@
 
                             <?php
 
-$ultimas_noticias = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/noticias/?order2=desc&limit=5"));
+$ultimas_noticias = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/noticias/?order2=desc&limit=5&importantes=si"));
 foreach ($ultimas_noticias as $noticia){
     
 $noticiafecha = date("F d, Y", $noticia->fecha);    
@@ -123,6 +122,18 @@ $noticiaurltag = $noticia->urltag;
     <script  src="/js/libs/hoverIntent.js"></script>
     <script  src="/js/libs/superfish.js"></script>
     <script  src="/js/libs/supersubs.js"></script>
+ <script type="text/javascript" src="/js/storyjs-embed.js"></script>
+        <script>
+  function crear_bandas_historicas (info) {
+    createStoryJS({
+            type:       'timeline',
+            width:      '480',
+            height:     '800',
+            source:     'https://docs.google.com/spreadsheet/ccc?key=0AvUjGlz70VGCdHoxRmR4VVdGWjZwUHZudjRXa0xJcGc&usp=sharing&output=html',
+            embed_id:   'my-timeline'
+        });
+  }
+        </script>
     <script  src="/js/libs/bjqs.js"></script>
     <script>
     function crear_slide() {
@@ -134,10 +145,12 @@ $noticiaurltag = $noticia->urltag;
         }
     $(document).on("ready", function () {
         setTimeout(crear_slide, 1000);
+        setTimeout(crear_bandas_historicas, 1000);
 
     });
     </script>
-
+    
+    
     <!--[if IE 6]>
     <link rel="stylesheet" href="css/ie6-hacks.css" media="screen" />
     <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
@@ -275,7 +288,7 @@ function YaCargoLetras(){
   left: 'auto' // Left position relative to parent in px
 };
                 </script>
-    <script src="http://openlayers.org/dev/OpenLayers.js"></script>
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
     <script src="/js/libs/bootstrap.js"></script>
     <script src="/js/libs/countdown.js"></script>
     <script src="/js/libs/lightbox-2.6.min.js"></script>
@@ -288,6 +301,19 @@ function YaCargoLetras(){
     <script src="/js/libs/backbone.min.js"></script>    
     <script src="/js/libs/jquery.youtubeplaylist.js"></script>    
     <script src="/js/init.js"></script>    
+   <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36574161-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
     <script src="/js/backbone/models/article.js"></script>    
     <script src="/js/backbone/models/artista.js"></script>    
     <script src="/js/backbone/models/fecha.js"></script>    
@@ -299,7 +325,9 @@ function YaCargoLetras(){
     <script src="/js/backbone/views/fecha.js"></script>    
     <script src="/js/backbone/routers/base.js"></script>    
     <script src="/js/brotecolectivo.js"></script>    
+ 
     <script>
+
 function Cargar_Cancion_Actual () {
     if(localStorage.getItem('reproductor').length > 0){
         console.log("Estoy cargando la cancion actual")

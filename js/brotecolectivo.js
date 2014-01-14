@@ -22,9 +22,11 @@
 	paginacion_actual = "";
 	artistas_json = [];
 	var map;
+var pageTracker = _gat._getTracker('UA-36574161-1');
 	var objeto_reproductor = new Object();
 
 	function ocultarPaginas (side) {
+	
 		if(side == true){
 
 		$("body").addClass("sin-sidebar");
@@ -51,6 +53,7 @@
 
 
 	}
+
 	function artista_al_azar (info) {
 		if(recargando == false){
 			recargando = true;
@@ -186,7 +189,7 @@ function iniciar () {
 
 		$("#boton_volver").remove();
 	});
-	$(document).on("click", "#escuchar-banda", function(){
+	$(document).on("click", "#escuchar-banda, #escuchar-banda-single", function(){
 		console.log("Hice click!");
 	 $("#reproductor [rel*='"+$(this).attr('data-urltag')+"']:first").parent().parent().find(".title").trigger("click");
 	});
@@ -302,7 +305,7 @@ $(document).ready(function(){
 		$('#fechas').append(view.$el);
 	});
 
-	var xhr = $.get('http://api.brotecolectivo.com/noticias/?order2=desc&corto=si');
+	var xhr = $.get('http://api.brotecolectivo.com/noticias/?order2=desc&corto=si&importantes=si');
 
 	xhr.done(function(data){
 		data.forEach(function(item){
@@ -358,7 +361,7 @@ $(document).ready(function(){
 	console.log("Antes de cargas fechas");
 	console.time('carga-fechas');
 var fechasxhr = $.ajax({
-		url: 'http://api.brotecolectivo.com/fechas/?order=fechas.fecha_inicio&order2=asc&nuevas=si&order2=desc&corto=si',
+		url: 'http://api.brotecolectivo.com/fechas/?nuevas=si&order2=desc&corto=si&order=fechas.fecha_inicio&order2=asc',
 		async: false,
 		dataType: "json"
 	}).done(function(data){

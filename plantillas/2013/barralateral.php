@@ -4,9 +4,9 @@
 	        		
 	        		<div class="block">
 		        		<h4>Proximos eventos</h4>
-						<ul>
+						<ul style="width:105%">
 							<?php
-							$fechas_al_azar = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/fechas/?limit=5&nuevas=si&corto=si"));
+							$fechas_al_azar = json_decode(leer_contenido_completo("http://api.brotecolectivo.com/fechas/?limit=5&nuevas=si&corto=si&order=fechas.fecha_inicio&order2=asc"));
 foreach ($fechas_al_azar as $fecha){
      
 $fechanombre = $fecha->titulo;
@@ -75,8 +75,13 @@ $bandabio = $banda->bio_corta;
 	        		        				<li class="cat-item"><a target="_blank" href="http://fmabril.net/">FM Abril</a></li>
 	        		        			</ul>
 	        		        		</div>
-	        		        		<div class="block_publi">
-                <h4>publicidad</h4>
+	        		        		<div class="block publi">
+                <h4>Nosotros apoyamos al</h4>
+                <a href="https://www.facebook.com/fundacion.nuevoteatro" target="_blank"><img src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc1/995425_1376880622533663_1283106637_n.jpg" alt="Nuevo Teatro Colon" width="200" border="0"></a>
+                
+            </div>
+	        		        		<div class="block publi">
+                <h4>Publicidad</h4>
 
          
                 <a href="javascript:void(0)"><img src="http://www.brotecolectivo.com/images/publicidad_03.jpg" alt="Publicita en Brote Colectivo" border="0"></a>

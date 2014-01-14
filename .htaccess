@@ -1,4 +1,29 @@
-# Activar RewriteEngine
+# 1 YEAR
+<filesMatch ".(ico|pdf|flv)$">
+Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+# 1 WEEK
+<filesMatch ".(jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+# 2 DAYS
+<filesMatch ".(xml|txt|css|js)$">
+Header set Cache-Control "max-age=604800, proxy-revalidate"
+</FilesMatch>
+# 1 MIN
+<filesMatch ".(html|htm|php)$">
+Header set Cache-Control "max-age=60, private, proxy-revalidate"
+</FilesMatch>
+
+SetOutputFilter DEFLATE
+ <IfModule mod_setenvif.c>
+  SetEnvIfNoCase Request_URI \.(?:rar|zip)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.(?:gif|jpg|png)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.(?:avi|mov|mp4)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.mp3$ no-gzip dont-vary
+ </IfModule>
+
+ # Activar RewriteEngine
 Options +FollowSymLinks
 RewriteEngine on
 RewriteBase /
@@ -72,8 +97,8 @@ RewriteRule ^feed/rss/ /rss.php
 RewriteRule ^rss/ /rss.php
 RewriteRule ^feed/ /rss.php
 RewriteRule ^reproductor-mp3/ /index.php?pagina=mp3
-RewriteRule ^bandas-historicas/ /index.php?pagina=bandas-historicas
-RewriteRule ^bandas-historicas /index.php?pagina=bandas-historicas
+RewriteRule ^bandas-antiguas/ /index.php?pagina=bandas-antiguas
+RewriteRule ^bandas-antiguas /index.php?pagina=bandas-antiguas
 RewriteRule ^registro/ /index.php?pagina=registro
 RewriteRule ^registro /index.php?pagina=registro
 RewriteRule ^confirmar-registro/ /index.php?pagina=confirmar-registro
@@ -85,6 +110,7 @@ RewriteRule ^agenda-cultural/ /index.php?pagina=agenda-cultural&interior=nada
 RewriteRule ^terminos-condiciones/ /index.php?pagina=tos
 RewriteRule ^galeria-de-fotos/ /index.php?pagina=galeria-de-fotos
 RewriteRule ^prensa/lu-14/ /lu14.php
+RewriteRule ^prensa/lu-12/ /lu12.php
 
 AuthName "Desarrollo"
 AuthUserFile "/home/brotecol/.htpasswds/nuevo-brote/passwd"

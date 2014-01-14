@@ -14,6 +14,20 @@
             <div id="cargando_pagina"></div>
             <!-- posts list -->
             <div id="posts-list">
+              <section id="bandasAntiguas" style="display:none;">
+                
+                <div id="my-timeline"></div>
+
+                    <style>
+
+                .vco-timeline .vco-navigation .timenav-background .timenav-tag div h3{
+                display:none;
+                }
+                .vco-slider .slider-item .content .content-container .text .container .slide-tag {
+                display:none;
+                }
+                </style>  
+              </section>
               <section id="inicio" style="display:none;">
   <article class="format-standard">
            
@@ -138,6 +152,8 @@
             <h3><%= post.nombre %></h3>
             <div class="bio">
             <p><%= post.bio_corta %></p>
+
+            
             </div>
           </div>
         </section>

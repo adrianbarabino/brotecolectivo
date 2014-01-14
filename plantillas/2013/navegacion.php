@@ -59,7 +59,7 @@ function esta_activo($elemento){
 			<div class="wrapper">
 					
 				<a href="javascript:void(0)" rel="address:/inicio" id="logo"><img  src="/img/logo.png" alt="Brote Colectivo"></a>
-				<a href="javascript:void(0)" rel="address:/noticia/primer-aniversario" id="pastel"><img  src="/img/pastel.png" alt="1 Año de Brote Colectivo"></a>
+				<!-- <a href="javascript:void(0)" rel="address:/noticia/primer-aniversario" id="pastel"><img  src="/img/pastel.png" alt="1 Año de Brote Colectivo"></a> -->
 				
 				<nav>
 					<ul id="nav" class="sf-menu">

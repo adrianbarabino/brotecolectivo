@@ -5,6 +5,9 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		"noticias/" :  "noticias",
 		"artistas/" :  "artistas",
 		"agenda-cultural/" :  "fechas",
+		"agenda-cultural" :  "fechas",
+		"bandas-antiguas/" :  "bandasAntiguas",
+		"bandas-antiguas" :  "bandasAntiguas",
 		"noticia/:id/": "articleSingle",
 		"noticia/:id": "articleSingle",
 		"artistas/:id/": "artistaSingle",
@@ -17,7 +20,21 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$("#cargando_pagina").fadeOut();
 
 
-	},
+        this.bind('route', this.trackPageview);
+    },
+
+    trackPageview: function ()
+    {
+        var url = Backbone.history.getFragment();
+
+        //prepend slash
+        if (!/^\//.test(url) && url != "")
+        {
+            url = "/" + url;
+        }
+
+        _gaq.push(['_trackPageview', url]);
+    },
 	root: function(){
 		$(document).attr("title", "Inicio"+titulo_inicial);
 		ocultarPaginas(false);
@@ -35,6 +52,30 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$('#artistas').slideUp('slow');
 		$('#noticias').slideUp('slow');
 		$('#inicio > div').show();
+	},
+	bandasAntiguas: function(){
+		$(document).attr("title", "Bandas Antiguas"+titulo_inicial);
+		ocultarPaginas(true);
+		var self = this;
+
+		console.log("Root");
+				$("body").addClass("sin-sidebar");
+		$("aside#sidebar").fadeOut();
+		$("#bread1").text("home");
+		$("#bread2").text("bandas historicas");
+		$('#inicio').fadeOut('slow', function() {
+		    $('#bandasAntiguas').fadeIn('slow');
+		});				
+		$(".head").text("Bandas Antiguas");
+
+
+		$(".subhead").text("sección de bandas antiguas de Santa Cruz");
+
+		$(".current-menu-item").removeClass('current-menu-item');
+		$("nav ul#nav li:contains('inicio')").addClass('current-menu-item');
+		$('#artistas').slideUp('slow');
+		$('#noticias').slideUp('slow');
+		crear_bandas_historicas();
 	},
 	noticias: function(){
 		$(document).attr("title", "Noticias"+titulo_inicial);
@@ -103,7 +144,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			$('#artistas .abierto h3').slideDown();
 			$('#artistas .abierto a[data-tipo^=lightbox]').attr("href", "javascript:void(0)")
 			$('#artistas .abierto a[data-tipo^=lightbox]').attr("rel", "")
-			$("#info_relacionada_artista").remove();
+
 			// $('#artistas .abierto .read-more').slideDown();
 			var url_foto = $("#artistas .abierto img").attr("src");
 			var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
@@ -247,9 +288,11 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$("#single .info-evento > h2").append('<span class="activo">¿Dónde?</span> <span class="small">¿Cuándo?</span>');
 				$("#single a.foto_evento").attr("href", "http://www.brotecolectivo.com/fechas/"+ info.urltag+".jpg");
 				$("#single figure img").attr("src", "http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/"+ info.urltag+".jpg&w=300&h=200&zc=1");
+				$("#single .info-evento .cuando").hide();
 				$("#single .seccion.donde").html("");
 
 				$("#single .seccion.donde").append("<h2>"+info.lugar+"</h2><h3>"+info.direccion+" <small>"+info.ciudad+"</small></h3>")
+				$("#single .info-evento .donde").slideDown();
 				$("#contenidoTop").remove();
 				$("#cargando_info").remove();
 				fecha_inicio = moment(info.fecha_inicio);
@@ -274,6 +317,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 				$('#single').prepend(boton_volver);
 				$("#boton_volver").html('<i class="icon-long-arrow-left  icon-large"></i>  Volver a Agenda Cultural');
+				
 				$('#single .bio-single').html(info.contenido);
 				$(".info-evento span.small:contains('¿Dónde?')").click();
 			});
@@ -318,27 +362,16 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$("#cargando_info").remove();
 				$('#artistas #'+id_de_articulo+" > li").prepend(boton_volver);
 				$("#boton_volver").html('<i class="icon-long-arrow-left  icon-large"></i>  Volver a Artistas');
+
 				$('#artistas #'+id_de_articulo+' .bio').html(info.bio);
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
+				$("#artistas #"+id_de_articulo+' > li').append('<div class="reproductor" id="info_relacionada_artista"><h2><span class="small">Videos</span> <span class="small">Noticias</span> <span class="small">Eventos</span></h2><div id="cargando_info"></div><div class="reproductordevideo seccion" style="display:none;"><div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul></div></div><div class="noticias_relacionadas seccion" style="display:none;"><ul class="noticias"></ul></div><div class="eventos_relacionados seccion" style="display:none;"><ul class="eventos"></ul></div></div>');
 				$('#artistas #'+id_de_articulo+' a[data-tipo^=lightbox]').attr("href", "http://www.brotecolectivo.com/contenido/imagenes/bandas/"+info.urltag+".jpg")
 				$('#artistas #'+id_de_articulo+' a[data-tipo^=lightbox]').attr("rel", "lightbox")
 				$('#artistas #'+id_de_articulo+' h3').slideUp();
 				$('#artistas #'+id_de_articulo+' .read-more').slideUp();
 
-				$("#artistas #"+id_de_articulo).append('<div class="reproductor" id="info_relacionada_artista"> \
-					<h2><span class="small">Videos</span> <span class="small">Noticias</span>  \
-					<span class="small">Eventos</span></h2> \
-					<div id="cargando_info"></div> \
-					<div class="reproductordevideo seccion" style="display:none;"> \
-					<div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul> \
-					</div></div> \
-					<div class="noticias_relacionadas seccion" style="display:none;"> \
-					<ul class="noticias"></ul> \
-					</div> \
-					<div class="eventos_relacionados seccion" style="display:none;"> \
-					<ul class="eventos"></ul> \
-					</div> \
-					</div>');
+				
 
 				var target = document.getElementById('cargando_info');
 				var spinner = new Spinner(opts).spin(target);
@@ -354,7 +387,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 						
 					}
 
-					var obtenerNoticias = $.getJSON('http://api.brotecolectivo.com/noticias/?banda='+id_de_articulo+'&limit=5&corto=1', function(data){
+					var obtenerNoticias = $.getJSON('http://api.brotecolectivo.com/noticias/?banda='+id_de_articulo+'&order=noticias.id&limit=5&corto=1&importantes=si', function(data){
 
 						if(data[0]){
 							$.each(data, function (i, item) {
@@ -366,19 +399,25 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 							
 							$('#artistas #'+id_de_articulo+" h2 span:contains('Videos')").remove();
 							}
+
 						}
-
-						var obtenerFechas = $.getJSON('http://api.brotecolectivo.com/fechas/?banda='+id_de_articulo+'&limit=5&order=fechas.id&corto=1&order2=desc', function(data){
+						var obtenerFechas = jQuery.ajax({
+							async: false,
+							timeout: 9000,
+							url: 'http://api.brotecolectivo.com/fechas/?banda='+id_de_articulo+'&limit=5&order=fechas.id&corto=1&order2=desc',
+							dataType: "json"}).complete( function(data){
 							
-								console.log("Hola2!")
+								console.log("Hola2!");
+								console.log(data);
+								var data_json = JSON.parse(data.responseText);
 
-							if(data[0]){
-								$.each(data, function (i, item) {
+							if(data_json[0]){
+								$.each(data_json, function (i, item) {
 									console.log(i);
 									console.log(item);
-									console.log(data.length);
+									console.log(data_json.length);
 									$("ul.eventos").append('<li><a href="javascript:void(0);" rel="address:/agenda-cultural/'+item.urltag+'">'+item.fecha_corta+' - '+item.titulo+'</a></li>');
-									if(i+1 == data.length){
+									if(i+1 == data_json.length){
 										$(document).trigger("eventosCargados", id_de_articulo);
 									}
 								});
@@ -406,6 +445,23 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 								
 							}
 
+						}).fail( function(jqXHR, textStatus, errorThrown) {
+							var err;
+							    if (textStatus !== "abort" && errorThrown !== "abort") {
+							        try {
+							            err = $.parseJSON(jqXHR.responseText);
+							            alert(err.Message);
+							        } catch(e) {
+							            alert("ERROR:\n" + jqXHR.responseText);
+							        }
+							    }
+							    // aborted requests should be just ignored and no error message be displayed
+							});
+						var tiene_canciones = $.getJSON('http://api.brotecolectivo.com/canciones/?limit=1&banda='+info.id, function (dataB) {
+							if(dataB[0]){
+								$('#artistas #'+id_de_articulo+' #contenidoTop').append('<span id="escuchar-banda-single" style="margin-left: 0.5em;color:white;" class="btn btn-danger btn-mini azarfinal" href="javascript:void(0)" data-urltag="'+info.urltag+'"><i class="icon-play-sign"></i> Escuchar</span>');
+
+							}
 						});
 					});
 				});
