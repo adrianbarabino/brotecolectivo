@@ -14,7 +14,6 @@ Header set Cache-Control "max-age=604800, proxy-revalidate"
 <filesMatch ".(html|htm|php)$">
 Header set Cache-Control "max-age=60, private, proxy-revalidate"
 </FilesMatch>
-
 SetOutputFilter DEFLATE
  <IfModule mod_setenvif.c>
   SetEnvIfNoCase Request_URI \.(?:rar|zip)$ no-gzip dont-vary
@@ -22,6 +21,7 @@ SetOutputFilter DEFLATE
   SetEnvIfNoCase Request_URI \.(?:avi|mov|mp4)$ no-gzip dont-vary
   SetEnvIfNoCase Request_URI \.mp3$ no-gzip dont-vary
  </IfModule>
+ 
 
  # Activar RewriteEngine
 Options +FollowSymLinks
@@ -60,6 +60,9 @@ RewriteRule ^ /agenda-cultural/? [R=301,NC,L]
 RewriteCond %{QUERY_STRING} ^pagina=contacto [NC]
 RewriteRule ^ /contacto/? [R=301,NC,L]
 
+RewriteCond %{QUERY_STRING} ^pagina=prensa [NC]
+RewriteRule ^ /prensa/? [R=301,NC,L]
+
 RewriteRule ^agenda-cultural/interior/ /index.php?pagina=agenda-cultural&interior=1
 RewriteRule ^agenda-cultural/gallegos/ /index.php?pagina=agenda-cultural&interior=0
 RewriteRule ^agenda-cultural-([^/]+)/interior/ index.php?pagina=agenda-cultural&page=$1&interior=1
@@ -91,6 +94,7 @@ RewriteRule ^noticias/ /index.php?pagina=noticias
 RewriteRule ^noticia/ index.php?pagina=inicio
 RewriteRule ^artistas /index.php?pagina=artistas
 RewriteRule ^contacto/ /index.php?pagina=contacto
+RewriteRule ^prensa/ /index.php?pagina=prensa
 RewriteRule ^publicidad/ /index.php?pagina=publicidad
 RewriteRule ^inicio/ /index.php?pagina=inicio
 RewriteRule ^feed/rss/ /rss.php
@@ -111,8 +115,3 @@ RewriteRule ^terminos-condiciones/ /index.php?pagina=tos
 RewriteRule ^galeria-de-fotos/ /index.php?pagina=galeria-de-fotos
 RewriteRule ^prensa/lu-14/ /lu14.php
 RewriteRule ^prensa/lu-12/ /lu12.php
-
-AuthName "Desarrollo"
-AuthUserFile "/home/brotecol/.htpasswds/nuevo-brote/passwd"
-AuthType Basic
-

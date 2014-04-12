@@ -1,5 +1,4 @@
 
-
         <footer>
             <div class="wrapper">
             
@@ -118,6 +117,7 @@ $noticiaurltag = $noticia->urltag;
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
     <script src="/js/libs/tabs.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
     <!-- <script src="/js/libs/date.js"></script> -->
     <script  src="/js/libs/hoverIntent.js"></script>
     <script  src="/js/libs/superfish.js"></script>
@@ -149,44 +149,8 @@ $noticiaurltag = $noticia->urltag;
 
     });
     </script>
-    
-    
-    <!--[if IE 6]>
-    <link rel="stylesheet" href="css/ie6-hacks.css" media="screen" />
-    <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
-      <script>
-              /* EXAMPLE */
-              DD_belatedPNG.fix('*');
-          </script>
-    <![endif]-->
-
-
-
-
-<script type="text/javascript">
-
-function YaCargoLetras(){
-
-   $("a.overlay").overlay({
- 
-        mask: 'black',
- 
-        onBeforeLoad: function() {
- 
-            // grab wrapper element inside content
-            var wrap = this.getOverlay().find(".contentWrap");
- 
-            // load the page specified in the trigger
-            wrap.load(this.getTrigger().attr("href"));
-        }
- 
-    });
-};
-
-
-</script>
-<script type="text/javascript">
-(function(){
+    <script>
+    (function(){
 
     var matcher = /\s*(?:((?:(?:\\\.|[^.,])+\.?)+)\s*([!~><=]=|[><])\s*("|')?((?:\\\3|.)*?)\3|(.+?))\s*(?:,|$)/g;
 
@@ -240,6 +204,43 @@ function YaCargoLetras(){
 
 }());
 </script>
+    
+    
+    <!--[if IE 6]>
+    <link rel="stylesheet" href="css/ie6-hacks.css" media="screen" />
+    <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
+      <script>
+              /* EXAMPLE */
+              DD_belatedPNG.fix('*');
+          </script>
+    <![endif]-->
+
+
+
+
+<script type="text/javascript">
+
+function YaCargoLetras(){
+
+   $("a.overlay").overlay({
+ 
+        mask: 'black',
+ 
+        onBeforeLoad: function() {
+ 
+            // grab wrapper element inside content
+            var wrap = this.getOverlay().find(".contentWrap");
+ 
+            // load the page specified in the trigger
+            wrap.load(this.getTrigger().attr("href"));
+        }
+ 
+    });
+};
+
+
+</script>
+
 <!-- overlayed element -->
 
 <div class="apple_overlay" id="overlay">
@@ -328,13 +329,7 @@ function YaCargoLetras(){
  
     <script>
 
-function Cargar_Cancion_Actual () {
-    if(localStorage.getItem('reproductor').length > 0){
-        console.log("Estoy cargando la cancion actual")
-      $("[data-urltag='"+JSON.parse(localStorage.getItem('reproductor')).actual+"'] .title").trigger("click");
-      $(".jp-pause").trigger("click");
-    }
-  }
+
 var request;
 var myPlaylist = [];
 request = $.getJSON("http://api.brotecolectivo.com/canciones/?order2=asc&order=bandas.nombre", function (data) {
@@ -361,7 +356,17 @@ request = $.getJSON("http://api.brotecolectivo.com/canciones/?order2=asc&order=b
             });
 
 
-
+function Cargar_Cancion_Actual () {
+	if(typeof localStorage.getItem != 'undefined'){
+	var reproductorls = localStorage.getItem('reproductor');
+	    if(typeof reproductorls !== 'undefined' && reproductorls !== null){
+	        console.log("Estoy cargando la cancion actual")
+	      $("[data-urltag='"+JSON.parse(localStorage.getItem('reproductor')).actual+"'] .title").trigger("click");
+	      $(".jp-pause").trigger("click");
+	    }
+    }
+  }
+  
 $('#reproductor').ttwMusicPlayer(myPlaylist, {
 
                 autoPlay:false, 
@@ -401,7 +406,6 @@ $('#reproductor').ttwMusicPlayer(myPlaylist, {
     $('#reproductor').show();
     YaCargoLetras();
     console.log("Reproductor LISTO!");
-      setTimeout(Cargar_Cancion_Actual, 1000);
 
         });
 </script>
@@ -421,7 +425,6 @@ $('#reproductor').ttwMusicPlayer(myPlaylist, {
     <script src="/js/libs/ajuste-thumbs.js"></script>
 <script>
 
-$("nav ul#nav li a").attr("href", "javascript:void(0)")
 
 </script>
   </body>

@@ -22,7 +22,9 @@
 	paginacion_actual = "";
 	artistas_json = [];
 	var map;
+if (typeof _gat != 'undefined') {
 var pageTracker = _gat._getTracker('UA-36574161-1');
+}
 	var objeto_reproductor = new Object();
 
 	function ocultarPaginas (side) {
@@ -38,6 +40,9 @@ var pageTracker = _gat._getTracker('UA-36574161-1');
 		}
 		$('#noticias').fadeOut('slow')
 		$('#artistas').fadeOut('slow')
+		$('#publicite').fadeOut('slow')
+		$('#contacto').fadeOut('slow')
+		$('#prensa').fadeOut('slow')
 		$('#inicio').fadeOut('slow')
 		$('#fechas').fadeOut('slow')
 		$('#single').fadeOut('slow')
@@ -53,6 +58,40 @@ var pageTracker = _gat._getTracker('UA-36574161-1');
 
 
 	}
+	// Contacto
+		jQuery.validator.addMethod('telefonoAR', function(phone_number, element) {
+		  return this.optional(element) || phone_number.length > 9 &&
+		  phone_number.match(/^(\(?(0|\+54)?\s?\S?[9]?\s?\S?\d{3,4}\)?\s?\S?\d{0,2}?\s?\S?\d{3,4}\s?\S?\d{3,4})$/);
+		  }, 'Ingresaste mal tu numero, recorda ingresar el codigo de area ! '
+		);
+
+		jQuery('#formulario form').validate({
+		messages: {
+		     nombre: "Especifica tu nombre",
+		     telefono: {
+			required: "Necesitamos tu telefono para poder contactarte"
+		},
+		     email: {
+		       required: "Necesitamos tu email para poder contactarte",
+		       email: "Tu direccion de email debe ser correcta, ejemplo: nombre@hotmail.com"
+		     }
+		   },
+		   submitHandler: function(form){
+		   	jQuery('#formulario form').animate({left: "-10000px"}, 3000);
+			jQuery("#formulario #gracias").slideDown();
+		   	jQuery.post("/enviar-email.php", jQuery("#formulario form").serialize());
+		   },
+		    onfocusout: function(e) {
+		      this.element(e);
+		    }
+		    , onkeyup: false
+		  });
+		jQuery('#formulario form #enviar').on("click", function () {
+			jQuery('#formulario form').submit();
+
+		})
+
+
 
 	function artista_al_azar (info) {
 		if(recargando == false){
@@ -331,14 +370,16 @@ $(document).ready(function(){
 
 	});
 
-	$('nav li a').on('click', function () {
+	$('nav li a').on('click', function (event) {
+		event.preventDefault();
 		var url = $(this).attr("rel");
 		console.log(url);
 		url = url.split(":")
 		url = url[1];
 		Backbone.history.navigate(url+'/', {trigger:true})
 	})
-	function navegacion (){
+	function navegacion (event){
+		event.preventDefault();
 		var url = $(this).attr("rel");
 		console.log(url);
 		url = url.split(":")

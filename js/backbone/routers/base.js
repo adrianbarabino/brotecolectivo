@@ -4,6 +4,12 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		"inicio/" :  "root",
 		"noticias/" :  "noticias",
 		"artistas/" :  "artistas",
+		"publicidad/" :  "publicidad",
+		"publicidad" :  "publicidad",
+		"contacto/" :  "contacto",
+		"contacto" :  "contacto",
+		"prensa/" :  "prensa",
+		"prensa" :  "prensa",
 		"agenda-cultural/" :  "fechas",
 		"agenda-cultural" :  "fechas",
 		"bandas-antiguas/" :  "bandasAntiguas",
@@ -52,6 +58,48 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$('#artistas').slideUp('slow');
 		$('#noticias').slideUp('slow');
 		$('#inicio > div').show();
+	},
+	publicidad: function(){
+		$(document).attr("title", "Publicidad"+titulo_inicial);
+		ocultarPaginas(false);
+		var self = this;
+		console.log("Publicidad");
+		$('#publicite').fadeOut('slow', function() {
+		    $('#publicite').fadeIn('slow');
+		});				
+		$(".head").text("Publicite en Brote Colectivo");
+		$(".subhead").text("sitio de difusión cultural en Santa Cruz, Argentina");
+
+		$(".current-menu-item").removeClass('current-menu-item');
+		$("nav ul#nav li:contains('publicidad')").addClass('current-menu-item');
+	},
+	contacto: function(){
+		$(document).attr("title", "Contactanos"+titulo_inicial);
+		ocultarPaginas(false);
+		var self = this;
+		console.log("Contacto");
+		$('#contacto').fadeOut('slow', function() {
+		    $('#contacto').fadeIn('slow');
+		});				
+		$(".head").text("Contactanos");
+		$(".subhead").text("Nos interesa mucho saber tu opinion");
+
+		$(".current-menu-item").removeClass('current-menu-item');
+		$("nav ul#nav li:contains('publicidad')").addClass('current-menu-item');
+	},
+	prensa: function(){
+		$(document).attr("title", "Prensa"+titulo_inicial);
+		ocultarPaginas(false);
+		var self = this;
+		console.log("prensa");
+		$('#prensa').fadeOut('slow', function() {
+		    $('#prensa').fadeIn('slow');
+		});				
+		$(".head").text("Prensa");
+		$(".subhead").text("información de prensa de Brote Colectivo");
+
+		$(".current-menu-item").removeClass('current-menu-item');
+		$("nav ul#nav li:contains('publicidad')").addClass('current-menu-item');
 	},
 	bandasAntiguas: function(){
 		$(document).attr("title", "Bandas Antiguas"+titulo_inicial);
@@ -363,6 +411,53 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				$('#artistas #'+id_de_articulo+" > li").prepend(boton_volver);
 				$("#boton_volver").html('<i class="icon-long-arrow-left  icon-large"></i>  Volver a Artistas');
 
+				var redes = [];
+				if(info.social.facebook != "Facebook"){
+					var red = Object();
+					red.red = "facebook";
+					red.nombreRed = "Facebook";
+					red.url = "https://www.facebook.com/"+info.social.facebook;
+					red.estilo = "primary";
+					redes.push(red);
+				}
+				
+				if(info.social.twitter != "Twitter"){
+					var red = Object();
+					red.red = "twitter";
+					red.nombreRed = "Twitter";
+					red.url = "https://www.twitter.com/"+info.social.twitter;
+					red.estilo = "info";
+					redes.push(red);
+				}
+
+
+				if(info.social.soundcloud != "SoundCloud"){
+					var red = Object();
+					red.red = "cloud";
+					red.nombreRed = "Soundcloud";
+					red.url = "https://www.soundcloud.com/"+info.social.soundcloud;
+					red.estilo = "warning";
+					redes.push(red);
+				}
+
+				if(info.social.sitioweb != "Sitio Web"){
+					var red = Object();
+					red.red = "asterisk";
+					red.nombreRed = "Sitio Web";
+					red.url = info.social.sitioweb;
+					red.estilo = "inverse";
+					redes.push(red);
+				}
+
+				if(redes.length > 0){
+					for (var i = redes.length - 1; i >= 0; i--) {
+						data = redes[i];
+						$('#artistas #'+id_de_articulo+" > li #contenidoTop").append('&nbsp; <a class="btn btn-mini btn-'+data.estilo+'" class="boton-'+data.red+'" href="'+data.url+'"><i class="icon-'+data.red+'  icon-large"></i> '+data.nombreRed+'</a>');
+
+					};
+
+				}
+
 				$('#artistas #'+id_de_articulo+' .bio').html(info.bio);
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
 				$("#artistas #"+id_de_articulo+' > li').append('<div class="reproductor" id="info_relacionada_artista"><h2><span class="small">Videos</span> <span class="small">Noticias</span> <span class="small">Eventos</span></h2><div id="cargando_info"></div><div class="reproductordevideo seccion" style="display:none;"><div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul></div></div><div class="noticias_relacionadas seccion" style="display:none;"><ul class="noticias"></ul></div><div class="eventos_relacionados seccion" style="display:none;"><ul class="eventos"></ul></div></div>');
@@ -392,7 +487,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 						if(data[0]){
 							$.each(data, function (i, item) {
 								console.log(item);
-								$("ul.noticias").append('<li><a href="javascript:void(0);" rel="address:/noticia/'+item.urltag+'">'+item.titulo+'</a></li>');
+								$("ul.noticias").append('<li><a href="/noticia/'+item.urltag+'" rel="address:/noticia/'+item.urltag+'">'+item.titulo+'</a></li>');
 							});
 							if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length == 0){
 
