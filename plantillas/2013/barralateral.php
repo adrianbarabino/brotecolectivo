@@ -75,11 +75,7 @@ $bandabio = $banda->bio_corta;
 	        		        				<li class="cat-item"><a target="_blank" href="http://fmabril.net/">FM Abril</a></li>
 	        		        			</ul>
 	        		        		</div>
-	        		        		<div class="block publi">
-                <h4>Nosotros apoyamos al</h4>
-                <a href="https://www.facebook.com/fundacion.nuevoteatro" target="_blank"><img src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc1/995425_1376880622533663_1283106637_n.jpg" alt="Nuevo Teatro Colon" width="200" border="0"></a>
-                
-            </div>
+
 	        		        		<div class="block publi">
                 <h4>Publicidad</h4>
 

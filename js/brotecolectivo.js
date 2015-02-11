@@ -22,6 +22,39 @@
 	paginacion_actual = "";
 	artistas_json = [];
 	var map;
+
+
+$.fn.random = function()
+{
+    var ret = $();
+
+    if(this.length > 0)
+        ret = ret.add(this[Math.floor((Math.random() * this.length))]);
+
+    return ret;
+};
+
+function Cargar_Cancion_Actual () {
+	if(typeof localStorage.getItem != 'undefined'){
+      if (!localStorage.reproductor) {
+      	          console.log("Estoy cargando la cancion random")
+        $("[data-urltag] .title").random().trigger("click");
+        $(".jp-pause").trigger("click");
+        // Si el usuario no cambia de tema, al proximo inicio le ofrecemos otro tema
+        localStorage.removeItem("reproductor");
+
+	    
+    }else{
+        
+	       var reproductorls = localStorage.getItem('reproductor');
+	        console.log("Estoy cargando la cancion actual")
+	      $("[data-urltag='"+JSON.parse(localStorage.getItem('reproductor')).actual+"'] .title").trigger("click");
+	      $(".jp-pause").trigger("click");
+
+    }
+  }
+  }
+
 if (typeof _gat != 'undefined') {
 var pageTracker = _gat._getTracker('UA-36574161-1');
 }
@@ -79,7 +112,7 @@ var pageTracker = _gat._getTracker('UA-36574161-1');
 		   submitHandler: function(form){
 		   	jQuery('#formulario form').animate({left: "-10000px"}, 3000);
 			jQuery("#formulario #gracias").slideDown();
-		   	jQuery.post("/enviar-email.php", jQuery("#formulario form").serialize());
+		   	jQuery.post("/enviarMail.php", jQuery("#formulario form").serialize());
 		   },
 		    onfocusout: function(e) {
 		      this.element(e);
@@ -370,6 +403,7 @@ $(document).ready(function(){
 
 	});
 
+
 	$('nav li a').on('click', function (event) {
 		event.preventDefault();
 		var url = $(this).attr("rel");
@@ -392,6 +426,7 @@ $(document).ready(function(){
           	$(document).on("click", "#info_relacionada_artista li a", navegacion);
 	$(document).on("click", "#reproductor .artist a", navegacion);
 	$(document).on("click", "a#logo", navegacion);
+	$(document).on("click", "a.nav-interno", navegacion);
 	$(document).on("click", "a#pastel", navegacion);
 	$(document).on("click", "a.link_brote", navegacion);
 	$(document).on("click", ".bjqs > li > a", navegacion);
@@ -403,7 +438,7 @@ $(document).ready(function(){
 	console.time('carga-fechas');
 var fechasxhr = $.ajax({
 		url: 'http://api.brotecolectivo.com/fechas/?nuevas=si&order2=desc&corto=si&order=fechas.fecha_inicio&order2=asc',
-		async: false,
+		async: true,
 		dataType: "json"
 	}).done(function(data){
 			data.forEach(function(item){
@@ -413,6 +448,7 @@ var fechasxhr = $.ajax({
 		});
 	console.timeEnd('carga-fechas');
 	console.log("Despues de cargas fechas");
+
 
 });
 

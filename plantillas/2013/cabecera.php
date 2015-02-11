@@ -1,4 +1,6 @@
 <?php
+
+setlocale(LC_ALL, 'es_ES');
 function leer_contenido_completo($url){
    $fichero_url = fopen ($url, "r");
    $texto = "";

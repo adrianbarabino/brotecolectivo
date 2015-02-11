@@ -25,7 +25,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		var self = this;
 		$("#cargando_pagina").fadeOut();
 
-
+		Cargar_Cancion_Actual();
         this.bind('route', this.trackPageview);
     },
 
@@ -67,6 +67,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$('#publicite').fadeOut('slow', function() {
 		    $('#publicite').fadeIn('slow');
 		});				
+		goTop();
 		$(".head").text("Publicite en Brote Colectivo");
 		$(".subhead").text("sitio de difusión cultural en Santa Cruz, Argentina");
 
@@ -76,11 +77,13 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 	contacto: function(){
 		$(document).attr("title", "Contactanos"+titulo_inicial);
 		ocultarPaginas(false);
+
 		var self = this;
 		console.log("Contacto");
 		$('#contacto').fadeOut('slow', function() {
 		    $('#contacto').fadeIn('slow');
 		});				
+		goTop();
 		$(".head").text("Contactanos");
 		$(".subhead").text("Nos interesa mucho saber tu opinion");
 
@@ -95,6 +98,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$('#prensa').fadeOut('slow', function() {
 		    $('#prensa').fadeIn('slow');
 		});				
+		goTop();
 		$(".head").text("Prensa");
 		$(".subhead").text("información de prensa de Brote Colectivo");
 
@@ -140,6 +144,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		});
 
 		}
+		goTop();
 		$(".head").text("Noticias Culturales");
 		$(".subhead").text("sitio de difusión cultural en Santa Cruz, Argentina");
 		$("[class*=mas]").slideUp();
@@ -185,7 +190,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$("#bread2").text("artistas");
 		$('#artistas > div').show();
 		FB.XFBML.parse();
-
+			goTop();
 		$("#artistas .abierto .bio").each(function (i, info) {
 			$(this).html($(this).parent().parent().parent().parent().attr("bio_corta"));
 			padre = $(this).parent();
@@ -440,6 +445,24 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 					redes.push(red);
 				}
 
+				if(info.social.youtube != "Youtube"){
+					var red = Object();
+					red.red = "youtube-play";
+					red.nombreRed = "Youtube";
+					red.url = "https://www.youtube.com/"+info.social.youtube;
+					red.estilo = "danger";
+					redes.push(red);
+				}
+
+				if(info.social.vimeo != "Vimeo"){
+					var red = Object();
+					red.red = "vimeo-square";
+					red.nombreRed = "vimeo";
+					red.url = "https://www.vimeo.com/"+info.social.vimeo;
+					red.estilo = "info";
+					redes.push(red);
+				}
+
 				if(info.social.sitioweb != "Sitio Web"){
 					var red = Object();
 					red.red = "asterisk";
@@ -452,7 +475,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				if(redes.length > 0){
 					for (var i = redes.length - 1; i >= 0; i--) {
 						data = redes[i];
-						$('#artistas #'+id_de_articulo+" > li #contenidoTop").append('&nbsp; <a class="btn btn-mini btn-'+data.estilo+'" class="boton-'+data.red+'" href="'+data.url+'"><i class="icon-'+data.red+'  icon-large"></i> '+data.nombreRed+'</a>');
+						$('#artistas #'+id_de_articulo+" > li #contenidoTop").append('&nbsp; <a class="btn btn-mini btn-'+data.estilo+' boton-'+data.red+'" href="'+data.url+'" target="_blank" ><i class="icon-'+data.red+'  icon-large"></i> '+data.nombreRed+'</a>');
 
 					};
 

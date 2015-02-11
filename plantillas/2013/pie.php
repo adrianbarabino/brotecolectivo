@@ -23,10 +23,10 @@ $noticiaurltag = $noticia->urltag;
             
 
             
-           <a href="http://brotecolectivo.com/noticia/<?php echo $noticiaurltag; ?>/" class="thumb"><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/entradas/<?php echo $noticiaurltag; ?>.jpg&w=54&h=54&zc=1" width="54" height="54" alt="Post" /></a>
+           <a class="nav-interno thumb" rel="address:/noticia/<?php echo $noticiaurltag; ?>" href="http://brotecolectivo.com/noticia/<?php echo $noticiaurltag; ?>/"><img src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/entradas/<?php echo $noticiaurltag; ?>.jpg&w=54&h=54&zc=1" width="54" height="54" alt="Post" /></a>
 
 <div class="post-head">
-                                    <a href="#"><?php echo $noticiatitulo; ?></a><span><?php echo $noticiafecha; ?></span>
+                                    <a class="nav-interno" rel="address:/noticia/<?php echo $noticiaurltag; ?>" href="http://brotecolectivo.com/noticia/<?php echo $noticiaurltag; ?>/"><?php echo $noticiatitulo; ?></a><span><?php echo $noticiafecha; ?></span>
                                 </div>
                             </div>
                             
@@ -136,6 +136,9 @@ $noticiaurltag = $noticia->urltag;
         </script>
     <script  src="/js/libs/bjqs.js"></script>
     <script>
+      function goTop (event) {
+      $("html, body").animate({ scrollTop: 180 }, "slow");
+  }
     function crear_slide() {
         $('#slide-home').bjqs({
             animtype      : 'slide',
@@ -355,17 +358,6 @@ request = $.getJSON("http://api.brotecolectivo.com/canciones/?order2=asc&order=b
 
             });
 
-
-function Cargar_Cancion_Actual () {
-	if(typeof localStorage.getItem != 'undefined'){
-	var reproductorls = localStorage.getItem('reproductor');
-	    if(typeof reproductorls !== 'undefined' && reproductorls !== null){
-	        console.log("Estoy cargando la cancion actual")
-	      $("[data-urltag='"+JSON.parse(localStorage.getItem('reproductor')).actual+"'] .title").trigger("click");
-	      $(".jp-pause").trigger("click");
-	    }
-    }
-  }
   
 $('#reproductor').ttwMusicPlayer(myPlaylist, {
 
@@ -408,6 +400,8 @@ $('#reproductor').ttwMusicPlayer(myPlaylist, {
     console.log("Reproductor LISTO!");
 
         });
+
+
 </script>
 <!-- AddThis Smart Layers BEGIN -->
 <!-- Go to http://www.addthis.com/get/smart-layers to customize -->

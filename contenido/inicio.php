@@ -103,40 +103,11 @@
 
 <p>Publicitar en Brote Colectivo es llevar tu producto a ese público por un precio accesible teniendo en cuenta lo que sale publicitar en internet, además de contribuir al desarrollo de este sitio de difusión de artistas y grupos locales.</p>
 
-<p>Los espacios disponibles de publicidad actualmente están en la barra lateral, y se planea incluir otros pero tratando de no desarmonizar el diseÃ±o del sitio, para permitir una navegación sin problemas. Podemos ajustar la publicidad de su empresa al diseÃ±o del sitio si es que lo desea o no tiene un banner para la publicidad. </p>
+<p>Los espacios disponibles de publicidad actualmente están en la barra lateral, y se planea incluir otros pero tratando de no desarmonizar el diseño del sitio, para permitir una navegación sin problemas. Podemos ajustar la publicidad de su empresa al diseÃ±o del sitio si es que lo desea o no tiene un banner para la publicidad. </p>
 
-<p>Por cualquier consulta y para pedir un presupuesto, utilice el formulario de contacto que se encuentra debajo de este texto y nos comunicaremos con usted. Recuerde que llevar su producto al público relacionado con el arte local puede ser beneficioso para tu empresa, más aún para rubros como: comidas, venta de instrumentos, locales nocturnos (pubs, restobares, etc), entre otros. </p></p>
-<form action="/enviarMail.php" id="formpubli" method="post">
-<div style="display: none;">
-<input type="hidden" name="sitio" value="Brote Colectivo" />
-</div>
+<p>Por cualquier consulta y para pedir un presupuesto, utilice el formulario que se encuentra en la sección de Contacto y nos comunicaremos con usted. Recuerde que llevar su producto al público relacionado con el arte local puede ser beneficioso para tu empresa, más aún para rubros como: comidas, venta de instrumentos, locales nocturnos (pubs, restobares, etc), entre otros. </p></p>
 
-  <span id="sprytextfield1">
-
-  <input type="text" name="name"/>
-  </span>
-  <br />
-  <span id="sprytextfield2">
-
-  <input type="text" name="email" />
-  </span>
-  <br />
-  <span id="sprytextfield5">
-
-  <input type="text" name="tele" />
-  </span>
-  <br />
-  <br />
-  <span id="sprytextarea1">
-  <textarea name="message" cols="45" rows="5"></textarea>
-  <span id="countsprytextarea1" style="float: right;">&nbsp;</span><span class="textareaRequiredMsg"></span><span class="textareaMaxCharsMsg"></span></span></p>
-<p><input type="submit" style="padding: 10px 50px;
-background: #303030;
-color: white;
-border: 2px solid #505050;
-border-radius: 5px;
-" value="Enviar" />
-</form>
+<p>Te invitamos a contactarnos, <a href="/contacto/" class="nav-interno" rel="address:/contacto"> haciendo clic aqui.</a></p>
 </p>
 </article>
               </section>
