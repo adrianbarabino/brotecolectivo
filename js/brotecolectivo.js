@@ -323,7 +323,10 @@ function iniciar () {
 	}).trigger("resize");
 
 
-	
+	$("#reproductor").on("resize", function () {
+		bodyWidth = $("body").width();
+		$(this).width(body);
+	})
 		
 	
 	
