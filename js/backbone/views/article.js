@@ -10,7 +10,7 @@ BroteColectivo.Views.ArticleView = Backbone.View.extend({
 		this.model = model;
 		var index = this.collection.indexOf(this.model);
 		var modelAbove = this.collection.at(index-1);
-		console.log("Este es el "+index)
+		imprimirMensaje("Este es el "+index)
 
 		this.model.on('change', function(){
 			self.render();
@@ -18,7 +18,7 @@ BroteColectivo.Views.ArticleView = Backbone.View.extend({
 		var plantilla_init = $("#Article_tpl").html();
 
 		var plantilla = '<article class="format-standard" id="<%= post.urltag %>">'+plantilla_init+'</article>';
-		console.log("El indice es "+index+ " y el indice_modelo es "+indice_modelo);
+		imprimirMensaje("El indice es "+index+ " y el indice_modelo es "+indice_modelo);
 		if(index>4){
 			indice_modelo_nuevo = indice_modelo+5;
 			if(indice_modelo+9 == index){
@@ -32,7 +32,7 @@ BroteColectivo.Views.ArticleView = Backbone.View.extend({
 
 	},
 	navigate: function () {
-		console.log("le hice click", this.model.get("titulo"));
+		imprimirMensaje("le hice click", this.model.get("titulo"));
 		Backbone.history.navigate('noticia/'+this.model.get("urltag")+'/', {trigger:true})
 	},
 	render: function(data) {

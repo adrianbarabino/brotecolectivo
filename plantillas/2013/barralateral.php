@@ -14,7 +14,7 @@ $fechacorta = $fecha->fecha_corta;
 $fechaurltag = $fecha->urltag;
 $fechabio = $fecha->contenido_corto;
 ?>
-							<li class="cat-item"><a href="javascript:void(0);" rel="address:/agenda-cultural/<?php echo $fechaurltag; ?>" class="link_brote" title="<?php echo $fechabio; ?>"><?php echo $fechacorta; ?> - <?php echo $fechanombre; ?></a></li>
+							<li class="cat-item"><a href="javascript:void(0);" rel="address:/agenda-cultural/<?php echo $fechaurltag; ?>" class="link_brote"><?php echo $fechacorta; ?> - <?php echo $fechanombre; ?></a></li>
 							<?php
 						}
 						?>
@@ -82,6 +82,18 @@ $bandabio = $banda->bio_corta;
          
                 <a href="javascript:void(0)"><img src="http://www.brotecolectivo.com/images/publicidad_03.jpg" alt="Publicita en Brote Colectivo" border="0"></a>
               </div>
+		<div class="block publi">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Sidebar -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9358545241981588"
+     data-ad-slot="8421715554"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 	        	</aside>
 	        	<div class="clearfix"></div>
 				<!-- ENDS sidebar -->

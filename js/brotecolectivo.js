@@ -1,5 +1,6 @@
 	var artistas_json;
 	var boton_volver='<div id="contenidoTop" style="margin-top:-1em;margin-bottom:0.5em;"><a class="btn btn-mini btn-success" id="boton_volver" href="javascript:void(0);"><i class="icon-long-arrow-left  icon-large"></i> Volver</a></div>';
+var yacargueantiguas = false;
 	var actual;
 	var titulo_inicial = " - Brote Colectivo";
 	var anterior;
@@ -37,7 +38,7 @@ $.fn.random = function()
 function Cargar_Cancion_Actual () {
 	if(typeof localStorage.getItem != 'undefined'){
       if (!localStorage.reproductor) {
-      	          console.log("Estoy cargando la cancion random")
+      	          imprimirMensaje("Estoy cargando la cancion random")
         $("[data-urltag] .title").random().trigger("click");
         $(".jp-pause").trigger("click");
         // Si el usuario no cambia de tema, al proximo inicio le ofrecemos otro tema
@@ -47,7 +48,7 @@ function Cargar_Cancion_Actual () {
     }else{
         
 	       var reproductorls = localStorage.getItem('reproductor');
-	        console.log("Estoy cargando la cancion actual")
+	        imprimirMensaje("Estoy cargando la cancion actual")
 	      $("[data-urltag='"+JSON.parse(localStorage.getItem('reproductor')).actual+"'] .title").trigger("click");
 	      $(".jp-pause").trigger("click");
 
@@ -91,6 +92,7 @@ var pageTracker = _gat._getTracker('UA-36574161-1');
 
 
 	}
+
 	// Contacto
 		jQuery.validator.addMethod('telefonoAR', function(phone_number, element) {
 		  return this.optional(element) || phone_number.length > 9 &&
@@ -166,14 +168,15 @@ var pageTracker = _gat._getTracker('UA-36574161-1');
 		return url;
 	}
 	function sacar_HTML(html) {
-	    return html.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>?/gi, '');
+		html = jQuery(html).text();
+	    return html;
 	}
 		var map;
 	function iniciar_mapa(lat, lon, texto, wrapper) {
 		var markers = [];
 		map = new OpenLayers.Map(wrapper);
             map.addLayer(new OpenLayers.Layer.OSM());
-            console.log(lat);
+            imprimirMensaje(lat);
 	    var lonLat = new OpenLayers.LonLat( lat, lon)
 	    	 .transform(
 	        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
@@ -196,6 +199,12 @@ var pageTracker = _gat._getTracker('UA-36574161-1');
 
         
     };
+    debug_mode = false;
+    function imprimirMensaje (arg) {
+    	if(debug_mode){
+    		console.log(arg);
+    	}
+    }
 	function capitaliseFirstLetter(string)
 	{
 	    return string.charAt(0).toUpperCase() + string.slice(1);
@@ -220,27 +229,27 @@ var pageTracker = _gat._getTracker('UA-36574161-1');
 };
 
 $(document).on("eventosCargados", function (info, id_de_articulo) {
-	console.log("Se ejecutó el EMIT");
+	imprimirMensaje("Se ejecutó el EMIT");
 	$("#cargando_info").hide();
-	console.log(id_de_articulo)
+	imprimirMensaje(id_de_articulo)
 	if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length > 0){
-									console.log("Hay items en la lista de Videos");
+									imprimirMensaje("Hay items en la lista de Videos");
 									$('#artistas #'+id_de_articulo+" h2 span:contains('Videos')").click();
 								}else{
-									console.log("No hay items en la lista de Videos");
+									imprimirMensaje("No hay items en la lista de Videos");
 									if($('#artistas #'+id_de_articulo+' .noticias_relacionadas li').length > 0){
-										console.log("Hay items en la lista de Noticias");
+										imprimirMensaje("Hay items en la lista de Noticias");
 										$('#artistas #'+id_de_articulo+" h2 span:contains('Noticias')").click();
 									}
 								}
 								if($('#artistas #'+id_de_articulo+' .noticias li').length == 0){
-										console.log("No hay items en la lista Noticias");
+										imprimirMensaje("No hay items en la lista Noticias");
 
 									$('#artistas #'+id_de_articulo+" h2 span:contains('Noticias')").remove();
 								}
 								if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length == 0){
 									if($('#artistas #'+id_de_articulo+' .noticias li').length == 0){
-										console.log("No hay items en las listas: Noticias y Videos");
+										imprimirMensaje("No hay items en las listas: Noticias y Videos");
 
 								$('#artistas #'+id_de_articulo+" h2 span:contains('Eventos')").click();
 								$('#artistas #'+id_de_articulo+" h2 span:contains('Noticias')").remove();
@@ -252,7 +261,7 @@ $(document).on("ready", iniciar);
 
 function iniciar () {
 		$(document).on("click", "#boton_volver", function(){
-		console.log("Click en el boton volver");
+		imprimirMensaje("Click en el boton volver");
 			var url = window.location.pathname.split("/")[1]
 		if(url == "noticia"){
 			url = "noticias";
@@ -262,7 +271,7 @@ function iniciar () {
 		$("#boton_volver").remove();
 	});
 	$(document).on("click", "#escuchar-banda, #escuchar-banda-single", function(){
-		console.log("Hice click!");
+		imprimirMensaje("Hice click!");
 	 $("#reproductor [rel*='"+$(this).attr('data-urltag')+"']:first").parent().parent().find(".title").trigger("click");
 	});
 	
@@ -272,7 +281,7 @@ function iniciar () {
 		// sea activo.
 		$(this).parent().find(".activo").addClass("small");
 		$(this).parent().find(".activo").removeClass("activo");
-		console.log($(this).parent().find(".activo"));
+		imprimirMensaje($(this).parent().find(".activo"));
 		$(this).addClass("activo");
 		$(this).removeClass("small");
 		$(this).parent().parent().find(".seccion").slideUp();
@@ -345,14 +354,14 @@ function iniciar () {
 
 
 
-	console.log("Brote Colectivo iniciado!");
+	imprimirMensaje("Brote Colectivo iniciado!");
 }
 	//####################################################
 	//  Comienza Backbone
 	//####################################################
 
 $(document).ready(function(){
-	console.log('Starting app');
+	imprimirMensaje('Starting app');
 
 
 	window.collections.articles = new BroteColectivo.Collections.ArticlesCollection();
@@ -384,7 +393,7 @@ $(document).ready(function(){
 
 	xhr.done(function(data){
 		data.forEach(function(item){
-			console.log(item);
+			imprimirMensaje(item);
 			window.collections.articles.add(item);
 	});
 
@@ -392,7 +401,7 @@ $(document).ready(function(){
 
 		xhr.done(function(data){
 			data.forEach(function(item){
-				console.log(item);
+				imprimirMensaje(item);
 				window.collections.artistas.add(item);
 	});
 		
@@ -410,7 +419,7 @@ $(document).ready(function(){
 	$('nav li a').on('click', function (event) {
 		event.preventDefault();
 		var url = $(this).attr("rel");
-		console.log(url);
+		imprimirMensaje(url);
 		url = url.split(":")
 		url = url[1];
 		Backbone.history.navigate(url+'/', {trigger:true})
@@ -418,7 +427,7 @@ $(document).ready(function(){
 	function navegacion (event){
 		event.preventDefault();
 		var url = $(this).attr("rel");
-		console.log(url);
+		imprimirMensaje(url);
 		url = url.split(":")
 		url = url[1];
 		Backbone.history.navigate(url+'/', {trigger:true})
@@ -437,20 +446,20 @@ $(document).ready(function(){
 	
 	$(document).on("click", ".bandaazar a", navegacion);
 		
-	console.log("Antes de cargas fechas");
+	imprimirMensaje("Antes de cargas fechas");
 	console.time('carga-fechas');
 var fechasxhr = $.ajax({
-		url: 'http://api.brotecolectivo.com/fechas/?nuevas=si&order2=desc&corto=si&order=fechas.fecha_inicio&order2=asc',
+		url: 'http://api.brotecolectivo.com/fechas/?nuevas=si&formato_corto=si&order=fechas.fecha_inicio&order2=asc',
 		async: true,
 		dataType: "json"
 	}).done(function(data){
 			data.forEach(function(item){
-				console.log(item);
+				imprimirMensaje(item);
 				window.collections.fechas.add(item);
 		});
 		});
 	console.timeEnd('carga-fechas');
-	console.log("Despues de cargas fechas");
+	imprimirMensaje("Despues de cargas fechas");
 
 
 });

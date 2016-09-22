@@ -244,22 +244,31 @@
         </script>
   
     </ul>
-      <ul class="thumbnails" id="fechas" style="position:relative;left:0px;display:none;">
-         <script id="Fecha_tpl" type="text/template">
+
+        <ul class="lista-fechas row" id="fechas" style="position:relative;left:0px;display:none;">
+
+
+ <script id="Fecha_tpl" type="text/template">
          
-        <section class="thumbnail" style="padding:0;">
-            <img data-src="holder.js/300x200" alt="300x200"  src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/<%= post.urltag %>.jpg&w=300&h=200&zc=1" alt="">
-          <div class="caption">
-            <h3><%= post.titulo %></h3>
-            <div class="bio">
-            <p><%= post.contenido_corto %></p>
-            </div>
-          </div>
-        </section>
+<div class="col-sm-4 event">
+      <div class="thumbnail">
+        <div class="overlay"></div>
+        <img class="img-responsive" alt="alternative text" src="http://www.brotecolectivo.com/thumb/phpThumb.php?src=/fechas/<%= post.urltag %>.jpg&w=400&h=200&zc=1">
+      </div>
+      <span class="label label-info date"><%= post.dia %> de <%= post.mes %></span> 
+      <span class="label label-primary"><span class="fa fa-map-marker"></span> <%= post.lugar %></span>
+      <span class="label label-danger"><span class="fa clock-o"></span> <%= post.hora %></span>
+      <p>
+        <strong><%= post.titulo %></strong><br>
+      </p>
+    </div>
+
+
       
         </script>
-  
-    </ul>
+
+        </ul>
+
 <div id="pagination"></div>
             </div>
             <!-- ENDS posts list -->

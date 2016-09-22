@@ -45,7 +45,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$(document).attr("title", "Inicio"+titulo_inicial);
 		ocultarPaginas(false);
 		var self = this;
-		console.log("Root");
+		imprimirMensaje("Root");
 		$("#bread1").text("home");
 		$("#bread2").text("bienvenido");
 		$('#inicio').fadeOut('slow', function() {
@@ -63,7 +63,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$(document).attr("title", "Publicidad"+titulo_inicial);
 		ocultarPaginas(false);
 		var self = this;
-		console.log("Publicidad");
+		imprimirMensaje("Publicidad");
 		$('#publicite').fadeOut('slow', function() {
 		    $('#publicite').fadeIn('slow');
 		});				
@@ -79,7 +79,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		ocultarPaginas(false);
 
 		var self = this;
-		console.log("Contacto");
+		imprimirMensaje("Contacto");
 		$('#contacto').fadeOut('slow', function() {
 		    $('#contacto').fadeIn('slow');
 		});				
@@ -94,7 +94,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$(document).attr("title", "Prensa"+titulo_inicial);
 		ocultarPaginas(false);
 		var self = this;
-		console.log("prensa");
+		imprimirMensaje("prensa");
 		$('#prensa').fadeOut('slow', function() {
 		    $('#prensa').fadeIn('slow');
 		});				
@@ -110,7 +110,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		ocultarPaginas(true);
 		var self = this;
 
-		console.log("Root");
+		imprimirMensaje("Root");
 				$("body").addClass("sin-sidebar");
 		$("aside#sidebar").fadeOut();
 		$("#bread1").text("home");
@@ -132,7 +132,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 	noticias: function(){
 		$(document).attr("title", "Noticias"+titulo_inicial);
 		var self = this;
-		console.log("Root");
+		imprimirMensaje("Root");
 		$("#bread1").text("home");
 		FB.XFBML.parse();
 		$("#bread2").text("noticias");
@@ -158,7 +158,6 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			if($(".mas-"+nueva_cantidad).length > 0){
 
 			$("#cargar-mas").attr("data-cantidad", nueva_cantidad)
-
 			}else{
 				 $("#cargar-mas").hide();
 				 $("#cargar-mas").attr("data-cantidad", 5);				
@@ -176,6 +175,9 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$("#noticias .abierto .excerpt").each(function (i, info) {
 			$(this).html($(this).parent().parent().attr("contenido_corto"));
 			padre = $(this).parent();
+			imprimirMensaje("Vamso a cerrar ese post!");
+			$(".fb-comments").remove();
+
 			$('.abierto h1').slideDown();
 			$('.abierto .read-more').slideDown();
 			$(this).parent().parent().removeClass("abierto");
@@ -185,12 +187,13 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$(document).attr("title", "Artistas"+titulo_inicial);
 
 		var self = this;
-		console.log("Root");
+		imprimirMensaje("Root");
 		$("#bread1").text("home");
 		$("#bread2").text("artistas");
 		$('#artistas > div').show();
 		FB.XFBML.parse();
 			goTop();
+
 		$("#artistas .abierto .bio").each(function (i, info) {
 			$(this).html($(this).parent().parent().parent().parent().attr("bio_corta"));
 			padre = $(this).parent();
@@ -245,7 +248,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$(document).attr("title", "Agenda Cultural"+titulo_inicial);
 
 		var self = this;
-		console.log("Root");
+		imprimirMensaje("Root");
 		$("#bread1").text("home");
 		$("#bread2").text("agenda cultural");
 		$('#fechas > div').show();
@@ -275,7 +278,54 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$("nav ul#nav li:contains('agenda')").addClass('current-menu-item');
 
 		$("#fechas .loop").slideUp();
-		$("#contenidoTop").remove()
+		$("#contenidoTop").remove();
+		$("#cargar-mas").remove()
+		$("#carga_antiguas").remove();
+                if(yacargueantiguas == false){
+		$("#fechas").append('<a href="javascript:void(0)" id="carga_antiguas" class="btn btn-info btn-large btn-block" >Cargar fechas anteriores</a>');
+}		
+$("#carga_antiguas").on("click", function () {
+		$("#fechas").fadeOut();
+    var $btn = $(this);
+    $btn.button('loading');
+yacargueantiguas = true;
+var fechasxhr = $.ajax({
+		url: 'http://api.brotecolectivo.com/fechas/?formato_corto=si&order=fechas.fecha_inicio&order2=desc',
+		async: true,
+		dataType: "json"
+	}).done(function(data){
+			data.forEach(function(item){
+				window.collections.fechas.add(item);
+		});
+		});
+	imprimirMensaje("Despues de cargas fechas");
+
+		$("[class*=mas]").slideUp();
+		$("#fechas").fadeIn();
+		$("#cargar-mas").remove()
+		$btn.remove();
+		if($("#fechas .loop").length > 0){
+
+		$("#posts-list").append('<a href="javascript:void(0)" id="cargar-mas" data-cantidad="8" class="btn btn-info btn-large btn-block" >Cargar mas</a>');
+		}
+		$("#cargar-mas").on("click", function () {
+			var cantidad = $("#cargar-mas").attr("data-cantidad");
+			var nueva_cantidad = parseInt(cantidad)+8;
+			$("#fechas .mas-"+cantidad).slideDown();
+			if($("#fechas .mas-"+nueva_cantidad).length > 0){
+
+			$("#cargar-mas").attr("data-cantidad", nueva_cantidad)
+
+			}else{
+				 $("#cargar-mas").hide();
+				 $("#cargar-mas").attr("data-cantidad", 8);				
+				
+			}
+
+		})		
+});				
+		$("[class*=mas]").slideUp();
+
 		if($("#fechas .loop").length > 0){
 
 		$("#posts-list").append('<a href="javascript:void(0)" id="cargar-mas" data-cantidad="8" class="btn btn-info btn-large btn-block" >Cargar mas</a>');
@@ -302,7 +352,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		});
 	},
 		fechaSingle: function(id){
-		console.log("fechaSingle", id);
+		imprimirMensaje("fechaSingle", id);
 		ocultarPaginas(true);
 
 		$('#fechas').fadeOut('10', function() {
@@ -317,25 +367,25 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 		var id_de_articulo;
 		var obtenerId = $.getJSON('http://api.brotecolectivo.com/fechas/obtenerId/'+id+'/', function(data){
-			console.log(data);
+			imprimirMensaje(data);
 			id_de_articulo = data[0].id;
-						console.log("Cargaremos: "+ 'http://api.brotecolectivo.com/artistas/'+id_de_articulo)
+						imprimirMensaje("Cargaremos: "+ 'http://api.brotecolectivo.com/artistas/'+id_de_articulo)
 			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/fechas/'+id_de_articulo, function(info){
-				console.log(info);
+				imprimirMensaje(info);
 
 		$("#bread1").text("agenda");
 		$("#bread2").text(info.titulo);
-				console.log(info.contenido);
+				imprimirMensaje(info.contenido);
 				$("#mapa_evento").html("");
 				$("#mapa_evento").show();
 				coordenadas = info.coordenadas.split(',');
-	    		console.log(coordenadas);
+	    		imprimirMensaje(coordenadas);
 				iniciar_mapa(coordenadas[1], coordenadas[0],"", "mapa_evento");
 	    		
 				$(".head").text(info.titulo);
-				console.log("Aca estoy ahora");
-				$(".subhead").html(sacar_HTML(info.contenido_corto));
-				console.log("Aca estoy ahora¿?");
+				imprimirMensaje("Aca estoy ahora");
+				$(".subhead").text("todos los próximos eventos culturales de la provincia");
+				imprimirMensaje("Aca estoy ahora¿?");
 				$(document).attr("title", info.titulo+titulo_inicial);
 				$("#single .info-evento > h2").html("")
 				$("#single .info-evento > h2").append('<span class="activo">¿Dónde?</span> <span class="small">¿Cuándo?</span>');
@@ -352,9 +402,9 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 				fecha_actual = moment();
 				diferencia = fecha_inicio.diff(fecha_actual);
 
-				console.log("la diferencia es: "+fecha_inicio.diff(fecha_actual));
+				imprimirMensaje("la diferencia es: "+fecha_inicio.diff(fecha_actual));
 				endDate = new Date(fecha_inicio.format("YYYY"),fecha_inicio.format("M")-1,fecha_inicio.format("DD"),fecha_inicio.format("HH"),fecha_inicio.format("mm"));
-				console.log('Date('+fecha_inicio.format("YYYY")+','+fecha_inicio.format("M")+'-1,'+fecha_inicio.format("DD")+','+fecha_inicio.format("HH")+','+fecha_inicio.format("mm")+');');
+				imprimirMensaje('Date('+fecha_inicio.format("YYYY")+','+fecha_inicio.format("M")+'-1,'+fecha_inicio.format("DD")+','+fecha_inicio.format("HH")+','+fecha_inicio.format("mm")+');');
 				
 				$("#single .info-evento .cuando").countdown('destroy'); 
 				
@@ -378,7 +428,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		},
 
 	artistaSingle: function(id){
-		console.log("artistaSingle", id);
+		imprimirMensaje("artistaSingle", id);
 		ocultarPaginas(true);
 		$('#artistas').fadeOut('10', function() {
 		    $('#artistas').fadeIn('slow');
@@ -395,14 +445,14 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 		var id_de_articulo;
 		var obtenerId = $.getJSON('http://api.brotecolectivo.com/bandas/obtenerId/'+id+'/', function(data){
-			console.log(data);
+			imprimirMensaje(data);
 			id_de_articulo = data[0].id;
-			console.log("Cargaremos: "+ 'http://api.brotecolectivo.com/artistas/'+id_de_articulo)
+			imprimirMensaje("Cargaremos: "+ 'http://api.brotecolectivo.com/artistas/'+id_de_articulo)
 			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/artistas/'+id_de_articulo, function(info){
-				console.log(info);
+				imprimirMensaje(info);
 			$("#bread1").text("artistas");
 			$("#bread2").text(info.titulo);
-				console.log(info.bio);
+				imprimirMensaje(info.bio);
 				$(".head").text(info.nombre);
 				$(".subhead").html(sacar_HTML(info.bio_corta));
 				$(document).attr("title", info.nombre+titulo_inicial);
@@ -497,11 +547,11 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 					if(data[0]){
 						$.each(data, function (i, item) {
-							console.log(item);
+							imprimirMensaje(item);
 							$("ul.videosbanda").append('<li><a href="http://www.youtube.com/watch?v='+item.idyoutube+'">'+item.titulo+'</a></li>');
 						});
 						$("ul.videosbanda").ytplaylist();
-						console.log("Voy a abrir un video");
+						imprimirMensaje("Voy a abrir un video");
 						
 					}
 
@@ -509,7 +559,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 						if(data[0]){
 							$.each(data, function (i, item) {
-								console.log(item);
+								imprimirMensaje(item);
 								$("ul.noticias").append('<li><a href="/noticia/'+item.urltag+'" rel="address:/noticia/'+item.urltag+'">'+item.titulo+'</a></li>');
 							});
 							if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length == 0){
@@ -522,18 +572,18 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 						var obtenerFechas = jQuery.ajax({
 							async: false,
 							timeout: 9000,
-							url: 'http://api.brotecolectivo.com/fechas/?banda='+id_de_articulo+'&limit=5&order=fechas.id&corto=1&order2=desc',
+							url: 'http://api.brotecolectivo.com/fechas/?banda='+id_de_articulo+'&limit=5&order=fechas.id&corto=si&order2=desc',
 							dataType: "json"}).complete( function(data){
 							
-								console.log("Hola2!");
-								console.log(data);
+								imprimirMensaje("Hola2!");
+								imprimirMensaje(data);
 								var data_json = JSON.parse(data.responseText);
 
 							if(data_json[0]){
 								$.each(data_json, function (i, item) {
-									console.log(i);
-									console.log(item);
-									console.log(data_json.length);
+									imprimirMensaje(i);
+									imprimirMensaje(item);
+									imprimirMensaje(data_json.length);
 									$("ul.eventos").append('<li><a href="javascript:void(0);" rel="address:/agenda-cultural/'+item.urltag+'">'+item.fecha_corta+' - '+item.titulo+'</a></li>');
 									if(i+1 == data_json.length){
 										$(document).trigger("eventosCargados", id_de_articulo);
@@ -543,13 +593,13 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 							}else{
 								$("#cargando_info").remove();
-								console.log("Hola!")
+								imprimirMensaje("Hola!")
 								if($('#artistas #'+id_de_articulo+' .reproductordevideo ul li').length == 0){
 									if($('#artistas #'+id_de_articulo+' .noticias li').length == 0){
 										$("#info_relacionada_artista").hide();
 									}
 								}else{
-									console.log("naranja")
+									imprimirMensaje("naranja")
 									$('#artistas #'+id_de_articulo+" h2 span:contains('Videos')").click();
 								}
 								if($('#artistas #'+id_de_articulo+' .noticias li').length == 0){
@@ -589,7 +639,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 	},
 	articleSingle : function(id){
-		console.log("articleSingle", id);
+		imprimirMensaje("articleSingle", id);
 		ocultarPaginas(false);
 
 		$('#noticias').fadeOut('10', function() {
@@ -609,13 +659,13 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 
 		var id_de_articulo;
 		var obtenerId = $.getJSON('http://api.brotecolectivo.com/noticias/obtenerId/'+id+'/', function(data){
-			console.log("Estoy cargando un articulo")
-			console.log(data);
+			imprimirMensaje("Estoy cargando un articulo")
+			imprimirMensaje(data);
 			id_de_articulo = data[0].id;
-			console.log("cargare "+id_de_articulo);
-			console.log("Estoy cargando un articulo")
+			imprimirMensaje("cargare "+id_de_articulo);
+			imprimirMensaje("Estoy cargando un articulo")
 			var obtener_articulo = $.getJSON('http://api.brotecolectivo.com/noticias/'+id_de_articulo, function(info){
-				console.log(info[0]);
+				imprimirMensaje(info[0]);
 				$(".head").text(info[0].titulo);
 						$("#bread1").text("noticias");
 						$("#bread2").text(info[0].titulo);

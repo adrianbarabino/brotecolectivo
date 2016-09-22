@@ -9,7 +9,7 @@ BroteColectivo.Views.ArtistaView = Backbone.View.extend({
 		this.model = model;
 		var index = this.collection.indexOf(this.model);
 		var modelAbove = this.collection.at(index-1);
-		console.log("Este es el "+index)
+		imprimirMensaje("Este es el "+index)
 
 		this.model.on('change', function(){
 			self.render();
@@ -17,7 +17,7 @@ BroteColectivo.Views.ArtistaView = Backbone.View.extend({
 		var plantilla_init = $("#Artista_tpl").html();
 		var plantilla = '<li class="span3" id="<%= post.urltag %>">'+plantilla_init+'</li>';
 		if(index>7){
-			console.log("Indice es: "+index+ " y el proximo será: "+indice_artistas);
+			imprimirMensaje("Indice es: "+index+ " y el proximo será: "+indice_artistas);
 		indice_artistas_nuevo = indice_artistas+8;
 		if(indice_artistas+15 == index){
 		indice_artistas = indice_artistas_nuevo;
@@ -34,7 +34,7 @@ BroteColectivo.Views.ArtistaView = Backbone.View.extend({
 
 	},
 	navigate: function () {
-		console.log("le hice click", this.model.get("nombre"));
+		imprimirMensaje("le hice click", this.model.get("nombre"));
 		Backbone.history.navigate('artistas/'+this.model.get("urltag")+'/', {trigger:true})
 	},
 	render: function(data) {

@@ -17,7 +17,6 @@ BroteColectivo.Views.FechaView = Backbone.View.extend({
 		var plantilla_init = $("#Fecha_tpl").html();
 		var plantilla = '<li class="span3" id="<%= post.urltag %>">'+plantilla_init+'</li>';
 		if(index>7){
-			console.log("Indice es: "+index+ " y el proximo será: "+indice_fechas);
 		indice_fechas_nuevo = indice_fechas+8;
 		if(indice_fechas+15 == index){
 		indice_fechas = indice_fechas_nuevo;
@@ -34,7 +33,6 @@ BroteColectivo.Views.FechaView = Backbone.View.extend({
 
 	},
 	navigate: function () {
-		console.log("le hice click", this.model.get("nombre"));
 		Backbone.history.navigate('agenda-cultural/'+this.model.get("urltag")+'/', {trigger:true})
 	},
 	render: function(data) {

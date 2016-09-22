@@ -341,4 +341,4 @@ if($palabras_clave){
 }
 
 ?>
-<meta name="author" content="Adrian Barabino">
+<meta name="author" content="">
