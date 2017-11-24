@@ -60,7 +60,7 @@ function esta_activo($elemento){
 					
 				<a href="javascript:void(0)" rel="address:/inicio" id="logo"><img  src="/img/logo.png" alt="Brote Colectivo"></a>
 				<!--  <a href="javascript:void(0)" rel="address:/noticia/primer-aniversario" id="pastel"><img  src="/img/pastel.png" alt="1 Año de Brote Colectivo"></a> -->
-			                                 <a href="https://www.facebook.com/RockSinVueltasRadio/" target="_blank"  id="rock"><img  src="/img/logo-color.png" /> </a>	
+			                                 <!-- <a href="https://www.facebook.com/RockSinVueltasRadio/" target="_blank"  id="rock"><img  src="/img/logo-color.png" /> </a> -->	
 				<nav>
 					<ul id="nav" class="sf-menu">
 						<li <?php esta_activo("inicio"); ?>><a id="nav_inicio" rel="address:/inicio" href="<?php enlace_interno("inicio/"); ?>">inicio<span class="subheader"> del sitio</span></a>
