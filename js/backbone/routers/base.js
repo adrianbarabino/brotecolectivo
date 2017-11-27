@@ -57,6 +57,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$("nav ul#nav li:contains('inicio')").addClass('current-menu-item');
 		$('#artistas').slideUp('slow');
 		$('#noticias').slideUp('slow');
+		crear_slide();
 		$('#inicio > div').show();
 	},
 	publicidad: function(){
@@ -206,6 +207,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
 			$("#artistas .abierto img").attr("src", url_foto_nueva);
 			$(this).parent().parent().parent().removeClass("abierto");
+			$(this).parent().parent().parent().parent().removeClass("opened");
 		});
 		$(".head").text("Artistas");
 		$(".subhead").text("catálogo de artistas de la provincia");
@@ -242,6 +244,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 		$("#inicio .abierto .excerpt").each(function (i, info) {
 			$(this).html($(this).parent().parent().attr("contenido_corto"));
 			$(this).parent().parent().removeClass("abierto");
+			$(this).parent().removeClass("opened");
 		});
 	},
 	fechas: function(){
@@ -264,6 +267,7 @@ BroteColectivo.Routers.BaseRouter = Backbone.Router.extend({
 			var url_foto_nueva = cambiar_thumb(url_foto, 300, 200);
 			$("#fechas .abierto img").attr("src", url_foto_nueva);
 			$(this).parent().parent().parent().removeClass("abierto");
+			$(this).parent().parent().parent().parent().removeClass("opened");
 		});
 		$(".head").text("Agenda Cultural");
 		$(".subhead").text("todos los próximos eventos culturales de la provincia");
@@ -533,6 +537,10 @@ var fechasxhr = $.ajax({
 
 				$('#artistas #'+id_de_articulo+' .bio').html(info.bio);
 				$('#artistas #'+id_de_articulo+' > li').addClass("abierto");
+				console.log("va el id este;");
+				console.log($('#artistas #'+id_de_articulo+''));
+				console.log("va el id este;");
+				$('#artistas div[id='+id_de_articulo+']').addClass("opened");
 				$("#artistas #"+id_de_articulo+' > li').append('<div class="reproductor" id="info_relacionada_artista"><h2><span class="small">Videos</span> <span class="small">Noticias</span> <span class="small">Eventos</span></h2><div id="cargando_info"></div><div class="reproductordevideo seccion" style="display:none;"><div class="yt_holder"><div id="ytvideo"></div><ul class="videosbanda"></ul></div></div><div class="noticias_relacionadas seccion" style="display:none;"><ul class="noticias"></ul></div><div class="eventos_relacionados seccion" style="display:none;"><ul class="eventos"></ul></div></div>');
 				$('#artistas #'+id_de_articulo+' a[data-tipo^=lightbox]').attr("href", "http://www.brotecolectivo.com/contenido/imagenes/bandas/"+info.urltag+".jpg")
 				$('#artistas #'+id_de_articulo+' a[data-tipo^=lightbox]').attr("rel", "lightbox")
