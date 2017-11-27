@@ -1,0 +1,1405 @@
+@Base: saturate(#80a51e, 10%);
+@BaseAlerta: #B80000;
+
+@PrimarioNormal: lighten(@Base, 5%);
+@PrimarioPocoClaro: lighten(@PrimarioNormal, 2%);
+@PrimarioClaro: lighten(@PrimarioNormal, 10%);
+@PrimarioPocoOscuro: darken(@PrimarioNormal, 8%);
+@PrimarioOscuro: darken(@PrimarioNormal, 15%);
+@GrisBase: #888;
+@GrisOscuro: #444;
+@AlertaNormal: desaturate(@BaseAlerta, 10%);
+
+.bordes-redondeados (@radius: 5px) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+
+/* Import other css */
+@import url('reset.css');
+@import url('social-icons.css');
+@import url('comments.css');
+@import url('elements.css');
+@import url('countdown.css');
+
+
+/* GENERAL ------------------------------------------------------------*/
+#single{
+	position:relative;
+}
+.info-evento {
+    width: 40%;
+    position: absolute;
+    right: 0.5em;
+    top: 1em;
+    background:#333;
+    padding: 0.5em;
+    color:white;
+	font-family: "Open Sans";
+}
+.info-evento .seccion {
+    margin-top: 0.5em;
+}
+.info-evento .seccion > span{
+font-size: 1.5em;
+font-weight: 200;
+display: block;
+text-align: center;
+margin: 0.2em 0;
+}
+
+.info-evento .cuando{
+	height:67px;
+}
+.info-evento h2 span {
+
+padding: 0.2em 0.3em;
+
+}
+
+#contenidoTop{
+	position: relative;
+z-index: 101;
+}
+
+#mapa_evento #OpenLayers_Control_Attribution_7, #mapa_evento #OpenLayers_Control_Zoom_5{
+	display:none!important;
+
+}
+.olControlAttribution, .olControlNoSelect{
+	display:none!important;
+}
+.info-evento h2{
+	font-size:21px;
+}
+.info-evento h3 small{
+	font-size:16px;
+}
+.info-evento h3{
+	font-size:18px;
+}
+#mapa_evento{
+	width: 103.2%;
+height: 200px;
+position: relative;
+top: -3em;
+left: -1em;
+}
+
+/* Estilo de Copy*/
+#copy{
+	color: #555;
+text-align: center;
+width:100%;
+padding-right:20px;
+display:inline-block;
+background: rgba(165, 165, 165, 0.56);
+padding: 10px;
+margin-top: 10px;
+position:relative;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+#copylogos{
+	text-align:right;
+}
+#copylogos figure{
+	text-align: right;
+display: inline-block;
+width: 10%;
+margin-left: 1em;
+margin-top: 1em;
+}
+#copylogos figure{
+	text-align: right;
+display: inline-block;
+width: 10%;
+margin-left: 1em;
+margin-top: 1em;
+}
+#copylogos  figure img{
+	width:100%;
+}
+#copylogos img{
+
+opacity: 0.5;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#copy:hover{
+background: rgba(255, 255, 255, 0.56);
+}
+#copylogos img:hover{
+	opacity:0.8;
+}
+/* Fin de estilo de copy */ 
+/* Estilo sin sidebar */
+#inicio > div{
+	transition:all 0.4s ease-in-out;
+}
+#inicio .abierto h1{
+}
+body.sin-sidebar{
+
+	aside#sidebar{
+		width:0;
+	}
+	#posts-list{
+		min-width: 500px;
+		min-height:450px;
+	}
+	#posts-list{
+		width: 97%;
+		margin-left: 1em;
+	}
+}
+
+#artistas.thumbnails div > li, #artistas.thumbnails div > li section,#fechas.thumbnails div > li, #fechas.thumbnails div > li section{
+	height:340px;
+	margin-bottom:3em;
+}
+#posts-list, aside#sidebar{
+	transition: all 0.2s ease-in-out;
+}
+.clearfix{ clear:both; }
+
+
+article.ubicacion{
+	margin: 0;
+	background: rgba(0, 0, 0, 0.48);
+	padding: 1em;
+	border: 5px solid rgba(34, 34, 34, 0.69);
+	color: white;
+}
+
+/* Aca comienza el CSS del reproductor */
+
+
+.ttw-music-player {
+    width: 370px;
+    margin: 60px auto;
+    font-family: 'Lato', arial, sans-serif;
+}
+
+.ttw-music-player .player {
+    width: 100%;
+}
+
+/** Album Cover **/
+.ttw-music-player .album-cover {
+    position: relative;
+    float: left;
+    background: #333 url(../img/reproductor/album-cover-bg.jpg) no-repeat 0 0 scroll;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, .75);
+    -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, .75);
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, .75);
+}
+
+.ttw-music-player .album-cover .img {
+    box-shadow: inset 0 0 1px rgba(255, 255, 255, .6);
+    -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .6);
+    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .6);
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+}
+
+.ttw-music-player .album-cover .highlight {
+    background: transparent url(../img/reproductor/album-cover-highlight.png) no-repeat 0 0 scroll;
+    opacity: 1;
+
+}
+
+.ttw-music-player .album-cover:hover .highlight {
+    opacity: 1;
+}
+
+.ttw-music-player .album-cover,
+.ttw-music-player .album-cover .img,
+.ttw-music-player .album-cover .highlight {
+    display: block;
+    height: 125px;
+    width: 125px;
+}
+
+.ttw-music-player .album-cover img,
+.ttw-music-player .album-cover .img,
+.ttw-music-player .album-cover .highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:125px;
+    width:125px;
+}
+
+/** Track Info **/
+.ttw-music-player .track-info {
+    width: 215px;
+    margin: 8px 0 0 30px;
+    float: left;
+    font-size: 12px;
+}
+
+.ttw-music-player .track-info p {
+    margin: 0 0 8px 0;
+}
+
+.ttw-music-player .player .title {
+    color: #232323;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .8);
+    font-family: 'Lato Bold', arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.ttw-music-player .artist-outer {
+    color: #727272;
+    font-family: 'Lato Italic', arial, sans-serif;
+    font-style: italic;
+}
+
+.ttw-music-player .artist {
+    color: #999;
+    font-family: 'Lato', arial, sans-serif;
+    margin-left: 4px;
+}
+
+.ttw-music-player .rating {
+    width: 75px;
+    height: 16px;
+}
+
+.ttw-music-player .rating-star {
+    width: 15px;
+    height: 16px;
+    display: block;
+    float: left;
+    background: transparent url(../img/reproductor/rating-off.png) no-repeat center center scroll;
+    cursor: pointer;
+}
+
+.ttw-music-player .rating-star:hover,
+.ttw-music-player .rating-star.on,
+.ttw-music-player .rating-star.hover {
+    background: transparent url(../img/reproductor/rating-on.png) no-repeat center center scroll;
+}
+
+/** Player **/
+.ttw-music-player .player-controls {
+    width: 215px;
+    height: 30px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: transparent url(../img/reproductor/player-bg.png) repeat 0 0 scroll;
+    float: left;
+    margin: 12px 0 0 30px;
+}
+
+.ttw-music-player .player-controls .main {
+    width: 52px;
+    height: 12px;
+    margin: 9px 9px;
+    float: left;
+}
+
+.ttw-music-player .player-controls div {
+
+    float: left;
+    cursor: pointer;
+}
+
+.ttw-music-player .previous, .ttw-music-player .next {
+    height: 10px;
+    width: 15px;
+    margin: 1px 0;
+}
+
+.ttw-music-player .play, .ttw-music-player .pause {
+    width: 8px;
+    height: 12px;
+    margin: 0 7px;
+}
+
+.ttw-music-player .previous {
+    background: transparent url(../img/botones-reproductor/back.png) no-repeat center center scroll;
+}
+
+.ttw-music-player .next {
+    background: transparent url(../img/botones-reproductor/next.png) no-repeat center center scroll;
+}
+
+.ttw-music-player .play {
+    background: transparent url(../img/botones-reproductor/play.png) no-repeat center center scroll;
+}
+
+.ttw-music-player .pause {
+    background: transparent url(../img/botones-reproductor/pause.png) no-repeat center center scroll;
+}
+
+.ttw-music-player .progress-wrapper {
+    height: 9px;
+    width: 135px;
+    float: left;
+    background: transparent url(../img/reproductor/player-progress.png) repeat-x 0 0 scroll;
+    margin: 11px 10px 10px 0;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.ttw-music-player .progress {
+    height: 9px;
+    width: 135px;
+    cursor: pointer;
+}
+
+.ttw-music-player .elapsed {
+    height: 6px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin: 1px;
+    width: 60%;
+    background: rgb(122, 190, 0);
+}
+
+.ttw-music-player .unused-controls {
+    display: block !important; /* Ahora SI los voy a usar, fuck you unused-controls display:none; !  */
+}
+
+/** Description **/
+.ttw-music-player .description {
+    clear: both;
+    margin: 30px 0 0 0;
+    font-size: 12px;
+    color: #999;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+}
+
+.ttw-music-player .description.showing{
+    margin:30px 0;
+}
+
+/** Track List **/
+.ttw-music-player .tracklist {
+    padding: 10px 20px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15), 0 1px 0 rgba(255, 255, 255, .04);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15), 0 1px 0 rgba(255, 255, 255, .04);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15), 0 1px 0 rgba(255, 255, 255, .04);
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: transparent url(../img/reproductor/tracklist-bg.png) repeat 0 0 scroll;
+    color: #efefef;
+    font-size: 12px;
+}
+
+.ttw-music-player .tracklist ol {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+}
+
+.ttw-music-player .tracklist li {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+    background: transparent url(../img/reproductor/tracklist-item-bg.png) repeat-x bottom left scroll;
+    padding: 10px 0 10px 0;
+    list-style-position: inside;
+    position: relative;
+}
+
+.ttw-music-player .tracklist li:hover {
+    color: #eee;
+}
+
+
+.ttw-music-player .track{
+	padding: 1em 0.5em!important;
+	transition: all 0.2s ease-in-out;
+}
+.ttw-music-player .track:hover{
+	box-shadow: inset 0 0 50px 10px rgb(107, 103, 103);
+border-radius: 0.5em;
+
+}
+
+.ttw-music-player .track:hover a, .ttw-music-player .track:hover .genero, .ttw-music-player .track:hover{
+	color:white!important;
+}
+.ttw-music-player li:last-child{
+    background: none;
+}
+
+.ttw-music-player .show-more-button li:last-child{
+    background: transparent url(../img/reproductor/tracklist-item-bg.png) repeat-x bottom left scroll;
+}
+
+
+
+.ttw-music-player .tracklist .title {
+    width: 164px;
+    display: inline-block;
+    padding: 0 0 0 14px;
+    cursor: pointer;
+}
+
+.ttw-music-player li:nth-child(1n + 10) .title{
+    padding-left:7px;
+}
+
+.ttw-music-player li.playing {
+    color:#fff !important;
+
+}
+
+.ttw-music-player .tracklist .rating {
+    margin-left: 10px;
+    width: 30px;
+    display: block;
+    position: absolute;
+    right: 72px;
+    top: 17.5px;
+}
+
+.ttw-music-player .rating-bar {
+    height: 10px;
+    width: 3px;
+    display: block;
+    float: left;
+    cursor: pointer;
+    background: transparent url(../img/reproductor/rating-bar.png) no-repeat 0 0 scroll;
+}
+
+.ttw-music-player .rating-bar.on,
+.ttw-music-player .rating-bar:hover,
+.ttw-music-player .rating-bar.hover {
+    background: transparent url(../img/reproductor/rating-bar-on.png) no-repeat 0 0 scroll;
+}
+
+.ttw-music-player .buy {
+    width: 62px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    top: 9px;
+    right: 0;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background: transparent url(../img/reproductor/buy-bg.png) repeat 0 0 scroll;
+    margin: 0 0 0 10px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 16px;
+    text-shadow: none;
+    color: #999;
+    text-decoration: none;
+}
+
+.ttw-music-player .buy:hover {
+    color: #eee;
+}
+
+.ttw-music-player .buy.not-active{
+    display:none;
+}
+
+.ttw-music-player .more {
+    display:none;
+    font-family: 'Lato Italic', arial, sans-serif;
+    font-style: italic;
+    font-size: 11px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+    padding: 10px 0;
+    margin: 10px 0;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: transparent url(../img/reproductor/tracklist-more.png) repeat 0 0 scroll;
+}
+
+.ttw-music-player .more:hover {
+    color: #eee;
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, .2);
+}
+
+.ttw-music-player .show-more-button .more{
+    display:block;
+}
+
+
+/** Transitions **/
+.ttw-music-player .more,
+.ttw-music-player .album-cover .highlight,
+.ttw-music-player .tracklist li,
+.ttw-music-player .buy {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* http://perishablepress.com/press/2009/12/06/new-clearfix-hack */
+.ttw-music-player .player:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+
+
+/* Aca empiezan los estilos para el reproductor FIXED en la parte de abajo */
+
+.ttw-music-player .tracklist .genero {
+    float: right;
+padding: 0 20px 0 0;
+}
+
+.ttw-music-player .genero {
+color: #999;
+font-family: 'Lato', arial, sans-serif;
+margin-left: 4px;
+}
+.ttw-music-player .tracklist .letra a {
+float: right;
+padding: 0 10px 0 0;
+color: #444!important;
+background: white;
+border-radius: 5px;
+width: 25px;
+padding-left: 5px;
+font-size: 13px;
+position: absolute;
+left: 370px;
+}
+.ttw-music-player .tracklist .letra a:hover{
+    text-decoration:none;
+}
+
+.ttw-music-player .unused-controls .jp-volume-bar{
+    position: absolute;
+top: 25px;
+width: 51px;
+height: 28px;
+z-index: 1000;
+background: transparent url(../img/botones-reproductor/volumen.png) no-repeat center center scroll;
+right: -400px;
+background-size:105%;
+}
+.ttw-music-player .volume-container{
+    position: relative;
+top: 16px;
+width: 51px;
+height: 20px;
+background: rgba(255, 255, 255, 0.14);
+left: 541px;
+
+}
+.ttw-music-player .tooltip{
+/* Estilos para el tooltip... */
+}
+.ttw-music-player .unused-controls .jp-volume-bar-value{
+    position: absolute;
+height: 20px;
+z-index: 999;
+background-color: rgb(63, 78, 37);
+}
+
+/* Los estilos de arriba eran anteriores del sitio antiguo de Brote Colectivo */
+
+.ttw-music-player{
+    position:relative;
+    top: -20px;
+    left: -60px;
+}
+.ttw-music-player .player-controls {
+    width:200px;
+    height:70px;
+    position: absolute;
+    top: -60px;
+    background: none;
+}
+
+.ttw-music-player #container-tracklist{
+    position: relative;
+    top: -122px;
+}
+.ttw-music-player .tracklist {
+    position: absolute;
+    bottom:0;
+    left:0;
+    opacity: 1;
+	border: 0.5em solid #b2e629;
+	box-shadow: inset 0 0 100px 50px #b2e629;
+	background: rgb(47, 68, 35);
+    width: 150%;
+    overflow: auto;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 1;
+    display:none;
+}
+
+.ttw-music-player .tracklist ol{
+    overflow:auto;
+}
+
+.ttw-music-player .tracklist .tracks .duration {
+position: absolute;
+left: 320px;
+}
+.ttw-music-player .tracklist .tracks{
+    height:100px!important;
+}
+.ttw-music-player .player-controls .main{
+    width:100%;
+
+}
+.ttw-music-player .player-controls .main > div{
+    width:50px;
+    height:50px;
+    background-size:100%;
+    display:inline-block;
+}
+
+.ttw-music-player .progress-wrapper{
+    position:absolute;
+    left:310px;
+    top:30px;
+    width:190px;
+}
+.ttw-music-player .progress, .ttw-music-player .elapsed {
+    height:10px;
+}
+
+#reproductor{
+    position: fixed;
+    font-family: "Open Sans", arial;
+    z-index:105;
+bottom: 0;
+height: 50px;
+width: 100%;
+background: rgb(195,220,50); /* Old browsers */
+background: -moz-linear-gradient(top,  @PrimarioClaro 0%, @PrimarioNormal 50%, @PrimarioOscuro 51%, @PrimarioPocoOscuro 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@PrimarioClaro), color-stop(50%,@PrimarioNormal), color-stop(51%,@PrimarioOscuro), color-stop(100%,@PrimarioPocoOscuro)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  @PrimarioClaro 0%,@PrimarioNormal 50%,@PrimarioOscuro 51%,@PrimarioPocoOscuro 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  @PrimarioClaro 0%,@PrimarioNormal 50%,@PrimarioOscuro 51%,@PrimarioPocoOscuro 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  @PrimarioClaro 0%,@PrimarioNormal 50%,@PrimarioOscuro 51%,@PrimarioPocoOscuro 100%); /* IE10+ */
+background: linear-gradient(to bottom,  @PrimarioClaro 0%,@PrimarioNormal 50%,@PrimarioOscuro 51%,@PrimarioPocoOscuro 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3dc32', endColorstr='#97c71d',GradientType=0 ); /* IE6-9 */
+
+}
+
+.ttw-music-player{
+    overflow:visible!important;
+}
+/* New CSS */
+
+footer {
+    background:black;
+    color:white;
+}
+
+.excerpt{
+    padding:1em;
+}
+.meta{
+    padding:1em;
+}
+footer > div {
+    width: 100%;
+    padding: 2em 3em;
+    margin: 0 auto;
+    font-size: 18px;
+    max-width: 1400px;
+}
+
+.feature-image {
+    display: block;
+    margin: 1em;
+    margin-top: 0;
+}
+
+
+header {
+    background: black;
+    font-family: "Open Sans", arial
+}
+#logo img{
+    max-width:250px;
+}
+
+header #nav{
+
+}
+
+header{
+    padding:0em 0;
+}
+
+header .wrapper{
+    margin: 0 auto;
+    width:80%;
+    text-align:center;
+
+
+}
+.col-md-3.opened{
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+div#main {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 18px;
+    max-width: 1400px;
+}
+
+div#masthead {
+    background: #dedede;
+    padding: 1em 2em;
+    margin: 1em;
+}
+
+#masthead span.head {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#masthead .subhead {
+    padding: 1em;
+    font-size: 1em;
+}
+
+div#contenidoTop {
+    margin-top: 0;
+    padding: 1em 0;
+}
+div#contenidoTop a{
+    text-decoration:none;
+}
+#header logo{
+    width:30%;
+    display:inline-block;
+}
+
+header nav{
+    width:70%;
+    text-align:right;
+   
+    display:inline-block;
+
+}
+
+header nav li{
+    display:inline-block;
+
+}
+
+
+nav > ul > li > ul {
+    position: absolute;
+    background:black;
+    margin-top:-3em;
+}
+nav > ul > li > ul > li > a{
+    line-height:20px;
+    display:block;
+}
+nav > ul > li > ul > li{
+    display:block;
+    text-align:left;
+}
+
+header nav ul li a{
+    list-style:none;
+    font-weight:bold;
+    font-size:14px;
+    color:white;;
+    text-decoration:none;
+    background:black;
+    line-height:8em;
+    padding:0.3em 0.5em;
+    display:inline-block;
+    margin:1em 0.3em;
+    text-transform:uppercase;
+
+}
+
+header nav ul li a:hover{
+    background:green;
+}
+
+.glide__slide span {
+    position: absolute;
+    bottom: 2em;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 1em;
+    margin: 0 auto;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-family:  "Open Sans", arial;
+    font-weight: bold;
+}
+.glide__slide span b {
+    display: block;
+    font-size: 0.5em;
+    font-weight: 200;
+}
+.glide__slide{
+    position:relative;
+}
+
+
+
+/* New CSS */
+
+.ttw-music-player .album-cover{
+    z-index:2;
+    position: absolute;
+top: -50px;
+left: 220px;
+}
+
+.ttw-music-player .track-info .title{
+    position: absolute;
+top: -35px;
+left: 300px;
+width: 100%;
+}
+
+.ttw-music-player .track-info .artist-outer{
+    position: absolute;
+top: -34px;
+left: 485px;
+width: 100%;
+}
+
+.jp-current-time{
+position: absolute;
+color: white;
+top: 35px;
+display: inline-block;
+left: 270px;
+}
+.jp-duration{
+    position: absolute;
+color: white;
+top: 35px;
+display: inline-block;
+left: 505px;
+}
+.unused-controls{
+    display:block!important;
+}
+
+.ttw-music-player .album-cover img, .ttw-music-player .album-cover .img, .ttw-music-player .album-cover .highlight,.ttw-music-player .album-cover, .ttw-music-player .album-cover .img, .ttw-music-player .album-cover .highlight{
+    width:50px;
+    height:50px;
+}
+
+.ttw-music-player .boton-playlist{
+    width: 50px;
+height: 50px;
+display: inline-block;
+background: transparent url(../img/botones-reproductor/playlist.png) no-repeat center center scroll;
+position: relative;
+top: -40px;
+left: -260px;
+background-size:100%;
+cursor:pointer;
+}
+
+.ttw-music-player .progress{
+    background-color: #393a3c;
+background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#505155), to(#2e302f));
+background-image: -webkit-linear-gradient(#505155, #2e302f);
+background-image: -moz-linear-gradient(#505155, #2e302f);
+background-image: -o-linear-gradient(#505155, #2e302f);
+background-image: linear-gradient(#505155, #2e302f);
+}
+
+.ttw-music-player .elapsed .jp-play-bar{
+    background:rgb(122, 190, 0)!important;
+}
+
+/* Arreglo de los botones del reproductor, para el tooltip */
+.jp-play, .jp-previous, .jp-next, .jp-pause{
+    position:absolute;
+}
+
+.jp-play, .jp-pause{
+    left:58px;
+}
+.jp-next{
+    left:115px;
+}
+@media (max-width:767px){
+.ttw-music-player{
+
+    left: -130px;
+}
+
+}
+@media (max-width:480px){
+
+#reproductor{
+	max-width:480px;
+}
+.thumbnails{
+	  width: 65%;
+  margin-left: -20px;
+}
+
+.thumbnails .thumbnail{
+	float:none;
+	margin:0 auto;
+}
+.thumbnails section.thumbnail{
+	float:left;
+}
+#info_relacionada_artista{
+	width:90%;
+	margin:0 auto!important;
+}
+}
+@media (max-width:600px){
+ul#artistas li.abierto img, #single figure img{
+	width:90%;
+	max-width:300px;
+}
+#main{
+	width:100%;
+}
+#copy,#copylogos{
+	width:90%!important;
+	margin:0 auto!important;
+}
+#info_relacionada_artista{
+	width:90%;
+	margin:0 auto!important;
+}
+.thumbnail{
+	width:90%;
+}
+#reproductor{
+    display:none;
+}
+
+
+}
+
+
+/* Finaliza el CSS del Reproductor*/
+
+
+
+/* CSS del Overlay */
+
+ /* container for external content. uses vertical scrollbar, if needed */
+  div.contentWrap {
+    height:441px;
+    overflow-y:auto;
+    width:90%;
+  }
+  
+
+/* the overlayed element */
+#overlay {
+
+    /* initially overlay is hidden */
+    display:none;
+
+    /* growing background image */
+    background-image:url(http://jquerytools.org/media/img/overlay/white.png);
+    background-repeat: no-repeat;
+
+    /*
+      width after the growing animation finishes
+      height is automatically calculated
+      */
+    width:640px;
+
+    /* some padding to layout nested elements nicely  */
+    padding:35px;
+
+    /* a little styling */
+    font-size:11px;
+}
+
+/* default close button positioned on upper right corner */
+#overlay .close {
+    background-image:url(http://jquerytools.org/media/img/overlay/close.png);
+    position:absolute; right:5px; top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+#cargando_pagina{
+	background: #222;
+display: inline-block;
+margin: 9em 20em;
+width: 20%;
+vertical-align: top;
+position: absolute;
+}
+
+/* Finaliza el CSS del Overlay */
+
+
+/* Comienza el estilo para Artistas */
+
+ul#artistas li.abierto,ul#fechas li.abierto{
+	width:98%;
+	height:auto;
+	
+}
+ul#artistas li.abierto section, ul#fechas li.abierto section{
+	border:0;
+	cursor:default;
+	height:auto;
+
+}
+
+ul#artistas li.abierto img,ul#fechas li.abierto img{
+	float:right;
+}
+
+#fechas h3{
+	font-size:20px;
+	line-height: 25px;
+}
+
+.icon-refresh{
+	cursor:pointer!important;
+}
+#info_relacionada_artista{
+	display: inline-block!important;
+width: 80%;
+background: #222 url("../img/main-pattern.png");
+box-shadow: inset 0 0 150px -20px rgba(0, 0, 0, 0.76);
+color: #fff;
+margin: 0 auto;
+text-align: center;
+margin-left: 6em;
+padding:2em 1em;
+font-family: 'Allan', helvetica, arial, sans-serif;
+}
+
+h2 span{
+	cursor:pointer;
+	transition: all 0.2s ease-in-out;
+}
+h2 span.small{
+	font-weight: normal;
+line-height: 1;
+color: #999999;
+font-size:17.5px;
+
+}
+
+h2 span.small:hover{
+color:white;
+	}
+
+h2 span.activo{
+
+}
+
+#info_relacionada_artista iframe{
+	width:80%;
+	padding:0.5em;
+}
+
+#info_relacionada_artista h2{
+	width: 80%;
+background: #111;
+padding: 0.2em 0;
+margin: 0.2em auto;
+}
+#info_relacionada_artista .seccion ul{
+	margin-top:1em;
+}
+#info_relacionada_artista .seccion ul li a{
+	color: rgb(240, 242, 240);
+background: #25B871;
+font-weight: bolder;
+
+width: 80%;
+display: block;
+margin: 0.5em auto;
+margin-top: 0;
+font-size: 1.5em;
+padding: 0.3em;
+box-shadow: inset 0 0 130px -10px #3CB141;
+}
+
+#cargando_info{
+	margin: 6em 0;
+	padding-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+ul#artistas li.abierto img, #single figure img {
+float: right;
+margin: 0.3em 0 1em 1em;
+background: #D1D1D1;
+padding: 0.3em;
+}
+
+/*  Sidebar */
+#sidebar{
+	font-family: "Open Sans", arial;
+}
+#sidebar .cat-item a {
+padding: 5px;
+background: #555;
+color: beige;
+font-family: "Open Sans", arial;
+line-height: 29px;
+font-size: 12px;
+font-weight: bold;
+}
+
+#sidebar .cat-item a:hover {
+background-color: #a1d026;
+border: 1px solid white;
+border-left-width: 0px;
+color: white;
+}
+
+#sidebar .bandaazar > a#bandaazar{
+	background: rgba(66, 66, 66, 0.88);
+display: block;
+padding: 0.5em;
+padding-bottom:1.5em;
+color: white;
+}
+#sidebar .bandaazar > a h2{
+	font-size:21px;
+	text-align:center;
+	background: #929292;
+margin-bottom: 0.5em;
+}
+#sidebar .bandaazar > a figure{
+	width:99%;
+	display:inline-block;
+	text-align:center;
+}
+#sidebar .bandaazar > a figure img{
+	width:100%;
+
+}
+#sidebar .bandaazar > a p{
+	text-align:center;
+}
+
+#inicio figure img {
+    width: 100%;
+}
+#inicio figure {
+    width: 100%;
+}
+#inicio article.ultimas {
+    width: 32%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Slider */
+
+#banner-fade,
+#slide-home{
+	margin-bottom: 60px;
+	border: 3px solid #333;
+}
+
+ul.bjqs-controls.v-centered li a{
+	display:none;
+	padding:10px;
+	background:#fff;
+	color:#000;
+	text-decoration: none;
+}
+
+ul.bjqs-controls.v-centered li a:hover{
+	background:#000;
+	color:#fff;
+}
+
+.bjqs-markers{
+	display:none;
+}
+
+ol.bjqs-markers li a{
+	display:none;
+	padding:5px 10px;
+	background:#000;
+	color:#fff;
+	margin:5px;
+	text-decoration: none;
+}
+
+ol.bjqs-markers li.active-marker a,
+ol.bjqs-markers li a:hover{
+	background: #999;
+}
+
+p.bjqs-caption{
+	background: #333;
+	font-size:1.5em;
+	text-align: center;
+	color:white;
+
+}
+
+
+
+section#formulario{
+  display:inline-block;
+  margin-top:-0.2em;
+  padding: 0 1em;
+  position:relative;
+  width:100%;
+  top:-0.5em;
+}
+
+section#formulario form{
+  position:relative;
+}
+section#formulario #gracias{
+  position:absolute;
+  display:none;
+  background: rgb(0, 153, 255);
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 11em 0;
+  width:83%;
+}
+section#formulario form input{
+background: #fff!important;
+border-radius:0.2em;
+}
+section#formulario form *{
+  padding: 1em;
+  margin-top:0.45em;
+  font-size:1em;
+  width:81%;
+}
+section#formulario form input[type="button"]{
+  border: 2px solid #444;
+  background: #666!important;
+  color: white;
+  font-weight: 600;
+  width: 86%;
+  transition: all 0.3s ease-in-out;
+}
+
+section#formulario form input[type="button"]:hover{
+  background:rgba(83,65,147,1);
+}
+
+
+section#formulario  input.error, section#formulario textarea.error{
+  border-color:#d33;
+  background: #fff url("/img/validate.png") !important;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-position-y: -2.8em;
+}
+
+section#formulario input.valid, section#formulario textarea.valid{
+  border-color:#3d3;
+  background: #fff url("/img/validate.png") !important;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-position-y: 0.4em;
+
+}
+
+section#formulario textarea.valid{
+  background-position-y: 4em;
+}
+section#formulario label.error{
+  display:none!important;
+} 
+
+
+#prensa article {
+    background: black;
+    color: white!important;
+    width: 200px;
+    display:inline-block;
+    padding:0.3em;
+    vertical-align:top;
+    margin:0.3em; !important;
+
+}
+#prensa article a {
+    color: white;
+    font-weight: bold;
+    text-align:center;
+    width: 100%;
+}
+#prensa article h3 {
+	font-size:1.3em;
+	line-height: 22px;
+}
+#prensa article img {
+    width: 100%;
+}
+#prensa article figure {
+    margin: 0.5em 0.3em 0.5em 0.3em;
+}
+
+
+#fechas li{
+float:none!important;
+
+}
+#fechas > div {
+display:inline-block;
+
+}
+
+#carga_antiguas{
+margin-left:0.6em;
+
+}
+
+
+
+
+          @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+    @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
